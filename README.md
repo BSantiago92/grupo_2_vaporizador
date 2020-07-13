@@ -18,7 +18,7 @@ una alternativa mucho menos perjudicial para la salud hasta alcanzar su objetivo
 ## Integrantes del equipo
 
 - Darío Chiappello
-- Bruno Cami
+- Bruno Cami: tengo 20 años, hice dos años de ingenieria mecánica en el ITBA y apartir del 2020 soy estudiante de diseño industrial en la UBA. Estos son mis primeros pasos en el mundo de la programación pero ya me considero un apasionado.
 - Santiago Bottino
 
 ## Sitios Web de Referencia
