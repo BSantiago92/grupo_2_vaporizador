@@ -1,3 +1,44 @@
-h1 {
-    color: aqua;
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 2px solid black;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.usuario {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.usuario li{
+    display: inline-block;
+    text-align: center;
+    margin: 2px;
+    border-left: 1px solid black;
+    padding: 5px;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu li {
+    display: inline;
+    text-align: center;
+    margin: 2px;
+    border-left: 1px solid black;
+    padding: 5px;
 }
