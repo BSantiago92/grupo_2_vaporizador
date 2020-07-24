@@ -31,14 +31,35 @@ header {
     padding: 5px;
 }
 
+nav {
+    width: 100%;
+    align-items: center;
+}
+
 .menu {
+    display: flex;
     text-align: center;
+    flex-grow: 1;
+    align-items: right;
+    justify-content: space-around;
 }
 
 .menu li {
-    display: inline;
+    display: inline-block;
     text-align: center;
     margin: 2px;
     border-left: 1px solid black;
     padding: 5px;
+}
+
+main {
+    height: 68vh;
+}
+
+footer {
+    height: 8vh;
+    width: 100%;
+    background-color: grey;
+    text-align: center;
+
 }
