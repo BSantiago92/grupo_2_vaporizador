@@ -2,15 +2,14 @@
     box-sizing: border-box;
 }
 body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    background-color: #F5F5F5;
+    background-color: rgb(204, 204, 204);
 }
 
 header {
     height: 200px;
     padding: 12px;
-
 }
 
 .usuario a:hover {
@@ -85,16 +84,36 @@ nav {
 
 section {
     width: 90%;
-    height: 800px;
     background-color: transparent;
     margin: auto;
     display: flex;
-
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
 }
 
-article {
-    margin-top: 10px;
+.slider{
+    width: 99%;
+    margin: 2px;
+    padding: 2px;
+}
+
+.dosColumnas {
+    background-color: white;
+    border-radius: 5px;
+    width: 49%;
+    padding: 2px;
+    margin: 5px;
+    
+}
+
+.tresColumnas {
+    background-color: white;
+    border-radius: 5px;
+    width: 32.35%;
+    padding: 2px;
+    margin: 5px;
 }
 
 article img {
