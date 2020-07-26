@@ -1,6 +1,7 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     margin: 0 auto;
     padding: 0;
@@ -16,8 +17,8 @@ header {
     color: #8F8F8F;
 }
 
-.menu a:hover{
-   color: #8F8F8F;
+.menu a:hover {
+    color: #8F8F8F;
 }
 
 .logo {
@@ -36,7 +37,7 @@ header {
     right: 25px;
 }
 
-.usuario li{
+.usuario li {
     display: inline-block;
     justify-content: space-between;
     text-align: center;
@@ -47,7 +48,7 @@ header {
 .usuario li a {
     text-decoration: none;
     color: black;
-} 
+}
 
 nav {
     width: 100%;
@@ -74,8 +75,6 @@ nav {
     color: black;
 }
 
-
-
 .form-inline {
     position: absolute;
     top: 120px;
@@ -91,9 +90,7 @@ nav {
     /*background-clip: padding-box;*/
     border: 1px solid #ced4da;
     border-radius: .25rem;
-
 }
-
 
 section {
     width: 90%;
@@ -106,7 +103,7 @@ section {
     justify-content: center;
 }
 
-.slider{
+.slider {
     width: 100%;
     margin: 2px auto;
     padding: 2px;
@@ -118,7 +115,6 @@ section {
     width: 49%;
     padding: 2px;
     margin: 5px;
-    
 }
 
 .tresColumnas {
@@ -133,13 +129,39 @@ article img {
     width: 100%;
 }
 
-
 footer {
-    height: 30vh;
+    height: 20vh;
     width: 100%;
     background-color: grey;
     justify-content: center;
     text-align: center;
     align-items: center;
+}
 
+footer p {
+    padding-top: 55px;
+}
+
+.form {
+    height: 50vh;
+    margin-top: 2%;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.form form {
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+.form input {
+    width: 100%;
+    margin: 10px;
+}
+
+.form p a {
+    color: #495057;
 }

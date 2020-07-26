@@ -1,22 +1,22 @@
 {
-  "name": "grupo_2_vaporizador",
-  "version": "1.0.0",
-  "description": "Ecommerce nacional para la compra de vaporizadores electrónicos y sus accesorios. Dentro de nuestra oferta se destacan\r los siguientes productos:",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BSantiago92/grupo_2_vaporizador.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BSantiago92/grupo_2_vaporizador/issues"
-  },
-  "homepage": "https://github.com/BSantiago92/grupo_2_vaporizador#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "grupo_2_vaporizador",
+    "version": "1.0.0",
+    "description": "Ecommerce nacional para la compra de vaporizadores electrónicos y sus accesorios. Dentro de nuestra oferta se destacan\r los siguientes productos:",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BSantiago92/grupo_2_vaporizador.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/BSantiago92/grupo_2_vaporizador/issues"
+    },
+    "homepage": "https://github.com/BSantiago92/grupo_2_vaporizador#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
 }
