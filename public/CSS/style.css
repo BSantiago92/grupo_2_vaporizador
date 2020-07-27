@@ -108,8 +108,8 @@ section {
 
 .slider{
     width: 100%;
-    margin: 2px auto;
-    padding: 2px;
+    margin: 0px auto;
+    padding: 0px;
 }
 
 .dosColumnas {
@@ -121,9 +121,21 @@ section {
     
 }
 
+#verMasButton-izquierda {
+    position: absolute;
+    top: 1100px;
+    left: 105px;
+}
+
+#verMasButton-derecha {
+    position: absolute;
+    top: 1100px;
+    right: 510px;
+}
+
 .tresColumnas {
     background-color: transparent;
-    border-radius: 5px;
+    border-radius: 70px;
     width: 32.35%;
     padding: 2px;
     margin: 5px;

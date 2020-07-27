@@ -41,14 +41,12 @@
             <li><a href="http://localhost:3003/">Inicio</a></li>
 
 
-            <li>  
-                <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 <a href="http://localhost:3003/catalogo">Vaporizadores</a>
-                </button>
+            <li>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vaporizadores</button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="#">Smok</a>
-                  <a class="dropdown-item" href="#">Juul</a>
+                  <a class="dropdown-item" href="http://localhost:3003/catalogo">Smok</a>
+                  <a class="dropdown-item" href="http://localhost:3003/catalogo">Juul</a>
                 </div>
               </div>
             </li>
@@ -71,6 +69,7 @@
     </header>
 
     <main>
+        
          <section>
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <article class="slider">
@@ -78,11 +77,23 @@
                 </article>
             </div>
             
-             <article class="dosColumnas"><a href="#"><img src="/images/IMG_1288.JPG" class="rounded float-left" alt="..."></a></article>
-             <article class="dosColumnas"><a href="#"><img src="/images/IMG_1289.JPG" class="rounded float-right" alt="..."></a></article>
-             <article class="tresColumnas"><a href=""><img src="/images/tresColumnas1.PNG" alt=""></a></article>
-             <article class="tresColumnas"><a href=""><img src="/images/tresColumnas2.PNG" alt=""></a></article>
-             <article class="tresColumnas"><a href=""><img src="/images/tresColumnas3.JPG" alt=""></a></article>
+             <article class="dosColumnas">
+                 <a href="#"><img src="/images/dosColumnasIzquierda.jpg" class="rounded float-left" alt="..."></a>
+                 <button id="verMasButton-izquierda" type="button" class="btn btn-primary">Ver más</button>
+            </article>
+             <article class="dosColumnas">
+                 <a href="#"><img src="/images/dosColumnasDerecha.JPG" class="rounded float-right" alt="..."></a>
+                 <button id="verMasButton-derecha" type="button" class="btn btn-primary">Ver más</button>
+                </article>
+             <article class="tresColumnas">
+                 <a href=""><img src="/images/tresColumnas1.PNG" alt=""></a>
+                </article>
+             <article class="tresColumnas">
+                 <a href=""><img src="/images/tresColumnas2.PNG" alt=""></a>
+                </article>
+             <article class="tresColumnas">
+                 <a href=""><img src="/images/tresColumnas3.JPG" alt=""></a>
+                </article>
          </section>
     </main>
 
