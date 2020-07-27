@@ -10,8 +10,12 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html')
 })
 
+app.get('/carrito', function(req,res){
+    res.sendFile(__dirname + '/public/productCart.html')
+})
+
 app.get('/catalogo', function(req, res) {
-    res.sendFile(__dirname + '/catalogo.html')
+    res.sendFile(__dirname + '/public/catalogo.html')
 })
 
 app.get('/login', function(req, res) {
@@ -24,4 +28,4 @@ app.get('/register', function(req, res) {
 
 app.get('*', (req, res) => {
     res.status(404).send("Esta pagina no existe");
-});
+})

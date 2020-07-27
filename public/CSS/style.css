@@ -9,8 +9,17 @@ body {
 }
 
 header {
-    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
     padding: 12px;
+    margin-bottom: 100px;
+}
+
+h1 {
+    text-align: center;
 }
 
 .usuario a:hover {
@@ -22,28 +31,42 @@ header {
 }
 
 .logo {
-    position: absolute;
-    top: 0px;
-    left: 10px;
+    margin: 10px;
+   height: 10vh;
 }
 
 .logo img {
-    width: 15%;
+    width: 20vw;
 }
 
 .usuario {
-    position: absolute;
-    top: 25px;
-    right: 25px;
+    margin: 10px;
+    width: 100%;
 }
 
-.usuario li {
+ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+ul li {
+    width: 75vw;
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    
+}
+
+/*.usuario li {
     display: inline-block;
     justify-content: space-between;
     text-align: center;
     padding: 5px;
     margin: 10px;
-}
+}*/
 
 .usuario li a {
     text-decoration: none;
@@ -51,19 +74,20 @@ header {
 }
 
 nav {
+    display: inline-block;
     width: 100%;
     align-items: center;
 }
 
-.menu {
+/*.menu {
     position: absolute;
     top: 100px;
     left: 100px;
     display: flex;
     justify-content: center;
-}
+}*/
 
-.menu li {
+/*.menu li {
     display: inline-block;
     text-align: center;
     margin: 10px;
@@ -73,14 +97,16 @@ nav {
 .menu li a {
     text-decoration: none;
     color: black;
-}
+}*/
+
 
 .form-inline {
-    position: absolute;
+    /*position: absolute;
     top: 120px;
-    right: 35px;
+    right: 35px;*/
     /*display: block;*/
-    width: 22.9%;
+    flex-grow: 1;
+    /*width: 100%;*/
     /*height: calc(1.5em + .75rem + 2px);*/
     /*padding: .375rem .75rem;*/
     font-size: 1rem;
@@ -111,6 +137,7 @@ section {
 }
 
 .dosColumnas {
+    display: block;
     background-color: transparent;
     border-radius: 5px;
     width: 49%;
@@ -197,7 +224,7 @@ footer p {
 }
 
 @media (max-width: 1024) {
-       .menu ul {
-           display: none !important;
+       header {
+           margin-bottom: auto;
        }
 }
