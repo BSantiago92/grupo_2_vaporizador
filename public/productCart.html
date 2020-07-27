@@ -4,33 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style-santiago.css">
     <title>Vapear</title>
 </head>
 
 <body>
-    <div class="logo">
-        <h1>Vapear</h1>
-   </div>
+    <header>
+        <div class="logo">
+            <h1>Vapear</h1>
+    </div>
 
-   <div class="usuario">
-        <ul>
-            <li><a href="#">Iniciar sesion</a></li>
-            <li><a href="#">Favoritos</a></li>
-            <li><a href="#">Carrito</a></li>
-        </ul>
-   </div>
+    <div class="usuario">
+            <ul>
+                <li><a href="#">Iniciar sesion</a></li>
+                <li><a href="#">Favoritos</a></li>
+                <li><a href="#">Carrito</a></li>
+            </ul>
+    </div>
 
-   <div class="menu">
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Vaporizadores</a></li>
-            <li><a href="#">Atomizadores</a></li>
-            <li><a href="#">E-liquids</a></li>
-            <li><a href="#">Resistencias</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-   </div>
+    <div class="menu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Vaporizadores</a></li>
+                <li><a href="#">Atomizadores</a></li>
+                <li><a href="#">E-liquids</a></li>
+                <li><a href="#">Resistencias</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+    </div>
+    </header>
+
+    <main>
+        <div class="productCartTitle">
+            <h3 class="productCartTitleStyle">CARRITO</h3>
+        </div>
+
+        <section class="column">
+            <div class="firstView">
+                <img src="../img/images/productCart1.jpg" alt="Vaporizador" width="250">
+            </div>
+            <div class="secondView">
+                <img src="../img/images/productCart2.jpg" alt="Vaporizador" width="250">
+            </div>
+            <div class="secondView">
+                <img src="../img/images/productCart3.jpg" alt="Vaporizador" width="250">
+            </div>
+        </section>
+
+        <section class="column2">
+
+            <div class="productAdd">
+                <form action="http://localhost:3000/" method="POST">
+                    
+                    <div class="quantityColorPC">
+                            <p class="product1DescriptionPC" >
+                               Target PM 80<br>
+                               $10.200
+                               <br><br><br><br><br><br> 
+                               Color: Gris Plata
+                            </p>
+                            <input class="quantityDecrese" type="button" value="-">
+                            <input class="quantityNumber" type="text" placeholder="0">
+                            <input class="quantityIncrease" type="button" value="+">
+                    </div>
+                    
+                    <div class="quantityColorPC">
+                        <p class="product2DescriptionPC" >
+                           VooPoo PNP<br>
+                           $18.300
+                           <br><br><br><br><br><br> 
+                           Color: Gris Oscuro
+                        </p>
+                        <input class="quantityDecrese" type="button" value="-">
+                        <input class="quantityNumber" type="text" placeholder="0">
+                        <input class="quantityIncrease" type="button" value="+">
+                    </div>
+
+                    <div class="quantityColorPC">
+                        <p class="product3DescriptionPC" >
+                           Vaporesso LT<br>
+                           $12.300
+                           <br><br><br><br><br><br> 
+                           Color: Negro
+                        </p>
+                        <input class="quantityDecrese" type="button" value="-">
+                        <input class="quantityNumber" type="text" placeholder="0">
+                        <input class="quantityIncrease" type="button" value="+">
+                    </div>
+
+                    <div class="buttonPCPosition">
+
+                        <div class="buttonPCPrice">
+                            <p class="text">TOTAL:</p>
+                            <p class="price">$</p>
+                        </div>
+
+                        <input class="productDetailButtonPC" type="submit" value="COMPRAR">
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <section class="column3">
+
+            <p class="product1DescriptionPC" >
+                Marca: Smoke
+                <br><br> 
+                Total: -
+            </p>
+
+            <p class="product2DescriptionPC" >
+                Marca: eGO AI
+                <br><br> 
+                Total: -
+            </p>
+
+            <p class="product3DescriptionPC" >
+                Marca: Vaporesso
+                <br><br> 
+                Total: -
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p class="footer">
+            Copyright Vapear 2020
+        </p>
+    </footer>
+
 </body>
 
 </html>

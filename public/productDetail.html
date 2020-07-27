@@ -4,33 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style-santiago.css">
     <title>Vapear</title>
 </head>
 
 <body>
-    <div class="logo">
-        <h1>Vapear</h1>
-   </div>
+    <header>
+        <div class="logo">
+            <h1>Vapear</h1>
+        </div>
 
-   <div class="usuario">
-        <ul>
-            <li><a href="#">Iniciar sesion</a></li>
-            <li><a href="#">Favoritos</a></li>
-            <li><a href="#">Carrito</a></li>
-        </ul>
-   </div>
+        <div class="usuario">
+            <ul>
+                <li><a href="#">Iniciar sesion</a></li>
+                <li><a href="#">Favoritos</a></li>
+                <li><a href="#">Carrito</a></li>
+            </ul>
+        </div>
 
-   <div class="menu">
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Vaporizadores</a></li>
-            <li><a href="#">Atomizadores</a></li>
-            <li><a href="#">E-liquids</a></li>
-            <li><a href="#">Resistencias</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-   </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Vaporizadores</a></li>
+                <li><a href="#">Atomizadores</a></li>
+                <li><a href="#">E-liquids</a></li>
+                <li><a href="#">Resistencias</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="column">
+            <div class="firstView">
+                <img src="../img/images/productDetail1.jpg" alt="Vaporizador" width="250">
+            </div>
+            <div class="secondView">
+                <img src="../img/images/productDetail2.jpg" alt="Vaporizador" width="250">
+            </div>
+        </section>
+
+        <div class="mainView">
+            <img src="../img/images/productDetail3.jpg" alt="Vaporizador" width="520">            
+        </div>
+
+        <div class="productDescription">
+            
+                <p class="productPrice">vape "Smoke Priv V8"</p>
+                <p>$ 25.500</p>
+
+            <div class="productAdd">
+                <form action="http://localhost:3000/" method="POST">
+                    
+                    <div class="quantityColor">
+                        <select>_</select>
+                        <span class="quantitySelect">
+                            <input class="quantityDecrese" type="button" value="-">
+                            <input class="quantityNumber" type="text" placeholder="0">
+                            <input class="quantityIncrease" type="button" value="+">
+                        </span>
+                    </div>                 
+                    
+                    <input class="productDetailButton" type="submit" value="AGREGAR AL CARRITO">                
+                </form>
+
+
+                <h3>Información general</h3>
+                <p>Con su atractivo diseño y su claromizador TFV8 Smoke Priv V8 te proporcionará horas 
+                    interminables de vapeo, Dispone de un gran pulsador para vapear y funciona con una
+                    batería 18650.<br>
+                    Pequeño y potente, la opción perfecta para todos aquellos que quieran empezar a lo grande.<br> 
+                    No incluye baterias 18560.
+                </p>
+            </div>
+            
+        </div>
+
+    </main>
+
+    <footer>
+        <p class="footer">
+            Copyright Vapear 2020
+        </p>
+    </footer>
 
    
 </body>
