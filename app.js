@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/index.html')
 })
 
-app.get('/carrito', function(req,res){
+app.get('/carrito', function(req, res) {
     res.sendFile(__dirname + '/public/productCart.html')
 })
 

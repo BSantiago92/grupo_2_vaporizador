@@ -1,6 +1,7 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     margin: 0 auto;
     padding: 0;
@@ -10,15 +11,14 @@ body {
 header {
     height: 200px;
     padding: 12px;
-
 }
 
 .usuario a:hover {
     color: #8F8F8F;
 }
 
-.menu a:hover{
-   color: #8F8F8F;
+.menu a:hover {
+    color: #8F8F8F;
 }
 
 .logo {
@@ -37,7 +37,9 @@ header {
     right: 25px;
 }
 
-.usuario li{
+
+/*
+.usuario li {
     display: inline-block;
     justify-content: space-between;
     text-align: center;
@@ -48,7 +50,27 @@ header {
 .usuario li a {
     text-decoration: none;
     color: black;
-} 
+}*/
+
+.usuario ul {
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.usuario ul li {
+    width: 75vw;
+    list-style: none;
+    text-align: center;
+    color: black;
+}
+
+.usuario li a {
+    text-decoration: none;
+    color: black;
+}
+
 
 /*nav {
     width: 100%;
@@ -75,6 +97,7 @@ header {
     color: black;
 }
 
+
 /*#busqueda {
     position: absolute;
     top: 140px;
@@ -100,6 +123,7 @@ header {
     padding: 2px;
 }*/
 
+
 /*.dosColumnas {
     background-color: white;
     border-radius: 5px;
@@ -109,6 +133,7 @@ header {
     
 }*/
 
+
 /*.tresColumnas {
     background-color: white;
     border-radius: 5px;
@@ -117,10 +142,15 @@ header {
     margin: 5px;
 }*/
 
+article {
+    width: 70%;
+    display: flex;
+    padding: 10%;
+}
+
 article img {
     width: 100%;
 }
-
 
 footer {
     margin-top: -15px;
@@ -129,13 +159,15 @@ footer {
     background-color: grey;
     text-align: center;
     align-items: center;
-
 }
+
 
 /* Estilos para productDetail y productCart */
 
+
 /* Por favor aplicar al header y footer de productCart y
 productDetail los estilos que aplicaste para el index*/
+
 
 /* Estilos para productCart */
 
@@ -152,7 +184,6 @@ productDetail los estilos que aplicaste para el index*/
     flex-wrap: wrap;
     flex-direction: column;
     margin-bottom: -25px;
-
 }
 
 .PCtitle h3 {
@@ -175,7 +206,6 @@ productDetail los estilos que aplicaste para el index*/
 #PCarticle2 {
     margin-top: -9px;
     margin-bottom: -9px;
-
 }
 
 .PCarticle img {
@@ -202,7 +232,9 @@ productDetail los estilos que aplicaste para el index*/
     color: green;
 }
 
-.PCquantityDecrese, .PCquantityNumber, .PCquantityIncrease {
+.PCquantityDecrese,
+.PCquantityNumber,
+.PCquantityIncrease {
     width: 35px;
     font-size: 20px;
     background-color: rgb(151, 148, 148);
@@ -256,6 +288,7 @@ productDetail los estilos que aplicaste para el index*/
     margin-right: 120px;
 }
 
+
 /* Estilos para productDetail*/
 
 .PDcolumn3 {
@@ -264,12 +297,8 @@ productDetail los estilos que aplicaste para el index*/
     align-items: center;
     flex-direction: column;
     padding: 0px;
-    
     margin: -6px;
     display: flex;
     flex-wrap: wrap;
     padding-top: 20px;
 }
-
-
-
