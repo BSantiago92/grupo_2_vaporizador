@@ -26,6 +26,10 @@ app.get('/register', function(req, res) {
     res.sendFile(__dirname + '/public/register.html')
 })
 
+app.get('/productdetail', function(req, res) {
+    res.sendFile(__dirname + '/public/productDetail.html')
+})
+
 app.get('*', (req, res) => {
     res.status(404).send("Esta pagina no existe");
 })

@@ -23,6 +23,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <header>
+
         <div class="logo">
             <h1>
                 <a href="http://localhost:3003"><img src="/images/Logo.PNG" alt=""></a>
@@ -34,137 +35,82 @@
                 <ul>
                     <li><a href="/login.html">Iniciar sesion</a></li>
                     <li><a href="#">Favoritos</a></li>
-                    <li><a href="#">Carrito</a></li>
+                    <li><a href="/carrito">Carrito</a></li>
                 </ul>
             </div>
+        </nav> 
 
-
-            <div class="menu">
-
-                <ul>
-                    <li><a href="http://localhost:3003/">Inicio</a></li>
-
-
-            <li>
-              <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vaporizadores</button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="http://localhost:3003/catalogo">Smok</a>
-                  <a class="dropdown-item" href="http://localhost:3003/catalogo">Juul</a>
-                </div>
-              </div>
-            </li>
-
-            
-            <li><a href="#">Atomizadores</a></li>
-            <li><a href="#">E-liquids</a></li>
-            <li><a href="#">Resistencias</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    
-      </div>
-
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-
-     </nav>
     </header>
 
-    <main>
-        <div class="productCartTitle">
-            <h3 class="productCartTitleStyle">CARRITO</h3>
+    <main class="PCmain">
+
+        <div class="PCtitle">
+            <h3>CARRITO</h3>
         </div>
 
-        <section class="column">
-            <div class="firstView">
-                <img src="/images/productCart1.jpg" alt="Vaporizador" width="250">
-            </div>
-            <div class="secondView">
-                <img src="/images/productCart2.jpg" alt="Vaporizador" width="250">
-            </div>
-            <div class="secondView">
-                <img src="/images/productCart3.jpg" alt="Vaporizador" width="250">
-            </div>
-        </section>
-
-        <section class="column2">
-
-            <div class="productAdd">
-                <form action="http://localhost:3000/" method="POST">
-                    
-                    <div class="quantityColorPC">
-                            <p class="product1DescriptionPC" >
-                               Target PM 80<br>
-                               $10.200
-                               <br><br><br><br><br><br> 
-                               Color: Gris Plata
-                            </p>
-                            <input class="quantityDecrese" type="button" value="-">
-                            <input class="quantityNumber" type="text" placeholder="0">
-                            <input class="quantityIncrease" type="button" value="+">
-                    </div>
-                    
-                    <div class="quantityColorPC">
-                        <p class="product2DescriptionPC" >
-                           VooPoo PNP<br>
-                           $18.300
-                           <br><br><br><br><br><br> 
-                           Color: Gris Oscuro
-                        </p>
-                        <input class="quantityDecrese" type="button" value="-">
-                        <input class="quantityNumber" type="text" placeholder="0">
-                        <input class="quantityIncrease" type="button" value="+">
-                    </div>
-
-                    <div class="quantityColorPC">
-                        <p class="product3DescriptionPC" >
-                           Vaporesso LT<br>
-                           $12.300
-                           <br><br><br><br><br><br> 
-                           Color: Negro
-                        </p>
-                        <input class="quantityDecrese" type="button" value="-">
-                        <input class="quantityNumber" type="text" placeholder="0">
-                        <input class="quantityIncrease" type="button" value="+">
-                    </div>
-
-                    <div class="buttonPCPosition">
-
-                        <div class="buttonPCPrice">
-                            <p class="text">TOTAL:</p>
-                            <p class="price">$</p>
-                        </div>
-
-                        <input class="productDetailButtonPC" type="submit" value="COMPRAR">
-                    </div>
-
-                </form>
-            </div>
-        </section>
-
-        <section class="column3">
-
-            <p class="product1DescriptionPC" >
-                Marca: Smoke
-                <br><br> 
-                Total: -
+        <article class="PCarticle">
+            <img src="/images/productCart1.jpg" alt="Vaporizador">
+            
+            <p class="PCdescription" >
+                Target PM 80<br>
+                <span class="PCprice">$10.200</span><br>
+                Color: Gris Plata
             </p>
 
-            <p class="product2DescriptionPC" >
-                Marca: eGO AI
-                <br><br> 
-                Total: -
+            <div class="PCquantity">
+
+                <input class="PCquantityDecrese" type="button" value="-">
+                <input class="PCquantityNumber" type="text" placeholder="0">
+                <input class="PCquantityIncrease" type="button" value="+">
+            
+            </div>
+        </article>
+
+        <article class="PCarticle" id="PCarticle2">
+            <img src="/images/productCart2.jpg" alt="Vaporizador">
+            
+            <p class="PCdescription" >
+                Voo Poo PNP<br>
+                <span class="PCprice">$18.300</span><br>
+                Color: Gris Plata
             </p>
 
-            <p class="product3DescriptionPC" >
-                Marca: Vaporesso
-                <br><br> 
-                Total: -
+            <div class="PCquantity">
+
+                <input class="PCquantityDecrese" type="button" value="-">
+                <input class="PCquantityNumber" type="text" placeholder="0">
+                <input class="PCquantityIncrease" type="button" value="+">
+            
+            </div>
+        </article>
+
+        <article class="PCarticle">
+            <img src="/images/productCart3.jpg" alt="Vaporizador">
+            
+            <p class="PCdescription" >
+                Vaporesso LT<br>
+                <span class="PCprice">$12.300</span><br>
+                Color: Gris Plata
             </p>
 
-        </section>
+            <div class="PCquantity">
+
+                <input class="PCquantityDecrese" type="button" value="-">
+                <input class="PCquantityNumber" type="text" placeholder="0">
+                <input class="PCquantityIncrease" type="button" value="+">
+            
+            </div>
+        </article>
+
+        <div class="PCbuttonPosition">
+
+            <div class="PCbuttonPrice">
+                <p class="text">TOTAL:</p>
+                <p class="price">$</p>
+            </div>
+
+            <input class="PCproductDetailButton" type="submit" value="COMPRAR">
+        </div>
 
     </main>
 
