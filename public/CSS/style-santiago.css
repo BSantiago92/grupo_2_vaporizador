@@ -325,3 +325,34 @@ productDetail los estilos que aplicaste para el index*/
     flex-wrap: wrap;
     padding-top: 20px;
 }
+
+.PDarticle {
+    text-align: center;
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.PDmain {
+    width: 489px;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: -8px;
+}
+
+.PDsection {
+    width: 339px;
+    text-align: center;
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+}
+
