@@ -49,13 +49,11 @@ h1 {
     margin-left: 15%;
 }
 
-
 .usuario ul li {
     width: 75%;
     list-style: none;
     text-align: center;
     color: black;
-    
 }
 
 
@@ -77,11 +75,11 @@ h1 {
     justify-content: space-around;
 }
 
-
 nav {
     width: 100%;
     align-items: center;
 }
+
 
 /*.menu {
     position: absolute;
@@ -90,6 +88,7 @@ nav {
     display: flex;
     justify-content: center;
 }*/
+
 
 /*.menu li {
     display: inline-block;
@@ -104,8 +103,8 @@ nav {
 }*/
 
 
-
 /*Barra de busqueda*/
+
 .form-inline {
     /*position: absolute;
     top: 120px;
@@ -121,6 +120,8 @@ nav {
     /*background-clip: padding-box;*/
     border-radius: .25rem;
 }
+
+
 /*Barra de busqueda*/
 
 
@@ -138,20 +139,18 @@ section {
 }
 
 
-
 /*diapositiva de superposicion de imagen*/
-
 
 .container {
     position: relative;
     width: 100%;
-  }
+}
 
 .img-fluid {
     display: block;
     width: 100%;
     height: auto;
-  }
+}
 
 .overlay {
     position: absolute;
@@ -162,13 +161,13 @@ section {
     width: 100%;
     height: 0;
     transition: .5s ease;
-  }
+}
 
-  .container:hover .overlay {
+.container:hover .overlay {
     height: 100%;
-  }
+}
 
-  .text {
+.text {
     color: white;
     font-size: 20px;
     position: absolute;
@@ -178,11 +177,10 @@ section {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-  }
+}
 
 
-  /*fin diapositiva de superposicion de imagen*/
-
+/*fin diapositiva de superposicion de imagen*/
 
 .dosColumnas {
     display: block;
@@ -215,6 +213,7 @@ section {
 article img {
     width: 100%;
 }
+
 
 /*Home fin*/
 
@@ -272,10 +271,8 @@ footer p {
     color: #495057;
 }
 
-/*Formularios login-register fin*/
 
-
-/*Catalogo*/ 
+/*Catalogo*/
 
 .catalogo article {
     width: 100%;
@@ -288,28 +285,25 @@ footer p {
     width: 100%;
 }
 
+
 /*Catalogo fin*/
 
-
 @media (max-width: 1132px) {
-
-   section {
-       flex-direction: column;
-   }
-
-   .dosColumnas {
-       width: 80%;
-       justify-content: center;
-   }
-
-   .tresColumnas {
-       width: 80%;
-       justify-content: center;
-   }
+    section {
+        flex-direction: column;
+    }
+    .dosColumnas {
+        width: 80%;
+        justify-content: center;
+    }
+    .tresColumnas {
+        width: 80%;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 1024) {
-       header {
-           margin-bottom: auto;
-       }
+    header {
+        margin-bottom: auto;
+    }
 }
