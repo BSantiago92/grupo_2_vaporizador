@@ -24,6 +24,7 @@
 
 
     <header>
+
         <div class="logo">
             <h1>
                 <a href="http://localhost:3003"><img src="/images/Logo.PNG" alt=""></a>
@@ -35,89 +36,93 @@
                 <ul>
                     <li><a href="/login.html">Iniciar sesion</a></li>
                     <li><a href="#">Favoritos</a></li>
-                    <li><a href="#">Carrito</a></li>
+                    <li><a href="/carrito">Carrito</a></li>
                 </ul>
             </div>
+        </nav>
 
-
-            <div class="menu">
-
-                <ul>
-                    <li><a href="http://localhost:3003/">Inicio</a></li>
-
-
-            <li>
-              <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vaporizadores</button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="http://localhost:3003/catalogo">Smok</a>
-                  <a class="dropdown-item" href="http://localhost:3003/catalogo">Juul</a>
-                </div>
-              </div>
-            </li>
-
-            
-            <li><a href="#">Atomizadores</a></li>
-            <li><a href="#">E-liquids</a></li>
-            <li><a href="#">Resistencias</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    
-      </div>
-
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
-
-     </nav>
     </header>
 
     <main>
-        <section class="column">
-            <div class="firstView">
-                <img src="../img/images/productDetail1.jpg" alt="Vaporizador" width="250">
-            </div>
-            <div class="secondView">
-                <img src="../img/images/productDetail2.jpg" alt="Vaporizador" width="250">
-            </div>
-        </section>
 
-        <div class="mainView">
-            <img src="../img/images/productDetail3.jpg" alt="Vaporizador" width="520">            
-        </div>
+        <main class="PCmain">
+    
+            <article class="PCarticle">
+                <img src="../img/images/productDetail1.jpg" alt="Vaporizador">
+                <img src="../img/images/productDetail2.jpg" alt="Vaporizador">
+                <img src="../img/images/productDetail3.jpg" alt="Vaporizador">
+                
+            </article>
 
-        <div class="productDescription">
-            
-                <p class="productPrice">vape "Smoke Priv V8"</p>
-                <p>$ 25.500</p>
+            <section class="PDcolumn3">
 
-            <div class="productAdd">
-                <form action="http://localhost:3000/" method="POST">
-                    
-                    <div class="quantityColor">
-                        <select>_</select>
-                        <span class="quantitySelect">
-                            <input class="quantityDecrese" type="button" value="-">
-                            <input class="quantityNumber" type="text" placeholder="0">
-                            <input class="quantityIncrease" type="button" value="+">
-                        </span>
-                    </div>                 
-                    
-                    <input class="productDetailButton" type="submit" value="AGREGAR AL CARRITO">                
-                </form>
-
-
-                <h3>Información general</h3>
                 <p>Con su atractivo diseño y su claromizador TFV8 Smoke Priv V8 te proporcionará horas 
                     interminables de vapeo, Dispone de un gran pulsador para vapear y funciona con una
                     batería 18650.<br>
                     Pequeño y potente, la opción perfecta para todos aquellos que quieran empezar a lo grande.<br> 
                     No incluye baterias 18560.
                 </p>
-            </div>
+
+
+
+
+
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="PCquantity">
+
+                <input class="PCquantityDecrese" type="button" value="-">
+                <input class="PCquantityNumber" type="text" placeholder="0">
+                <input class="PCquantityIncrease" type="button" value="+">
             
-        </div>
+            </div>
+       
+            <div class="PCbuttonPosition">
+    
+                <div class="PCbuttonPrice">
+                    <p class="text">TOTAL:</p>
+                    <p class="price">$</p>
+                </div>
+    
+                <input class="PCproductDetailButton" type="submit" value="AGREGAR AL CARRITO">
+            </div>
+    
+        </main>
+
 
     </main>
 
