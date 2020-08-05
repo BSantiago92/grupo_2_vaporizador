@@ -1,0 +1,382 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    background-color: #fff7f7;
+    font-family: serif;
+}
+
+header {
+    height: auto;
+    padding: 24px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.usuario a:hover {
+    color: #8F8F8F;
+}
+
+.menu a:hover {
+    color: #8F8F8F;
+}
+
+.logo {
+    text-align: center;
+    margin: 10px;
+    width: 100vw;
+}
+
+.logo img {
+    width: 50vw;
+}
+
+.usuario {
+    margin: 10px;
+    width: 75vw;
+}
+
+.usuario ul {
+    width: 80vw;
+    margin-left: 15%;
+}
+
+.usuario ul li {
+    width: 75%;
+    list-style: none;
+    text-align: center;
+    color: black;
+}
+
+
+/*.usuario li {
+    display: inline-block;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}*/
+
+.usuario li a {
+    text-decoration: none;
+    color: black;
+}
+
+.menuSmall {
+    display: inline-block;
+    justify-content: space-around;
+}
+
+nav {
+    width: 100%;
+    align-items: center;
+}
+
+
+
+/*Barra de busqueda*/
+
+.form-inline {
+    /*position: absolute;
+    top: 120px;
+    right: 35px;*/
+    display: inline-block;
+    /*width: 100%;*/
+    /*height: calc(1.5em + .75rem + 2px);*/
+    /*padding: .375rem .75rem;*/
+    font-size: 1rem;
+    font-weight: 400;
+    /*line-height: 1.5;*/
+    color: #495057;
+    /*background-clip: padding-box;*/
+    border-radius: .25rem;
+}
+
+
+/*Barra de busqueda*/
+
+
+/*Home*/
+
+section {
+    width: 90%;
+    background-color: transparent;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*diapositiva de superposicion de imagen*/
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.img-fluid {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.container:hover .overlay {
+    height: 100%;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+/*fin diapositiva de superposicion de imagen*/
+
+.dosColumnas {
+    display: block;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 80%;
+    padding: 2px;
+    margin: 5px;
+}
+
+#verMasButton-izquierda {
+    position: absolute;
+    top: 1100px;
+    left: 105px;
+}
+
+#verMasButton-derecha {
+    position: absolute;
+    top: 1100px;
+    right: 510px;
+}
+
+.tresColumnas {
+    background-color: transparent;
+    width: 80%;
+    padding: 2px;
+    margin: 5px;
+}
+
+article img {
+    width: 100%;
+}
+
+
+/*Home fin*/
+
+
+/*Footer*/
+footer {
+    width: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+    
+
+footer section{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+}
+
+.logoFooter img{
+    width: 15%;    
+}
+
+
+footer p {
+    padding-top: 10px;
+}
+
+/*Footer fin*/
+
+/*Formularios login-register*/
+.form {
+    height: 50vh;
+    margin-top: 2%;
+    margin-bottom: 20%;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.form form {
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+.form input {
+    width: 100%;
+    margin: 10px;
+}
+
+.form p a {
+    color: #495057;
+}
+
+
+/*Catalogo*/
+
+.catalogo {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.catalogo article {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding: 3px;
+    margin: 2px;
+    border-radius: 1rem;
+}
+
+.catalogo article img {
+    text-align: center;
+    width: 100%;
+}
+
+
+/*Catalogo fin*/
+
+@media (min-width: 1132px) {
+
+    header {
+        height: 300px;
+        padding: 12px;        
+    }
+    section {
+        flex-direction: row;
+    }
+    .dosColumnas {
+        width: 49%;
+        justify-content: center;
+    }
+    .tresColumnas {
+        width: 32.35%;
+        justify-content: center;
+    }
+    .menuSmall {
+        display: none;
+    }
+
+    .logo {
+        position: absolute;
+        top: 0px;
+        left: 10px;
+        width: 20vw;
+    }
+
+    .logo img {
+        width: 100%;
+    }
+
+    .usuario {
+        width: 50%;
+        position: absolute;
+        top: 70px;
+        right: 1px; 
+        display: flex;
+        justify-content: flex-end; 
+    }
+
+    .usuario ul {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .usuario ul li {
+        width: 31%;
+        display: inline-block;
+        text-align: center;
+        margin: 2px;
+        padding: 2px;
+    }
+
+    .usuario li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    nav {
+        width: 100%;
+        align-items: center;
+    }
+    
+    /*Barra de busqueda*/
+    .form-inline {
+        position: absolute;
+        top: 230px;
+        right: 70px;
+    }
+
+    .menu {
+        width: 100vw;
+        position: absolute;
+        top: 125px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu li {
+        display: inline-block;
+        text-align: center;
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .menu li a {
+    text-decoration: none;
+    color: black;
+    }
+
+    .catalogo article {
+        width: 23%;
+    }
+}
+
+/*@media (max-width: 1024) {
+    header {
+        margin-bottom: auto;
+    }
+}*/
+
+@media (max-width: 1132px) {
+    .menu {
+        display: none !important;
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>Vapear</title>
+    <link rel="icono de acceso directo" href="/images/favicon (2).ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon (2).ico" type="image/x-icon">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <header>
+        <div class="logo">
+            <h1>
+                <a href="http://localhost:3003"><img src="/images/Logo.PNG" alt=""></a>
+            </h1>
+        </div>
+
+            <div class="usuario">
+                <ul>
+                    <li><a href="/login.html">INICIAR SESIÓN</a></li>
+                    <li><a href="#">FAVORITOS</a></li>
+                    <li><a href="/carrito">CARRITO</a></li>
+                </ul>
+            </div>
+
+         </div>
+            <div class="menuSmall">
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding: 0px;"><i class="fas fa-bars"></i></button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                      <a class="dropdown-item" href="/">Inicio</a>
+                      <a class="dropdown-item" href="/catalogo">Vaporizadores</a>
+                      <a class="dropdown-item" href="/catalogo">Atomizadores</a>
+                      <a class="dropdown-item" href="/catalogo">E-Liquids</a>
+                      <a class="dropdown-item" href="/catalogo">Resistencias</a>
+                      <a class="dropdown-item" href="#">Contacto</a>
+                    </div>
+                  </div>
+
+            </div>
+                <div class="menu">
+                  <ul>
+                    <li>
+                        <a href="http://localhost:3003/">Inicio</a>
+                    </li>
+                    <li>
+                     <div class="btn-group" role="group">
+                       <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vaporizadores</button>
+                      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                         <a class="dropdown-item" href="/catalogo">Smok</a>
+                         <a class="dropdown-item" href="/catalogo">Juul</a>
+                      </div>
+                     </div>
+                    </li>
+            
+                    <li><a href="#">Atomizadores</a></li>
+                    <li><a href="#">E-liquids</a></li>
+                    <li><a href="#">Resistencias</a></li>
+                    <li><a href="#">Contacto</a></li>
+                  </ul>
+                </div>
+    
+              
+        
+               <form class="form-inline my-2 my-lg-0">
+                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+               </form>
+            
+    </header>
+    <div class="form">
+        <form>
+            <h1>INICIAR SESION</h1>
+            <input class="form-control" type="email" name="email" placeholder="Email">
+            <input class="form-control" type="password" name="password" placeholder="Contraseña">
+            <input class="btn btn-success" type="submit" value="Ingresar">
+            <p>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </p>
+            <p>
+                <a href="/user/register">REGISTRARSE</a>
+            </p>
+        </form>
+    </div>
+    <footer>
+        <p>desarrollado por vapear.org</p>
+    </footer>
+</body>
+
+</html>
