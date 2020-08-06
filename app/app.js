@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
 
+//Configuración 
+app.set('view engine', 'ejs');
+//app.set('views', 'app/views');
+
+
+
 app.listen(3003, () => { console.log('servidor corriendo en el puerto 3003') })
 
 app.use(express.static('public'));
-app.use(express.static('img'))
+app.use(express.static('img'));
 
 
 

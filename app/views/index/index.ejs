@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head'); %>
+
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<%- include('../partials/header') %>
+
+    <main>
+        <section>
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <article class="slider">
+                    <div class="container">
+                        <a href="#"><img src="/images/smok(slider).jpg" class="img-fluid" alt="Responsive image"></a>
+                      <a href="/product">
+                          <div class="overlay">
+                              <img src="/images/Slider3.jpg" alt="">
+                              <!--div class="text">Hello World</div-->
+                            </div>
+                      </a>
+                    </div>
+
+
+
+                </article>
+            </div>
+
+
+            
+             <article class="dosColumnas">
+                 <a href="/product/catalogo"><img src="/images/dosColumnasIzquierda.jpg" class="rounded float-left" alt="..."></a>
+                 <!--a href="/product/catalogo"><button id="verMasButton-izquierda" type="button" class="btn btn-primary">Ver más</button></a-->
+            </article>
+             <article class="dosColumnas">
+                 <a href="/product/catalogo"><img src="/images/dosColumnasDerecha.JPG" class="rounded float-right" alt="..."></a>
+                 <!--a href="/product/catalogo"><button id="verMasButton-derecha" type="button" class="btn btn-primary">Ver más</button></a-->
+                </article>
+             <article class="tresColumnas">
+                 <a href=""><img src="/images/tresColumnasIzquierda.jpg" class="rounded" alt=""></a>
+                </article>
+             <article class="tresColumnas">
+                 <a href=""><img src="/images/tresColumnasCentro.jpg" class="rounded" alt=""></a>
+                </article>
+             <article class="tresColumnas">
+                 <a href=""><img src="/images/trescolumnasDerecha.jpg" class="rounded" alt=""></a>
+                </article>
+         </section>
+
+    </main>
+
+
+<%- include('../partials/footer') %>
+
+</body>
+
+</html>

@@ -1,18 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const controller = require('../controllers/productController');
 
 
-router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname,  '/../public/productDetail.html'))
-})
+router.get('/', controller.detail);
 
-router.get('/catalogo', function(req, res) {
-    res.sendFile(path.join(__dirname,  '/../public/catalogo.html'))
-})
+router.get('/catalogo', controller.catalogue);
 
-router.get('/carrito', function(req, res) {
-    res.sendFile(path.join(__dirname,  '/../public/productCart.html'))
-})
+router.get('/carrito', controller.cart);
 
 module.exports = router;
