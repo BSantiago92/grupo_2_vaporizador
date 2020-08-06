@@ -6,7 +6,7 @@ module.exports = {
     },
     
       catalogue: (req, res) => {
-        res.sendFile(path.join(__dirname,  '/../views/catalogo.html'))
+        res.render('catalogo')
     },
     
       cart: (req, res) => {
