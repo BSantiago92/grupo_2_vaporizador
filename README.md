@@ -1,4 +1,4 @@
-# Vaporizadores Electrónicos
+# Vapear
 
 ## Descripción del sitio
 
@@ -31,3 +31,7 @@ tuvimos en cuenta que fueran sitios nacionales preferentemente, facilmente naveg
 - https://www.cigarrilloselectronicos.com.ar/
 - https://topvapor.store/#!/-bienvenido/
 - https://www.bairesvapor.com/
+
+## Enlace al Tablero de Trabajo
+
+https://trello.com/b/RUZQ73v2/vapear
