@@ -195,6 +195,184 @@ article img {
 /*Home fin*/
 
 
+
+
+/* Estilos para productDetail y productCart */
+
+
+/* Por favor aplicar al header y footer de productCart y
+productDetail los estilos que aplicaste para el index*/
+
+
+/* Estilos para productCart */
+
+.PCmain {
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: -8px;
+}
+
+.PCtitle {
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: -25px;
+}
+
+.PCtitle h3 {
+    display: inline;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.PCarticle {
+    text-align: center;
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#PCarticle2 {
+    margin-top: -9px;
+    margin-bottom: -9px;
+}
+
+.PCarticle img {
+    width: 300px;
+    height: 340px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.PCarticleDescription {
+    width: 300px;
+    margin-left: 3%;
+}
+
+.PCdescription {
+    text-align: left;
+    margin-left: 1px;
+    margin-top: -5px;
+    margin-right: 80px;
+    margin-bottom: -8px;
+}
+
+.PCprice {
+    color: green;
+}
+
+.PCquantityDecrese,
+.PCquantityNumber,
+.PCquantityIncrease {
+    width: 35px;
+    font-size: 20px;
+    background-color: rgb(151, 148, 148);
+    border: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.PCquantityDecrese {
+    border-radius: 10px 0px 0px 10px;
+    margin-right: -3px;
+    color: black;
+}
+
+.PCquantityNumber {
+    color: black;
+}
+
+.PCquantityIncrease {
+    border-radius: 0px 10px 10px 0px;
+    margin-left: -4px;
+    color: black;
+}
+
+.PCproductDetailButton {
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    padding: 12px;
+    background-color: black;
+    color: gray;
+    border: 0px;
+    border-radius: -40px;
+    margin-top: 10px;
+}
+
+.PCbuttonPosition {
+    margin-top: -40px;
+    margin-bottom: 48px;
+    order: 1;
+    text-align: center;
+    align-items: center;
+}
+
+.PCbuttonPrice p {
+    display: inline;
+    margin-right: 120px;
+}
+
+
+/* Estilos para productDetail*/
+
+.PDcolumn3 {
+    width: 425px;
+    text-align: left;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    margin: -6px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.PDarticle {
+    text-align: center;
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.PDmain {
+    width: 489px;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: -8px;
+}
+
+.PDsection {
+    width: 339px;
+    text-align: center;
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+
+
+
+
 /*Footer*/
 footer {
     width: 100%;
