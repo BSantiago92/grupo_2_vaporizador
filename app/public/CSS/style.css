@@ -5,7 +5,7 @@
 body {
     margin: 0 auto;
     padding: 0;
-    background-color: #fff7f7;
+    background-color: #ebebeb;
     font-family: serif;
 }
 
@@ -37,8 +37,9 @@ h1 {
 }
 
 .usuario {
-    margin: 10px;
-    width: 75vw;
+    margin: 5px;
+    width: 75%;
+    font-size: 12px;
 }
 
 .usuario ul {
@@ -306,7 +307,7 @@ footer p {
     }
 
     .usuario {
-        width: 50%;
+        width: 40%;
         position: absolute;
         top: 70px;
         right: 1px; 
@@ -315,12 +316,14 @@ footer p {
     }
 
     .usuario ul {
+        display: flex;
+        flex-wrap: wrap;
         width: 100%;
         justify-content: center;
     }
 
     .usuario ul li {
-        width: 31%;
+        width: 25%;
         display: inline-block;
         text-align: center;
         margin: 2px;
