@@ -28,7 +28,6 @@ h1 {
 
 .logo {
     text-align: center;
-    margin: 10px;
     width: 100vw;
 }
 
@@ -198,10 +197,6 @@ article img {
 
 
 /* Estilos para productDetail y productCart */
-
-
-/* Por favor aplicar al header y footer de productCart y
-productDetail los estilos que aplicaste para el index*/
 
 
 /* Estilos para productCart */
@@ -441,7 +436,7 @@ footer p {
     width: 100%;
     padding: 3px;
     margin: 2px;
-    border-radius: 1rem;
+    border-radius: 5px;
 }
 
 .catalogo article img {

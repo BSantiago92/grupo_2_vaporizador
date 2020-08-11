@@ -1,60 +1,56 @@
 <header>
     <div class="logo">
-        <h1>
-            <a href="http://localhost:3003"><img src="/images/Logo.PNG" alt=""></a>
-        </h1>
+      <h1><a href="/"><img src="/images/Logo.PNG" alt=""></a></h1>
     </div>
 
-        <div class="usuario">
-            <ul>
-                <li><a href="/user/login">INICIAR SESIÓN</a></li>
-                <li><a href="#">FAVORITOS</a></li>
-                <li><a href="/product/carrito">CARRITO</a></li>
-            </ul>
+    <div class="usuario">
+      <ul>
+        <li><a href="/user/login">INICIAR SESIÓN</a></li>
+        <li><a href="#">FAVORITOS</a></li>
+        <li><a href="/product/carrito">CARRITO</a></li>
+      </ul>
+    </div>
+
+    <div class="menuSmall">
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding: 0px;"><i class="fas fa-bars"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="/">Inicio</a>
+          <a class="dropdown-item" href="/product/catalogo">Vaporizadores</a>
+          <a class="dropdown-item" href="/product/catalogo">Atomizadores</a>
+          <a class="dropdown-item" href="/product/catalogo">E-Liquids</a>
+          <a class="dropdown-item" href="/product/catalogo">Resistencias</a>
+          <a class="dropdown-item" href="#">Contacto</a>
         </div>
+      </div>
 
-     </div>
-        <div class="menuSmall">
-            <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding: 0px;"><i class="fas fa-bars"></i></button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="/">Inicio</a>
-                  <a class="dropdown-item" href="/product/catalogo">Vaporizadores</a>
-                  <a class="dropdown-item" href="/product/catalogo">Atomizadores</a>
-                  <a class="dropdown-item" href="/product/catalogo">E-Liquids</a>
-                  <a class="dropdown-item" href="/product/catalogo">Resistencias</a>
-                  <a class="dropdown-item" href="#">Contacto</a>
-                </div>
-              </div>
-
-        </div>
-            <div class="menu">
-              <ul>
-                <li>
-                    <a href="http://localhost:3003/">Inicio</a>
-                </li>
-                <li>
-                 <div class="btn-group" role="group">
-                   <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vaporizadores</button>
-                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                     <a class="dropdown-item" href="/product/catalogo">Smok</a>
-                     <a class="dropdown-item" href="/product/catalogo">Juul</a>
-                  </div>
-                 </div>
-                </li>
-        
-                <li><a href="/product/catalogo">Atomizadores</a></li>
-                <li><a href="/product/catalogo">E-liquids</a></li>
-                <li><a href="/product/catalogo">Resistencias</a></li>
-                <li><a href="/product/catalogo">Contacto</a></li>
-              </ul>
-            </div>
-
-          
+    </div>
     
-           <form class="form-inline my-2 my-lg-0">
-             <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-           </form>
+    <div class="menu">
+      <ul>
+        <li><a href="http://localhost:3003/">Inicio</a></li>
+        <li>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vaporizadores
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="/product/catalogo">Smok</a>
+              <a class="dropdown-item" href="/product/catalogo">Juul</a>
+            </div>
+          </div>
+        </li>
+        
+        <li><a href="/product/catalogo">Atomizadores</a></li>
+        <li><a href="/product/catalogo">E-liquids</a></li>
+        <li><a href="/product/catalogo">Resistencias</a></li>
+        <li><a href="/product/catalogo">Contacto</a></li>
+      </ul>
+    </div>
+    
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
         
 </header>
