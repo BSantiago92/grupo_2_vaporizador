@@ -37,7 +37,7 @@ h1 {
 
 .usuario {
     margin: 5px;
-    width: 75%;
+    width: 75vw;
     font-size: 12px;
 }
 
@@ -160,7 +160,7 @@ section {
 
 .dosColumnas {
     display: block;
-    background-color: transparent;
+    background-color: #E74C3C;
     border-radius: 5px;
     width: 80%;
     padding: 2px;
@@ -180,7 +180,7 @@ section {
 }
 
 .tresColumnas {
-    background-color: transparent;
+    background-color: #2ECC71;
     width: 80%;
     padding: 2px;
     margin: 5px;
@@ -453,6 +453,7 @@ footer p {
         height: 300px;
         padding: 12px;        
     }
+
     section {
         flex-direction: row;
     }
@@ -538,6 +539,10 @@ footer p {
     .menu li a {
     text-decoration: none;
     color: black;
+    }
+
+    .catalogo {
+        width: 90%;
     }
 
     .catalogo article {
