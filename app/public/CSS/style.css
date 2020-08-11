@@ -556,3 +556,47 @@ footer p {
         display: none !important;
     }
 }
+
+/*@media para productCart*/
+
+@media (min-width: 1132px) {
+
+    #PCdescriptionmedia1 {
+        position: absolute;
+        top: 655px;
+        right: 780px;
+    }
+
+    #PCdescriptionmedia2 {
+        position: absolute;
+        top: 1085px;
+        right: 780px;
+    }
+
+    #PCdescriptionmedia3 {
+        position: absolute;
+        top: 1515px;
+        right: 780px;
+    }
+
+    #PCquantitymedia1 {
+        position: absolute;
+        top: 580px;
+        right: 860px;
+    }
+
+    #PCquantitymedia2 {
+        position: absolute;
+        top: 1010px;
+        right: 860px;
+    }
+
+    #PCquantitymedia3 {
+        position: absolute;
+        top: 1440px;
+        right: 860px;
+    }
+
+}
+
+/*@media para productDetail*/
