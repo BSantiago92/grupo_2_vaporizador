@@ -18,14 +18,6 @@ h1 {
     text-align: center;
 }
 
-.usuario a:hover {
-    color: #8F8F8F;
-}
-
-.menu a:hover {
-    color: #8F8F8F;
-}
-
 .logo {
     text-align: center;
     width: 100vw;
@@ -33,6 +25,12 @@ h1 {
 
 .logo img {
     width: 50vw;
+}
+
+/* Menu de usuario */
+
+.usuario a:hover {
+    color: #8F8F8F;
 }
 
 .usuarioMobile {
@@ -57,19 +55,19 @@ h1 {
     color: black;
 }
 
-
-/*.usuario li {
-    display: inline-block;
-    justify-content: space-between;
-    text-align: center;
-    padding: 5px;
-    margin: 10px;
-}*/
-
 .usuario li a {
     text-decoration: none;
     color: black;
 }
+
+/* Fin menu de usuario */
+
+/* Menu */
+
+.menu a:hover {
+    color: #8F8F8F;
+}
+
 
 .menuMobile {
     display: inline-block;
@@ -77,38 +75,26 @@ h1 {
     margin: 10px;
 }
 
-nav {
-    width: 100%;
-    align-items: center;
-}
-
+/* Fin menu */
 
 
 /*Barra de busqueda*/
 
 .form-inline {
-    /*position: absolute;
-    top: 120px;
-    right: 35px;*/
     display: inline-block;
-    /*width: 100%;*/
-    /*height: calc(1.5em + .75rem + 2px);*/
-    /*padding: .375rem .75rem;*/
     font-size: 1rem;
     font-weight: 400;
-    /*line-height: 1.5;*/
     color: #495057;
-    /*background-clip: padding-box;*/
     border-radius: .25rem;
 }
 
 
-/*Barra de busqueda*/
+/*Fin Barra de busqueda*/
 
 
 /*Home*/
 
-section {
+.mainSection {
     width: 90%;
     background-color: transparent;
     margin: 20px auto;
@@ -218,6 +204,24 @@ article img {
 }
 
 
+.infoEnvios {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100% auto;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.infoEnviosArt {
+    width: 40%;
+    margin: 5px;
+    text-align: center;
+}
+
+
 /*Home fin*/
 
 
@@ -321,7 +325,7 @@ article img {
 }
 
 .PCproductDetailButton {
-    width: 300px;
+    width: 275px;
     text-align: center;
     align-items: center;
     padding: 12px;
@@ -348,6 +352,66 @@ article img {
 
 /* Estilos para productDetail*/
 
+
+/* product detail 2 */
+
+
+.PDmain {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.PDLeft {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30vw;
+    justify-content: center;
+}
+
+.secondaryPhoto {
+    margin: 5px;
+}
+
+.PDCenter {
+    display: block;
+    width: 60vw;
+    justify-content: center;
+}
+
+.primaryPhoto {
+    margin: 5px;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.vapeInfo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: center;
+}
+.vapeSelection{
+    display: inline-block;
+    flex-direction: row;
+}
+
+.vapeSelection #dropdownMenuButton {
+    margin-right: 10px;
+}
+
+.vapeDescription {
+    display: none;
+}
+
 .PDcolumn3 {
     width: 425px;
     text-align: left;
@@ -370,14 +434,7 @@ article img {
     border-radius: 8px;
 }
 
-.PDmain {
-    width: 489px;
-    background-color: transparent;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: -8px;
-}
+
 
 .PDsection {
     width: 339px;
@@ -390,38 +447,6 @@ article img {
     border-radius: 8px;
 }
 
-
-
-
-
-
-/*Footer*/
-footer {
-    width: 100%;
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-    
-
-footer section{
-     width: 100%;
-     display: flex;
-     flex-direction: column;
-}
-
-.logoFooter img{
-    width: 15%;    
-}
-
-
-footer p {
-    padding-top: 10px;
-}
-
-/*Footer fin*/
 
 /*Formularios login-register*/
 .form {
@@ -455,6 +480,8 @@ footer p {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
 
 }
 
@@ -474,6 +501,36 @@ footer p {
 
 /*Catalogo fin*/
 
+
+/*Footer*/
+footer {
+    width: 100%;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+    
+
+footer section{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+}
+
+.logoFooter img{
+    width: 15%;    
+}
+
+
+footer p {
+    padding-top: 10px;
+}
+
+/*Footer fin*/
+
+
 @media (min-width: 1132px) {
 
     header {
@@ -481,7 +538,7 @@ footer p {
         padding: 12px;        
     }
 
-    section {
+    .mainSection {
         flex-direction: row;
     }
     .dosColumnas {
@@ -499,7 +556,6 @@ footer p {
 
     .tresColumnas {
         width: 32.35%;
-        height: 370px;
         justify-content: center;
     }
 
@@ -583,6 +639,12 @@ footer p {
     color: black;
     }
 
+    .infoEnviosArt {
+        width: 23%;
+        margin: 5px;
+        text-align: center;
+    }
+
     .catalogo {
         width: 90%;
     }
@@ -607,6 +669,68 @@ footer p {
 /*@media para productCart*/
 
 @media (min-width: 1132px) {
+
+    /* Product detail 2 */
+
+    .PDmain {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 100px;
+    }
+    
+    .PDLeft {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 20vw;
+        justify-content: center;
+    }
+    
+    .secondaryPhoto {
+        margin: 5px;
+    }
+    
+    .PDCenter {
+        display: block;
+        width: 40vw;
+        justify-content: center;
+    }
+    
+    .primaryPhoto {
+        margin: 5px;
+    }
+    
+    .productInfo {
+        display: inline-block;
+        flex-direction: column;
+        width: 30vw;
+        margin-bottom: 0;
+    }
+
+    .vapeInfo {
+        margin-top: 1rem;
+        margin-bottom: 100px;
+    }
+
+    .vapeSelection {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .vapeDescription {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* .vapeSelection p, h4 {
+        display: flex;
+    }
+     */
+    /* Fin product detail 2 */
 
     #PCdescriptionmedia1 {
         position: absolute;

@@ -15,7 +15,7 @@
 <%- include('../partials/header') %>
 
     <main>
-        <section>
+        <section class="mainSection">
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <article class="slider">
                     <div class="container">
@@ -32,7 +32,7 @@
             <article class="dosColumnas">
                 <div class="textoDosColumnas">
                     <h3>KIT DE INICIO</h3>
-                    <p>CIGARRILLOS ELECTRÓNICOS Y VAPORIZADORES</p>   
+                    <p>CIGARRILLOS ELECTRÓNICOS Y <br> VAPORIZADORES</p>   
                     <a href="/product/catalogo"><button id="verMasButton-izquierda" type="button" class="btn btn-primary">Ver más</button></a>                            
                 </div>
                 <a href="/product/catalogo"><img src="/images/dosColumnasIzquierda(2).jpg" class="rounded float-left" alt="..."></a>
@@ -60,12 +60,51 @@
             <article class="tresColumnas">
                 <a href=""><img src="/images/tresColumnasCentro.jpg" class="rounded" alt=""></a>
                 <div class="textoTresColumnas">
-                <h3>MODs</h3>                    
+                <br>
+                <h3>MODs</h3><br>         
                 </div>
 
             </article>
             <article class="tresColumnas">
                 <a href=""><img src="/images/trescolumnasDerecha.jpg" class="rounded" alt=""></a>
+            </article>
+        </section>
+
+        <section class="infoEnvios">
+            <article class="infoEnviosArt">
+                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-truck" fill="#F3311E" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5v7h-1v-7a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5v1A1.5 1.5 0 0 1 0 10.5v-7zM4.5 11h6v1h-6v-1z"/>
+                    <path fill-rule="evenodd" d="M11 5h2.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5h-1v-1h1a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4.5h-1V5zm-8 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                    <path fill-rule="evenodd" d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                </svg>
+                <h4>Envío Rápido</h4>
+                <h5>Envío en 24hs Despúes de Realizar el Pedido</h5>
+            </article>
+            <article class="infoEnviosArt">
+                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="#F3311E" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+                </svg>
+                <h4>Productos Originales</h4>
+                <h5>Empaques y Sellos Originales de Fábrica</h5>
+            </article>
+            <article class="infoEnviosArt">
+                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-headset" fill="#F3311E" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 1a5 5 0 0 0-5 5v4.5H2V6a6 6 0 1 1 12 0v4.5h-1V6a5 5 0 0 0-5-5z"/>
+                    <path d="M11 8a1 1 0 0 1 1-1h2v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V8zM5 8a1 1 0 0 0-1-1H2v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V8z"/>
+                    <path fill-rule="evenodd" d="M13.5 8.5a.5.5 0 0 1 .5.5v3a2.5 2.5 0 0 1-2.5 2.5H8a.5.5 0 0 1 0-1h3.5A1.5 1.5 0 0 0 13 12V9a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M6.5 14a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1z"/>
+                </svg>
+                  <h4>Soporte Online 24/7</h4>
+                  <h5>Soporte de Nuestros Expertos 24/7</h5>
+            </article>
+            <article class="infoEnviosArt">
+                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-wallet2" fill="#F3311E" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.5 4l10-3A1.5 1.5 0 0 1 14 2.5v2h-1v-2a.5.5 0 0 0-.5-.5L5.833 4H2.5z"/>
+                    <path fill-rule="evenodd" d="M1 5.5A1.5 1.5 0 0 1 2.5 4h11A1.5 1.5 0 0 1 15 5.5v8a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5v-8zM2.5 5a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-11z"/>
+                </svg>
+                <h4>Pagos Seguros</h4>
+                <h5>Seguridad en tus pagos garantizada</h5>
             </article>
         </section>
 
