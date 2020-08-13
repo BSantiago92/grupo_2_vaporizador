@@ -330,7 +330,7 @@ article img {
     align-items: center;
     padding: 12px;
     background-color: black;
-    color: gray;
+    color: white;
     border: 0px;
     border-radius: -40px;
     margin-top: 10px;
@@ -392,6 +392,7 @@ article img {
     justify-content: center;
     margin-bottom: 50px;
 }
+
 
 .vapeInfo {
     display: flex;
