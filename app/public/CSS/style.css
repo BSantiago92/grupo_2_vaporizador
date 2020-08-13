@@ -35,14 +35,18 @@ h1 {
     width: 50vw;
 }
 
+.usuarioMobile {
+    display: inline-block;
+    margin: 10px;
+}
+
 .usuario {
+    display: none;
     margin: 5px;
-    width: 75vw;
     font-size: 12px;
 }
 
 .usuario ul {
-    width: 80vw;
     margin-left: 15%;
 }
 
@@ -67,9 +71,10 @@ h1 {
     color: black;
 }
 
-.menuSmall {
+.menuMobile {
     display: inline-block;
     justify-content: space-around;
+    margin: 10px;
 }
 
 nav {
@@ -159,31 +164,53 @@ section {
 /*fin diapositiva de superposicion de imagen*/
 
 .dosColumnas {
-    display: block;
-    background-color: #E74C3C;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F5B041 ;
     border-radius: 5px;
+    border-width: 632px;
     width: 80%;
-    padding: 2px;
+    padding: 5px;
     margin: 5px;
+    justify-content: space-around;
+}
+
+.textoDosColumnas {
+    display: block;
+    width: 60%;
+    justify-content: flex-start;
+    position: relative;
+    top: 50px;
 }
 
 #verMasButton-izquierda {
-    position: absolute;
-    top: 1100px;
-    left: 105px;
+    display: none;
 }
 
 #verMasButton-derecha {
-    position: absolute;
-    top: 205%;
-    right: 40.5%;
+    display: none;
 }
 
 .tresColumnas {
-    background-color: #2ECC71;
+    display: block;
+    background-color: #5DADE2;
+    border-radius: 5px;
     width: 80%;
-    padding: 2px;
+    padding: 5px;
     margin: 5px;
+    text-align: center;
+}
+
+.tresColumnas img{
+    width: 50%;
+    margin-top: 10px;
+}
+
+.textoTresColumnas {
+    display: block;
+    justify-content: center;
+    width: 100%;
+    margin: 8px;
 }
 
 article img {
@@ -461,11 +488,22 @@ footer p {
         width: 49%;
         justify-content: center;
     }
+
+    #verMasButton-izquierda {
+        display: flex;   
+    }
+
+    #verMasButton-derecha {
+        display: flex;
+    }
+
     .tresColumnas {
         width: 32.35%;
+        height: 370px;
         justify-content: center;
     }
-    .menuSmall {
+
+    .menuMobile {
         display: none;
     }
 
@@ -478,6 +516,10 @@ footer p {
 
     .logo img {
         width: 100%;
+    }
+
+    .usuarioMobile {
+        display: none;
     }
 
     .usuario {
