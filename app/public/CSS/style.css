@@ -5,7 +5,17 @@
 body {
     margin: 0 auto;
     padding: 0;
-    background-color: #ebebeb;
+
+    /* Background color */
+    background: rgba(240,246,249,1);
+    background: -moz-linear-gradient(top, rgba(240,246,249,1) 0%, rgba(240,246,249,1) 13%, rgba(154,188,213,1) 76%, rgba(154,188,213,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(240,246,249,1)), color-stop(13%, rgba(240,246,249,1)), color-stop(76%, rgba(154,188,213,1)), color-stop(100%, rgba(154,188,213,1)));
+    background: -webkit-linear-gradient(top, rgba(240,246,249,1) 0%, rgba(240,246,249,1) 13%, rgba(154,188,213,1) 76%, rgba(154,188,213,1) 100%);
+    background: -o-linear-gradient(top, rgba(240,246,249,1) 0%, rgba(240,246,249,1) 13%, rgba(154,188,213,1) 76%, rgba(154,188,213,1) 100%);
+    background: -ms-linear-gradient(top, rgba(240,246,249,1) 0%, rgba(240,246,249,1) 13%, rgba(154,188,213,1) 76%, rgba(154,188,213,1) 100%);
+    background: linear-gradient(to bottom, rgba(240,246,249,1) 0%, rgba(240,246,249,1) 13%, rgba(154,188,213,1) 76%, rgba(154,188,213,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f6f9', endColorstr='#9abcd5', GradientType=0 );
+
     font-family: serif;
 }
 
@@ -108,43 +118,6 @@ h1 {
 
 /*diapositiva de superposicion de imagen*/
 
-.container {
-    position: relative;
-    width: 100%;
-}
-
-.img-fluid {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    transition: .5s ease;
-}
-
-.container:hover .overlay {
-    height: 100%;
-}
-
-.text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
 
 
 /*fin diapositiva de superposicion de imagen*/
@@ -179,12 +152,29 @@ h1 {
 
 .tresColumnas {
     display: block;
-    background-color: #5DADE2;
+    /* background-color: #5DADE2; */
     border-radius: 5px;
     width: 80%;
     padding: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     margin: 5px;
     text-align: center;
+}
+
+#tresColumnasIzquierda {
+    background: -prefix-linear-gradient(top, #F5B041, white 80%, #4EE690);
+    background: linear-gradient(to bottom, #F5B041, white 80%, #4EE690);
+}
+
+#tresColumnasCentro {
+    background: -prefix-linear-gradient(top, #4EE690, white 80%, #8AF0E7);
+    background: linear-gradient(to bottom, #4EE690, white 80%, #8AF0E7);
+}
+
+#tresColumnasDerecha {
+    background: -prefix-linear-gradient(top, #8AF0E7, white 80%, rgba(154,188,213,1));
+    background: linear-gradient(to bottom, #8AF0E7, white 80%, rgba(154,188,213,1));
 }
 
 .tresColumnas img{
@@ -232,100 +222,77 @@ article img {
 
 /* Estilos para productCart */
 
-.PCmain {
+.cart {
     background-color: transparent;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-left: -8px;
+    justify-content: center;
+}
+
+.PCPurchase {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.purchaseArticle {
+    margin: 5px;
 }
 
 .PCtitle {
+    width: 100%;
     text-align: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin-bottom: -25px;
-}
-
-.PCtitle h3 {
-    display: inline;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
 }
 
 .PCarticle {
-    text-align: center;
-    margin: 50px;
+    width: 100%;
+    margin: 5px;
     display: flex;
     flex-wrap: wrap;
-    background-color: lightgrey;
-    padding: 20px;
+    padding: 5px;
     border-radius: 8px;
 }
 
-#PCarticle2 {
-    margin-top: -9px;
-    margin-bottom: -9px;
+.shadow {
+    width: 100%;
 }
 
 .PCarticle img {
-    width: 300px;
-    height: 340px;
     border-radius: 4px;
-    margin-bottom: 8px;
 }
 
-.PCarticleDescription {
-    width: 300px;
-    margin-left: 3%;
+
+.PCimg {
+    width: 100%;
 }
 
 .PCdescription {
-    text-align: left;
-    margin-left: 1px;
-    margin-top: -5px;
-    margin-right: 80px;
-    margin-bottom: -8px;
+    justify-content: flex-start;
 }
 
-.PCprice {
-    color: green;
+.PCProduct {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
 }
 
-.PCquantityDecrese,
-.PCquantityNumber,
-.PCquantityIncrease {
-    width: 35px;
-    font-size: 20px;
-    background-color: rgb(151, 148, 148);
-    border: 0px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-    align-items: center;
+.PCSelection {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.PCquantityDecrese {
-    border-radius: 10px 0px 0px 10px;
-    margin-right: -3px;
-    color: black;
-}
-
-.PCquantityNumber {
-    color: black;
-}
-
-.PCquantityIncrease {
-    border-radius: 0px 10px 10px 0px;
-    margin-left: -4px;
-    color: black;
-}
 
 .PCproductDetailButton {
-    width: 275px;
+    width: 100%;
     text-align: center;
     align-items: center;
     padding: 12px;
@@ -334,19 +301,6 @@ article img {
     border: 0px;
     border-radius: -40px;
     margin-top: 10px;
-}
-
-.PCbuttonPosition {
-    margin-top: -40px;
-    margin-bottom: 48px;
-    order: 1;
-    text-align: center;
-    align-items: center;
-}
-
-.PCbuttonPrice p {
-    display: inline;
-    margin-right: 120px;
 }
 
 
@@ -405,6 +359,10 @@ article img {
     flex-direction: row;
 }
 
+.displayFlex {
+    display: flex;
+}
+
 .vapeSelection #dropdownMenuButton {
     margin-right: 10px;
 }
@@ -413,40 +371,6 @@ article img {
     display: none;
 }
 
-.PDcolumn3 {
-    width: 425px;
-    text-align: left;
-    align-items: center;
-    flex-direction: column;
-    padding: 0px;
-    margin: -6px;
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 20px;
-}
-
-.PDarticle {
-    text-align: center;
-    margin: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: lightgrey;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-
-
-.PDsection {
-    width: 339px;
-    text-align: center;
-    margin: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: whitesmoke;
-    padding: 20px;
-    border-radius: 8px;
-}
 
 
 /*Formularios login-register*/
@@ -506,7 +430,6 @@ article img {
 /*Footer*/
 footer {
     width: 100%;
-    background-color: grey;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -558,6 +481,10 @@ footer p {
     .tresColumnas {
         width: 32.35%;
         justify-content: center;
+        background: -prefix-linear-gradient(top, #F5B041, white 80%, rgba(154,188,213,1)) !important;
+        background: linear-gradient(to bottom, #F5B041, white 80%, rgba(154,188,213,1)) !important;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .menuMobile {
@@ -678,7 +605,7 @@ footer p {
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
-        margin-bottom: 100px;
+        padding-bottom: 100px;
     }
     
     .PDLeft {
@@ -704,22 +631,21 @@ footer p {
     }
     
     .productInfo {
-        display: inline-block;
+        display: flex;
         flex-direction: column;
         width: 30vw;
         margin-bottom: 0;
+        justify-content: space-between;
     }
 
     .vapeInfo {
         margin-top: 1rem;
-        margin-bottom: 100px;
     }
 
     .vapeSelection {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
-        justify-content: flex-start;
     }
 
     .vapeDescription {
@@ -733,40 +659,39 @@ footer p {
      */
     /* Fin product detail 2 */
 
-    #PCdescriptionmedia1 {
-        position: absolute;
-        top: 655px;
-        right: 780px;
+    .cart {
+        width: 60%;
     }
 
-    #PCdescriptionmedia2 {
-        position: absolute;
-        top: 1085px;
-        right: 780px;
+    .PCPurchase {
+        width: 40%;
+        margin-bottom: 44px;
     }
 
-    #PCdescriptionmedia3 {
-        position: absolute;
-        top: 1515px;
-        right: 780px;
+    .purchaseArticle {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
-    #PCquantitymedia1 {
-        position: absolute;
-        top: 580px;
-        right: 860px;
+
+    .PCimg {
+        width: 30%;
     }
 
-    #PCquantitymedia2 {
-        position: absolute;
-        top: 1010px;
-        right: 860px;
+    .PCProduct {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px;
     }
 
-    #PCquantitymedia3 {
-        position: absolute;
-        top: 1440px;
-        right: 860px;
+    .PCSelection {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
 }

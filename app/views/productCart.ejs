@@ -13,72 +13,94 @@
 
         <%- include('./partials/header') %>
 
-            <main class="PCmain">
+            <main class="PDmain">
 
                 <div class="PCtitle">
                     <h3>CARRITO</h3>
                 </div>
 
-                <article class="PCarticle">
-                    <img src="/images/productCart1.jpg" alt="Vaporizador">
+                <section class="cart">                
 
-                    <p class="PCdescription" id="PCdescriptionmedia1">
-                        Target PM 80<br>
-                        <span class="PCprice">$10.200</span><br> Color: Gris Plata
-                    </p>
 
-                    <div class="PCquantity" id="PCquantitymedia1">
+                    <div class="shadow p-3 mb-5 rounded">
+                    <article class="PCarticle">
+                        <div class="PCimg">
+                            <img src="/images/productCart1.jpg" alt="Vaporizador">
+                        </div>
+                        
 
-                        <input class="PCquantityDecrese" type="button" value="-">
-                        <input class="PCquantityNumber" type="text" placeholder="0">
-                        <input class="PCquantityIncrease" type="button" value="+">
-
-                    </div>
-                </article>
-
-                <article class="PCarticle" id="PCarticle2">
-                    <img src="/images/productCart2.jpg" alt="Vaporizador">
-
-                    <p class="PCdescription" id="PCdescriptionmedia2">
-                        Voo Poo PNP<br>
-                        <span class="PCprice">$18.300</span><br> Color: Gris Plata
-                    </p>
-
-                    <div class="PCquantity" id="PCquantitymedia2">
-
-                        <input class="PCquantityDecrese" type="button" value="-">
-                        <input class="PCquantityNumber" type="text" placeholder="0">
-                        <input class="PCquantityIncrease" type="button" value="+">
-
-                    </div>
-                </article>
-
-                <article class="PCarticle">
-                    <img src="/images/productCart3.jpg" alt="Vaporizador">
-
-                    <p class="PCdescription" id="PCdescriptionmedia3">
-                        Vaporesso LT<br>
-                        <span class="PCprice">$12.300</span><br> Color: Gris Plata
-                    </p>
-
-                    <div class="PCquantity" id="PCquantitymedia3">
-
-                        <input class="PCquantityDecrese" type="button" value="-">
-                        <input class="PCquantityNumber" type="text" placeholder="0">
-                        <input class="PCquantityIncrease" type="button" value="+">
-
-                    </div>
-                </article>
-
-                <div class="PCbuttonPosition">
-
-                    <div class="PCbuttonPrice">
-                        <!--<p class="text">TOTAL:</p>-->
-                        <p class="price">$</p>
+                        <div class="PCProduct">
+                        <div class="PCdescription">
+                            <h3>Target PM 80</h3>
+                            <h5>$10.200</h5> 
+                        </div>
+                            <div class="PCSelection">
+                                <h5>Color: Gris Plata</h5>
+                                <div class="btn-group" role="group" aria-label="Basic example" role="group">
+                                    <button type="button" class="btn btn-secondary">-</button>
+                                    <button type="button" class="btn btn-secondary">1</button>
+                                    <button type="button" class="btn btn-secondary">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                     </div>
 
-                    <input class="PCproductDetailButton" type="submit" value="COMPRAR">
-                </div>
+                    <div class="shadow p-3 mb-5 rounded">
+                    <article class="PCarticle">
+                        <div class="PCimg">
+                            <img src="/images/productCart2.jpg" alt="Vaporizador">
+                        </div>
+                        
+
+                        <div class="PCProduct">
+                        <div class="PCdescription">
+                            <h3>Voo Poo PNP</h3>
+                            <h5>$18.200</h5> 
+                        </div>
+                            <div class="PCSelection">
+                                <h5>Color: Gris Plata</h5>
+                                <div class="btn-group" role="group" aria-label="Basic example" role="group">
+                                    <button type="button" class="btn btn-secondary">-</button>
+                                    <button type="button" class="btn btn-secondary">1</button>
+                                    <button type="button" class="btn btn-secondary">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+
+                    <div class="shadow p-3 mb-5 rounded">
+                    <article class="PCarticle">
+                        <div class="PCimg">
+                            <img src="/images/productCart3.jpg" alt="Vaporizador">
+                        </div>
+                        
+
+                        <div class="PCProduct">
+                        <div class="PCdescription">
+                            <h3>Vaporesso LT</h3>
+                            <h5>$12.300</h5> 
+                        </div>
+                            <div class="PCSelection">
+                                <h5>Color: Gris Plata</h5>
+                                <div class="btn-group" role="group" aria-label="Basic example" role="group">
+                                    <button type="button" class="btn btn-secondary">-</button>
+                                    <button type="button" class="btn btn-secondary">1</button>
+                                    <button type="button" class="btn btn-secondary">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+                </section>   
+
+                <section class="PCPurchase">
+                    <article class="purchaseArticle">
+                        <h4>TOTAL: </h4>
+                        <input class="PCproductDetailButton" type="submit" value="COMPRAR">
+                    </article>
+                </section>
 
             </main>
 
