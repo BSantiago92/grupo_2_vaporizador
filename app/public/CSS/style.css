@@ -116,12 +116,6 @@ h1 {
 }
 
 
-/*diapositiva de superposicion de imagen*/
-
-
-
-/*fin diapositiva de superposicion de imagen*/
-
 .dosColumnas {
     display: flex;
     flex-wrap: wrap;
@@ -544,7 +538,7 @@ footer p {
     .form-inline {
         position: absolute;
         top: 230px;
-        right: 70px;
+        right: 65px;
     }
 
     .menu {
@@ -560,6 +554,10 @@ footer p {
         text-align: center;
         margin: 20px;
         padding: 15px;
+    }
+
+    .menu #btnGroupDrop1 {
+        margin-bottom: 4px;
     }
 
     .menu li a {
@@ -679,12 +677,18 @@ footer p {
     }
 
     .PCProduct {
-        width: 70%;
+        width: 65%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 10px;
+    }
+
+    .PCarticle .delete {
+        width: 5%;
+        text-decoration: none;
+        color: black;
     }
 
     .PCSelection {
