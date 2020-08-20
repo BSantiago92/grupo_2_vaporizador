@@ -1,0 +1,11 @@
+[
+    {
+        "id": 0,
+        "firstName": "bruno",
+        "lastName": "cami",
+        "age": 20,
+        "email": "bruno.cami@hotmail.com",
+        "password": "12345678",
+        "category": "administrador"
+    }
+]

@@ -16,12 +16,11 @@ body {
     background: linear-gradient(to bottom, rgba(240,246,249,1) 0%, rgba(240,246,249,1) 13%, rgba(154,188,213,1) 76%, rgba(154,188,213,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f6f9', endColorstr='#9abcd5', GradientType=0 );
 
-    font-family: serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 header {
     height: auto;
-    padding: 24px;
 }
 
 h1 {
@@ -35,6 +34,12 @@ h1 {
 
 .logo img {
     width: 50vw;
+}
+
+.mobile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Menu de usuario */
@@ -70,6 +75,10 @@ h1 {
     color: black;
 }
 
+#userMobile {
+   padding: 0em;
+}
+
 /* Fin menu de usuario */
 
 /* Menu */
@@ -96,6 +105,10 @@ h1 {
     font-weight: 400;
     color: #495057;
     border-radius: .25rem;
+}
+
+.busquedaLaptop {
+    display: none;
 }
 
 
@@ -205,6 +218,35 @@ article img {
     text-align: center;
 }
 
+.infoH5 {
+    display: none;        
+}
+
+/* Más vendidos */
+.masVendidos {
+    width: 90%;
+    background-color: transparent;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.masVendidosArticle {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F5B041 ;
+    border-radius: 5px;
+    border-width: 632px;
+    width: 80%;
+    padding: 5px;
+    margin: 5px;
+    justify-content: space-around;
+}
+/* Más vendidos fin */
+
 
 /*Home fin*/
 
@@ -223,6 +265,7 @@ article img {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .PCPurchase {
@@ -243,12 +286,13 @@ article img {
 }
 
 .PCarticle {
-    width: 100%;
+    width: 60%;
     margin: 5px;
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
     border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
 
 .shadow {
@@ -452,16 +496,26 @@ footer p {
 @media (min-width: 1132px) {
 
     header {
-        height: 300px;
-        padding: 12px;        
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     }
 
     .mainSection {
         flex-direction: row;
     }
+
     .dosColumnas {
         width: 49%;
         justify-content: center;
+    }
+
+    .mainText {
+        width: 100%;
+        margin: 50px 0px 50px;
+    }
+
+    .mainText .masVendidoSombreado {
+        color: rgb(203, 221, 235);
+        text-align: center;
     }
 
     #verMasButton-izquierda {
@@ -481,15 +535,28 @@ footer p {
         padding-bottom: 50px;
     }
 
+    .masVendidos {
+        flex-direction: row;
+    }
+
+    .masVendidosArticle {
+        width: 18%;
+        justify-content: center;
+        background: -prefix-linear-gradient(top, #F5B041, white 80%, rgba(154,188,213,1)) !important;
+        background: linear-gradient(to bottom, #F5B041, white 80%, rgba(154,188,213,1)) !important;
+    }
     .menuMobile {
         display: none;
     }
 
+    .laptop {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
     .logo {
-        position: absolute;
-        top: 0px;
-        left: 10px;
-        width: 20vw;
+        width: 15%;
     }
 
     .logo img {
@@ -501,12 +568,9 @@ footer p {
     }
 
     .usuario {
-        width: 40%;
-        position: absolute;
-        top: 70px;
-        right: 1px; 
+        width: 20%;
         display: flex;
-        justify-content: flex-end; 
+        align-items: center;
     }
 
     .usuario ul {
@@ -514,50 +578,84 @@ footer p {
         flex-wrap: wrap;
         width: 100%;
         justify-content: center;
+        align-items: center;
+        margin-bottom: 0em;
     }
 
     .usuario ul li {
-        width: 25%;
+        width: 33%;
         display: inline-block;
         text-align: center;
-        margin: 2px;
-        padding: 2px;
     }
 
     .usuario li a {
         text-decoration: none;
         color: black;
     }
-
-    nav {
-        width: 100%;
-        align-items: center;
-    }
     
     /*Barra de busqueda*/
     .form-inline {
-        position: absolute;
-        top: 230px;
-        right: 65px;
+        display: none;
+    }
+
+
+
+    .busquedaLaptop {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;       
+    }
+
+    .busquedaLaptop form {
+        position: relative;
+        bottom: 20px;
+        right: 6%;
+    }
+    .form-text {
+        display: block;
+        margin-top: 0em;
+    }
+    .navbar-form .form-control[type=text] {
+        background: transparent;
+        display:inline-block;
+        transition: all .5s;
+    }
+
+    .navbar-form .form-control[type=text]:focus {
+        background-color: #fff;
+        border-color: #729fcf;
+        color:#333;
+        -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+        -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+        box-shadow: 0 0 5px rgba(109,207,246,.5);
+    }
+
+    .navbar-form input.form-control[type=text] {
+        width: 160px;
+    }
+    .navbar-form input.form-control[type=text]:focus { 
+        width: 350px; 
     }
 
     .menu {
-        width: 100vw;
-        position: absolute;
-        top: 125px;
+        width: 60%;
         display: flex;
-        justify-content: center;
+        align-items: center;
+
+    }
+
+    .menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 0em;
     }
 
     .menu li {
         display: inline-block;
         text-align: center;
-        margin: 20px;
-        padding: 15px;
-    }
-
-    .menu #btnGroupDrop1 {
-        margin-bottom: 4px;
     }
 
     .menu li a {
@@ -569,6 +667,11 @@ footer p {
         width: 23%;
         margin: 5px;
         text-align: center;
+    }
+
+    .infoH5 {
+        display: inline; 
+        color: rgb(203, 221, 235);       
     }
 
     .catalogo {
@@ -659,6 +762,10 @@ footer p {
 
     .cart {
         width: 60%;
+    }
+
+    .PCarticle {
+        width: 80%;
     }
 
     .PCPurchase {
