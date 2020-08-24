@@ -448,7 +448,7 @@ article img {
 
 }
 
-.catalogo article {
+.catalogoArticle {
     background-color: rgb(255, 255, 255);
     width: 100%;
     padding: 3px;
@@ -456,9 +456,22 @@ article img {
     border-radius: 5px;
 }
 
-.catalogo article img {
+.item_details {
+    font-size: 13px;
+}
+
+.item_details .item_name {
+    font-size: 13px;
+}
+
+.catalogoArticle img {
     text-align: center;
     width: 100%;
+}
+
+.item_button {
+    text-decoration: none;
+    text-align: right;
 }
 
 
