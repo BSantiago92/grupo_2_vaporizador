@@ -9,4 +9,9 @@ router.get('/catalogo', controller.catalogue);
 
 router.get('/carrito', controller.cart);
 
+router.get('/products/:id/edit', controller.edit);
+
+router.put('/products/:id', controller.update);
+
+
 module.exports = router;
