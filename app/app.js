@@ -20,14 +20,15 @@ app.use(methodOverride('_method'));
 
 
 
- //Rutas
- const indexRoutes = require('./routes/index');
- const productsRoutes = require('./routes/products');
- const userRoutes = require('./routes/user');
+//Rutas
+const indexRoutes = require('./routes/index');
+const productsRoutes = require('./routes/products');
+const userRoutes = require('./routes/user');
 
- app.use('/', indexRoutes)
- app.use('/user', userRoutes)
- app.use('/product/', productsRoutes)
+app.use('/', indexRoutes)
+app.use('/user', userRoutes)
+app.use('/product/', productsRoutes)
+
 
 
 
