@@ -1,0 +1,51 @@
+
+    <section class="PDLeft">
+        <article class="secondaryPhoto">
+            <img src= <%- product.imgAux1 %> alt="imagen">
+        </article>
+        <article class="secondaryPhoto">
+            <img src= <%- product.imgAux2 %> alt="imagen">
+        </article>
+    </section>
+    <section class="PDCenter">
+        <article class="primaryPhoto">
+            <img class="product_img"  src= <%- product.img %> alt="imagen">
+        </article>
+
+    </section>
+    <section class="productInfo">
+        <article class="vapeInfo">
+                <h3><%- product.brand %></h3>
+                <h3><%- product.model %></h3>
+                <h3><%- product.price %></h3>
+        </article>
+        <div>
+            <article class="vapeSelection">
+                <div class="displayFlex">
+                <div class="dropdown">
+                    <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                    ELIJA EL MODELO
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">BLACK</a>
+                    <a class="dropdown-item" href="#">WHITE</a>
+                    <a class="dropdown-item" href="#">BLUE</a>
+                    </div>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example" role="group">
+                    <button type="button" class="btn btn-secondary">-</button>
+                    <button type="button" class="btn btn-secondary">1</button>
+                    <button type="button" class="btn btn-secondary">+</button>
+                </div>
+                </div>
+                <a href="/product/carrito">
+                    <input class="PCproductDetailButton" type="submit" value="AGREGAR AL CARRITO">
+                </a>
+            </article>
+            <article class="vapeDescription">
+                <h4>INFORMACIÓN GENERAL</h4>
+                <p><%- product.description %></p>
+            </article>
+        </div>
+
+    </section>

@@ -15,7 +15,7 @@
         <%- include('./partials/header') %>
 
 
-            <main class="PDmain">
+            <!-- <main class="PDmain">
                 <section class="PDLeft">
                     <article class="secondaryPhoto">
                         <img src="/images/productDetail1.jpg" alt="Vaporizador">
@@ -70,39 +70,14 @@
                     </div>
                 </section>
 
-                <!-- <article class="PDarticle">
-                    <img src="/images/productDetail1.jpg" alt="Vaporizador">
-                    <img src="/images/productDetail2.jpg" alt="Vaporizador">
-                    <img src="/images/productDetail3.jpg" alt="Vaporizador">
+            </main> -->
 
-                </article>
-
-                <section class="PDsection">
-
-                    <p>Con su atractivo diseño y su claromizador TFV8 Smoke Priv V8 te proporcionará horas interminables de vapeo, Dispone de un gran pulsador para vapear y funciona con una batería 18650.<br> Pequeño y potente, la opción perfecta para todos
-                        aquellos que quieran empezar a lo grande.<br> No incluye baterias 18560.
-                    </p>
-
-                </section>
-
-                <div class="PDquantity">
-
-                    <input class="PCquantityDecrese" type="button" value="-">
-                    <input class="PCquantityNumber" type="text" placeholder="0">
-                    <input class="PCquantityIncrease" type="button" value="+">
-
-                </div>
-
-                <div class="PCbuttonPosition">
-
-                    <div class="PCbuttonPrice"> -->
-                        <!--<p class="text">TOTAL:</p>-->
-                        <!-- <p class="price">$</p>
-                    </div>
-
-                    <input class="PCproductDetailButton" type="submit" value="AGREGAR AL CARRITO">
-                </div> -->
-
+            <main class="PDmain">
+                <% if(product) { %>
+                <%- include('./partials/detail', { product }) %>
+                <% } else { %>
+                    <h2>No encontramos ese producto</h2>
+                <% } %>
             </main>
 
             <%- include('./partials/footer') %>

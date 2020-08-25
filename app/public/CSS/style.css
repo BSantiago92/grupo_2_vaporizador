@@ -449,14 +449,24 @@ article img {
 }
 
 .catalogoArticle {
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     width: 100%;
     padding: 3px;
     margin: 2px;
     border-radius: 5px;
 }
 
+.catalogueFilters {
+    margin: 30px 0px 10px 20px;
+}
+
+.product_img {
+    width: 100% auto;
+}
+
 .item_details {
+    margin: 20px 0px 20px 10px;
+    background-color: transparent;
     font-size: 13px;
 }
 
@@ -691,8 +701,12 @@ footer p {
         width: 90%;
     }
 
-    .catalogo article {
+    .catalogoArticle {
         width: 23%;
+    }
+
+    .product_img {
+        width: 100% auto;
     }
 }
 
