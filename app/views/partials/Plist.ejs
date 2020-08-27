@@ -1,0 +1,18 @@
+<div class="mainContainer">
+    <div class="listContainer">
+        <img class="product_img"  src= <%- product.img %> alt="imagen">
+        <div class="list_details">
+            <h3><%- product.brand %></h3>
+            <h3><%- product.model1 %></h3>
+            <h3><%- product.category %></h3>
+            <p><%- product.description %></p>
+            <form action="/product/list/<%- product.id %>?_method=DELETE" method="POST">
+                <button type="submit">Borrar</button>
+            </form>
+        </div>
+    </div> 
+</div> 
+ 
+    
+
+    

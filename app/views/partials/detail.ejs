@@ -16,7 +16,6 @@
     <section class="productInfo">
         <article class="vapeInfo">
                 <h3><%- product.brand %></h3>
-                <h3><%- product.model %></h3>
                 <h3><%- product.price %></h3>
         </article>
         <div>
@@ -27,9 +26,9 @@
                     ELIJA EL MODELO
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">BLACK</a>
-                    <a class="dropdown-item" href="#">WHITE</a>
-                    <a class="dropdown-item" href="#">BLUE</a>
+                    <a class="dropdown-item" href="#"><%- product.model1 %></a>
+                    <a class="dropdown-item" href="#"><%- product.model2 %></a>
+                    <a class="dropdown-item" href="#"><%- product.model3 %></a>
                     </div>
                 </div>
                 <div class="btn-group" role="group" aria-label="Basic example" role="group">
