@@ -505,31 +505,5 @@
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
   "price": "$4243.30"
- },
- {
-  "id": 48,
-  "brand": "Manouria emys",
-  "category": "HSTM",
-  "model1": "Purple",
-  "model2": "Mauv",
-  "model3": "Teal",
-  "img": "/images/productCart1.jpg",
-  "imgAux1": "/images/productCart1.jpg",
-  "imgAux2": "/images/productCart1.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1594.18"
- },
- {
-  "id": 50,
-  "brand": "Neotis denhami",
-  "category": "AMRK",
-  "model1": "Indigo",
-  "model2": "Violet",
-  "model3": "Crimson",
-  "img": "/images/productCart1.jpg",
-  "imgAux1": "/images/productCart1.jpg",
-  "imgAux2": "/images/productCart1.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1814.76"
  }
 ]
