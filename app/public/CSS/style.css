@@ -303,11 +303,24 @@ article img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
+
 
 .purchaseArticle {
     margin: 5px;
+}
+
+.purchaseArticle .price {
+    width: 98%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.price .price_text {
+    font-size: 17px;
 }
 
 .PCtitle {
@@ -318,7 +331,7 @@ article img {
 
 .PCarticle {
     width: 60%;
-    margin: 5px;
+    margin: 5px auto;
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
@@ -357,6 +370,10 @@ article img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.PCSelection .form-control {
+    width: 20%;
 }
 
 
@@ -835,6 +852,25 @@ footer p {
 
     .PCarticle {
         width: 80%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .discount_code {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .code {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .code .form-control {
+        width: 70%;
+        margin-right: 15px;
     }
 
     .PCPurchase {
@@ -853,7 +889,7 @@ footer p {
     }
 
     .PCProduct {
-        width: 65%;
+        width: 62%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -861,8 +897,9 @@ footer p {
         padding: 10px;
     }
 
-    .PCarticle .delete {
-        width: 5%;
+    .PCarticle #delete {
+        width: 7%;
+        margin: 0px auto;
         text-decoration: none;
         color: black;
     }
@@ -872,6 +909,10 @@ footer p {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .PCSelection .form-control {
+        width: 20%;
     }
 
 }

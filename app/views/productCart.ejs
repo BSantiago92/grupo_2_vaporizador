@@ -14,106 +14,41 @@
         <%- include('./partials/header') %>
 
             <main class="PDmain">
-
                 <div class="PCtitle">
                     <h3>CARRITO</h3>
                 </div>
-
-                <section class="cart">                
-
-                    <article class="PCarticle">
-                        <div class="PCimg">
-                            <img src="/images/productCart1.jpg" alt="Vaporizador">
-                        </div>
-                        
-
-                        <div class="PCProduct">
-                            <div class="PCdescription">
-                                <h3>Target PM 80</h3>
-                                <h5>$10.200</h5> 
-                            </div>
-                            <div class="PCSelection">
-                                <h5>Color: Gris Plata</h5>
-                                <div class="btn-group" role="group" aria-label="Basic example" role="group">
-                                    <button type="button" class="btn btn-secondary">-</button>
-                                    <button type="button" class="btn btn-secondary">1</button>
-                                    <button type="button" class="btn btn-secondary">+</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a class="delete" href="#"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
-                            <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
-                        </svg></a>
-
-                    </article>
-
-                    <article class="PCarticle">
-                        <div class="PCimg">
-                            <img src="/images/productCart2.jpg" alt="Vaporizador">
-                        </div>
-                        
-
-                        <div class="PCProduct">
-                        <div class="PCdescription">
-                            <h3>Voo Poo PNP</h3>
-                            <h5>$18.200</h5> 
-                        </div>
-                            <div class="PCSelection">
-                                <h5>Color: Gris Plata</h5>
-                                <div class="btn-group" role="group" aria-label="Basic example" role="group">
-                                    <button type="button" class="btn btn-secondary">-</button>
-                                    <button type="button" class="btn btn-secondary">1</button>
-                                    <button type="button" class="btn btn-secondary">+</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a class="delete" href="#"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
-                            <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
-                        </svg></a>
-
-                    </article>
-
-                    <article class="PCarticle">
-                        <div class="PCimg">
-                            <img src="/images/productCart3.jpg" alt="Vaporizador">
-                        </div>
-                        
-
-                        <div class="PCProduct">
-                        <div class="PCdescription">
-                            <h3>Vaporesso LT</h3>
-                            <h5>$12.300</h5> 
-                        </div>
-                            <div class="PCSelection">
-                                <h5>Color: Gris Plata</h5>
-                                <div class="btn-group" role="group" aria-label="Basic example" role="group">
-                                    <button type="button" class="btn btn-secondary">-</button>
-                                    <button type="button" class="btn btn-secondary">1</button>
-                                    <button type="button" class="btn btn-secondary">+</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a class="delete" href="#"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
-                            <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
-                        </svg></a>
-
-                    </article>
-                </section>   
-
+                <section class="cart">
+                    <% carrito.forEach(product_cart => { %>
+                        <%- include('./partials/cart', { product_cart }) %>
+                    <% }) %>
+                </section>
                 <section class="PCPurchase">
                     <article class="purchaseArticle">
-                        <h4>TOTAL: </h4>
+                        <div class="discount_code">
+                            <h5>¿TENÉS UN CODIGO DE DESCUENTO?</h5>
+                            <div class="code">
+                                <input class="form-control" type="text" name="discount_code" placeholder="Insertar codigo">
+                                <input class="btn btn-success" type="submit" value="Añadir">                                
+                            </div>
+
+                        </div>
+                        <div class="price">
+                            <h4 class="price_text">TOTAL:</h4>
+                            <h4 class="price_text">
+                                $ 
+                                <% var arr = carrito; %>
+
+                                <% var total = arr.reduce((sum, value) => (typeof value.price == "number" ? sum + value.price : sum), 0); %>
+                                <%- total; %>                                 
+                            </h4>     
+        
+                            
+                        </div>
                         <input class="PCproductDetailButton" type="submit" value="COMPRAR">
                     </article>
                 </section>
-
             </main>
+
 
             <%- include('./partials/footer') %>
     </body>

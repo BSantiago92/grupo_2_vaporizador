@@ -1,31 +1,5 @@
 [
  {
-  "id": 7,
-  "brand": "Macropus fuliginosus",
-  "category": "KALU",
-  "model1": "Crimson",
-  "model2": "Mauv",
-  "model3": "Khaki",
-  "img": "/images/resistencia2.jpg",
-  "imgAux1": "/images/resistencia2.jpg",
-  "imgAux2": "/images/resistencia2.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2579.78"
- },
- {
-  "id": 8,
-  "brand": "Actophilornis africanus",
-  "category": "CSBR",
-  "model1": "Khaki",
-  "model2": "Pink",
-  "model3": "Red",
-  "img": "/images/resistenvia1.jpg",
-  "imgAux1": "/images/resistenvia1.jpg",
-  "imgAux2": "/images/resistenvia1.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$3995.27"
- },
- {
   "id": 9,
   "brand": "Aquila chrysaetos",
   "category": "HMN",
@@ -36,20 +10,7 @@
   "imgAux1": "/images/pimage_59878_1531130193.jpg",
   "imgAux2": "/images/pimage_59878_1531130193.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$4623.07"
- },
- {
-  "id": 10,
-  "brand": "Hystrix indica",
-  "category": "MSBF",
-  "model1": "Crimson",
-  "model2": "Turquoise",
-  "model3": "Orange",
-  "img": "/images/SMOK-Vape-Pen-Mesh-Coils-Online-in-Pakistan-by-VapeStation1.jpg",
-  "imgAux1": "/images/SMOK-Vape-Pen-Mesh-Coils-Online-in-Pakistan-by-VapeStation1.jpg",
-  "imgAux2": "/images/SMOK-Vape-Pen-Mesh-Coils-Online-in-Pakistan-by-VapeStation1.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1966.20"
+  "price": 4623.07
  },
  {
   "id": 11,
@@ -62,7 +23,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$4610.68"
+  "price": 4610.68
  },
  {
   "id": 12,
@@ -75,7 +36,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1554.26"
+  "price": 1554.26
  },
  {
   "id": 13,
@@ -88,33 +49,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$3541.75"
- },
- {
-  "id": 14,
-  "brand": "Chauna torquata",
-  "category": "CDTX",
-  "model1": "Violet",
-  "model2": "Blue",
-  "model3": "Crimson",
-  "img": "/images/productCart1.jpg",
-  "imgAux1": "/images/productCart1.jpg",
-  "imgAux2": "/images/productCart1.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2574.43"
- },
- {
-  "id": 15,
-  "brand": "Globicephala melas",
-  "category": "YY",
-  "model1": "Red",
-  "model2": "Red",
-  "model3": "Khaki",
-  "img": "/images/productCart1.jpg",
-  "imgAux1": "/images/productCart1.jpg",
-  "imgAux2": "/images/productCart1.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2217.12"
+  "price": 3541.75
  },
  {
   "id": 16,
@@ -127,7 +62,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1879.56"
+  "price": 1879.56
  },
  {
   "id": 17,
@@ -140,7 +75,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1613.16"
+  "price": 1613.16
  },
  {
   "id": 18,
@@ -153,7 +88,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1724.65"
+  "price": 1724.65
  },
  {
   "id": 19,
@@ -166,7 +101,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2441.68"
+  "price": 2441.68
  },
  {
   "id": 20,
@@ -179,7 +114,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$3243.32"
+  "price": 3243.32
  },
  {
   "id": 21,
@@ -192,7 +127,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$4404.74"
+  "price": 4404.74
  },
  {
   "id": 22,
@@ -205,7 +140,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1048.02"
+  "price": 1048.02
  },
  {
   "id": 23,
@@ -218,7 +153,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$3254.69"
+  "price": 3254.69
  },
  {
   "id": 24,
@@ -231,7 +166,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1087.70"
+  "price": 1087.7
  },
  {
   "id": 25,
@@ -244,7 +179,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$4833.39"
+  "price": 4833.39
  },
  {
   "id": 27,
@@ -257,7 +192,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$3107.33"
+  "price": 3107.33
  },
  {
   "id": 28,
@@ -270,7 +205,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1201.53"
+  "price": 1201.53
  },
  {
   "id": 29,
@@ -283,7 +218,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2610.28"
+  "price": 2610.28
  },
  {
   "id": 30,
@@ -296,7 +231,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2610.28"
+  "price": 2610.28
  },
  {
   "id": 31,
@@ -309,7 +244,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1257.38"
+  "price": 1257.38
  },
  {
   "id": 32,
@@ -322,7 +257,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1603.48"
+  "price": 1603.48
  },
  {
   "id": 33,
@@ -335,7 +270,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$3749.35"
+  "price": 3749.35
  },
  {
   "id": 34,
@@ -348,7 +283,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1362.86"
+  "price": 1362.86
  },
  {
   "id": 35,
@@ -361,7 +296,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1766.59"
+  "price": 1766.59
  },
  {
   "id": 36,
@@ -374,7 +309,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1311.22"
+  "price": 1311.22
  },
  {
   "id": 37,
@@ -387,7 +322,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$1589.32"
+  "price": 1589.32
  },
  {
   "id": 38,
@@ -400,7 +335,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2109.47"
+  "price": 2109.47
  },
  {
   "id": 39,
@@ -413,7 +348,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$983.84"
+  "price": 983.84
  },
  {
   "id": 40,
@@ -426,7 +361,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$933.65"
+  "price": 933.65
  },
  {
   "id": 41,
@@ -439,7 +374,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2082.17"
+  "price": 2082.17
  },
  {
   "id": 42,
@@ -452,7 +387,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2284.39"
+  "price": 2284.39
  },
  {
   "id": 43,
@@ -465,7 +400,7 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2432.46"
+  "price": 2432.46
  },
  {
   "id": 44,
@@ -478,32 +413,6 @@
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$3296.12"
- },
- {
-  "id": 45,
-  "brand": "Vanellus armatus",
-  "category": "LEXEA",
-  "model1": "Crimson",
-  "model2": "Violet",
-  "model3": "Pink",
-  "img": "/images/productCart1.jpg",
-  "imgAux1": "/images/productCart1.jpg",
-  "imgAux2": "/images/productCart1.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$2285.32"
- },
- {
-  "id": 46,
-  "brand": "Panthera leo persica",
-  "category": "CNXR",
-  "model1": "Crimson",
-  "model2": "Crimson",
-  "model3": "Blue",
-  "img": "/images/productCart1.jpg",
-  "imgAux1": "/images/productCart1.jpg",
-  "imgAux2": "/images/productCart1.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "$4243.30"
+  "price": 3296.12
  }
 ]

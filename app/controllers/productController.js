@@ -1,11 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const productos = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/products.json'), 'utf-8'));
+const carrito = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/cart.json'), 'utf-8'));
 
 const jsonTable = require('../dataBase/jsonTable');
 
+const cartModel = jsonTable('cart');
 const productsModel = jsonTable('products');
-const categoriesModel = jsonTable('categories');
+const userModel = jsonTable('user');
 
 module.exports = {
     catalogue: (req,res) => {
@@ -22,7 +24,16 @@ module.exports = {
     },
 
     cart: (req, res) => {
-        res.render('productCart', { productos })
+
+        res.render('productCart', { carrito });
+    },
+    destroy_cartP: (req, res) => {
+
+        let product_cart = cartModel.find(req.params.id);
+        
+        cartModel.delete(req.params.id);
+
+        res.redirect('/product/carrito')
     },
     list: (req,res) => {
         res.render('productList', { productos });
@@ -56,5 +67,18 @@ module.exports = {
         productsModel.delete(req.params.id);
 
         res.redirect('/product/list')
+    },
+    search: (req, res) => {
+        let results = [];
+
+        if (req.query.search) {
+            results = productos.filter(product => product.brand.toLowerCase().includes(req.query.search.toLowerCase()));
+        }
+
+        console.log(results);
+
+        // res.redirect('search', { productos: results, search: req.query.search });
+
+        res.render('search', { productos: results, search: req.query.search });
     }
 }
