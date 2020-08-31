@@ -12,11 +12,20 @@
         <%- include('./partials/header') %>
 
             <div class="form">
-                <form action="/products/<%= product && product.id %>?_method=PUT" method="POST">
+                <form action="/product/products/<%= product && product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <h1>Editar producto</h1>
-                    <input class="form-control" type="text" name="name" value="<%= product && product.brand %>">
-                    <input class="form-control" type="text" name="description" value="<%= product && product.description %>">
-                    <input class="form-control" type="text" name="price" value="<%= product && product.price %>">
+                    <input class="form-control" type="text" name="id" value="<%= product && product.id %>">
+                    <input class="form-control" type="text" name="brand" value="<%= product && product.brand %>">
+                    <input class="form-control" type="text" name="category" value="<%= product && product.category %>" placeholder="Categoría">
+                    <input class="form-control" type="text" name="model1" value="<%= product && product.model1 %>" placeholder="Modelo 1">
+                    <input class="form-control" type="text" name="model2" value="<%= product && product.model2 %>" placeholder="Modelo 2">
+                    <input class="form-control" type="text" name="model3" value="<%= product && product.model3 %>" placeholder="Modelo 3">   
+                    <input class="form-control" type="file" name="img">
+
+                    <input class="form-control" type="text" name="description" value="<%= product && product.description %>" placeholder="Descripción">
+                    <input class="form-control" type="number" name="price" value="<%= product && product.price %>" placeholder="Precio">
+                    
+
 
                     <input class="btn btn-success" type="submit" value="Editar">
 

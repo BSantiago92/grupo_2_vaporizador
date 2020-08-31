@@ -472,7 +472,7 @@ article img {
 
 /*Formularios login-register*/
 .form {
-    height: 50vh;
+    /* height: 50vh; */
     margin-top: 2%;
     margin-bottom: 20%;
     flex-wrap: wrap;

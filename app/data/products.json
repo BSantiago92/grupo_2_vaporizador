@@ -1,16 +1,14 @@
 [
  {
-  "id": 9,
-  "brand": "Aquila chrysaetos",
-  "category": "HMN",
-  "model1": "Turquoise",
-  "model2": "Pink",
-  "model3": "Pink",
-  "img": "/images/pimage_59878_1531130193.jpg",
-  "imgAux1": "/images/pimage_59878_1531130193.jpg",
-  "imgAux2": "/images/pimage_59878_1531130193.jpg",
+  "id": "9",
+  "brand": "vape master 3.0",
+  "category": "vaporizador",
+  "model1": "rojo",
+  "model2": "negro ",
+  "model3": "gris",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": 4623.07
+  "price": "4500",
+  "img": "/images/product-1598834743677.jpg"
  },
  {
   "id": 11,

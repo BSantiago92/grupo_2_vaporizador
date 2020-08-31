@@ -8,6 +8,7 @@ const jsonTable = require('../dataBase/jsonTable');
 const cartModel = jsonTable('cart');
 const productsModel = jsonTable('products');
 const userModel = jsonTable('user');
+const categoriesModel = jsonTable('categories');
 
 module.exports = {
     catalogue: (req,res) => {
@@ -41,24 +42,48 @@ module.exports = {
     edit: (req, res) => {
 
 
-        let newProduct = {
-            id: req.params.id,
-            name: req.body.name,
-            description: req.body.description,
-            image: req.body.image,
-            category: req.body.category,
-            colors: req.body.colors,
-            price: req.body.price,
-        }
+        // let newProduct = {
+        //     id: req.params.id,
+        //     name: req.body.name,
+        //     description: req.body.description,
+        //     image: req.body.image,
+        //     category: req.body.category,
+        //     colors: req.body.colors,
+        //     price: req.body.price,
+        // }
 
 
-        const product = productos.find(product => product.id == req.params.id);
-        console.log(product);
+        // const product = productos.find(product => product.id == req.params.id);
+        // console.log(product);
 
-        res.render('edit', { product });
+        // res.render('edit', { product });
+
+
+
+        let product = productsModel.find(req.params.id);
+        let categories = categoriesModel.all;
+
+        res.render('edit', { product, categories });
     },
     update: (req, res) => {
-        res.send(req.body);
+        // res.send(req.body);
+
+
+        let product = req.body;
+
+        product.id = req.params.id;
+        
+        if (req.file) {
+            product.img = req.file.filename;
+        } else if (req.body.oldImage) {
+            product.img = req.body.oldImage;
+        }
+
+        // delete product.oldImage;
+
+        productId = productsModel.update(product);
+
+        res.redirect('/product/detail/' + productId)
     },
     destroy: (req, res) => {
 
@@ -76,8 +101,6 @@ module.exports = {
         }
 
         console.log(results);
-
-        // res.redirect('search', { productos: results, search: req.query.search });
 
         res.render('search', { productos: results, search: req.query.search });
     }
