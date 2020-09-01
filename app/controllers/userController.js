@@ -6,7 +6,6 @@ const user = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.json
 const jsonTable = require('../dataBase/jsonTable');
 
 const usersModel = jsonTable('user');
-const categoriesModel = jsonTable('categories');
 
 
 module.exports = {
@@ -20,9 +19,7 @@ module.exports = {
     // },
 
     register: (req, res) => {
-        let categories = categoriesModel.all();
-
-        res.render('register', { categories });
+        res.render('register');
     },
     store: (req, res) => {
         let errors = validationResult(req);
@@ -35,19 +32,10 @@ module.exports = {
             // 4. guardado el nuevo listado en el archivo JSON
 
             let user = req.body;
-            // user.image = 'default.png';
 
-            // if (req.file) {
-            //     user.image = req.file.filename;
-            // } else if (req.body.oldImage) {
-            //     user.image = req.body.oldImage;
-            // }
+            let newId = usersModel.create(user);
 
-            // delete user.oldImage;
-
-            userId = usersModel.create(user);
-
-            res.redirect('index');
+            res.redirect('/index/index');
         } else {
             let users = usersModel.all();
             res.render('register', { 
