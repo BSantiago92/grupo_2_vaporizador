@@ -14,29 +14,38 @@ module.exports = {
         res.render('catalogo', { productos });
     },
     create: (req,res) => {
-        res.render('create', { productos });
+         res.render('create');
     },
     store: (req, res) => {
-        //Nuevo producto
-        let newProduct = {
-            id: 30,
-            brand: req.body.name,
-            category: "WEB",
-            model1: "Aquamarine",
-            model2: "Khaki",
-            model3: "Maroon",
-            img: "/images/productCart1.jpg",
-            imgAux1: "/images/productCart1.jpg",
-            imgAux2: "/images/productCart1.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-            price: 2610.28
+        // //Nuevo producto
+        // let newProduct = {
+        //     id: 30,
+        //     brand: req.body.name,
+        //     category: req.body.category,
+        //     model1: req.body.model1,
+        //     model2: req.body.model2,
+        //     model3: req.body.model3,
+        //     img: req.body.img,
+        //     imgAux1: req.body.imgAux1,
+        //     imgAux2: req.body.imgAux2,
+        //     description: req.body.description,
+        //     price: req.body.price
+        // }
+
+        // //Agrego el nuevo grupo a los existentes
+        // productos.push(newProduct);
+
+        // //Guardo el nuevo listado en el archivo JSON
+        // res.redirect('/products');
+
+        let product = req.body;
+        product.img = '/images/default.jpg';
+        if (req.file) {
+            product.img = req.file.filename;
         }
-
-        //Agrego el nuevo grupo a los existentes
-        productos.push(newProduct);
-
-        //Guardo el nuevo listado en el archivo JSON
-        res.redirect('/products');
+        let newId = productsModel.create(product);
+        
+        res.redirect('/product/list');
     },
     detail: (req, res) => {
         res.render('productDetail')

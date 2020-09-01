@@ -19,7 +19,7 @@ router.get('/search', controller.search);
 
 router.get('/create', controller.create);
 
-router.post('/', controller.store);
+router.post('/', upload.single('img'), controller.store);
 
 router.get('/detail/:id', controller.detail);
 

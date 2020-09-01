@@ -12,10 +12,17 @@
         <%- include('./partials/header') %>
 
             <div class="form">
-                <form action="/products" method="POST" enctype="application/x-www-form-urlencoded">
+                <form action="/product/" method="POST" enctype="application/x-www-form-urlencoded">
                     <h1>Crear producto</h1>
-                    <input class="form-control" type="text" name="id" value="<%= product && product.id %>">
-                    <input class="form-control" type="text" name="brand" value="<%= product && product.brand %>">
+                    
+                    <input class="form-control" type="text" name="brand" placeholder="Marca">
+                    <input class="form-control" type="text" name="category" placeholder="Categoría">
+                    <input class="form-control" type="text" name="model1" placeholder="Modelo">
+                    <input class="form-control" type="text" name="model2" placeholder="Modelo">
+                    <input class="form-control" type="text" name="model3" placeholder="Modelo">
+                    <input class="form-control" type="file" name="img">
+                    <input class="form-control" type="text" name="description" placeholder="Descripción">
+                    <input class="form-control" type="number" name="price" placeholder="Precio">
                                      
 
 
