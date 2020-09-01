@@ -14,6 +14,31 @@ module.exports = {
     catalogue: (req,res) => {
         res.render('catalogo', { productos });
     },
+    create: (req,res) => {
+        res.render('create', { productos });
+    },
+    store: (req, res) => {
+        //Nuevo producto
+        let newProduct = {
+            id: 30,
+            brand: req.body.name,
+            category: "WEB",
+            model1: "Aquamarine",
+            model2: "Khaki",
+            model3: "Maroon",
+            img: "/images/productCart1.jpg",
+            imgAux1: "/images/productCart1.jpg",
+            imgAux2: "/images/productCart1.jpg",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
+            price: 2610.28
+        }
+
+        //Agrego el nuevo grupo a los existentes
+        productos.push(newProduct);
+
+        //Guardo el nuevo listado en el archivo JSON
+        res.redirect('/products');
+    },
     detail: (req, res) => {
         res.render('productDetail')
     },
