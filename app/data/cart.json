@@ -1,28 +1,54 @@
 [
  {
-  "id": 15,
-  "brand": "Globicephala melas",
-  "category": "YY",
-  "model1": "Red",
-  "model2": "Red",
-  "model3": "Khaki",
+  "id": 11,
+  "brand": "Cebus nigrivittatus",
+  "category": "LKQ",
+  "model1": "Khaki",
+  "model2": "Orange",
+  "model3": "Goldenrod",
   "img": "/images/productCart1.jpg",
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": 2217.12
+  "price": 4610.68
  },
  {
-  "id": 15,
-  "brand": "Globicephala melas",
-  "category": "YY",
-  "model1": "Red",
-  "model2": "Red",
-  "model3": "Khaki",
+  "id": 12,
+  "brand": "Kobus defassa",
+  "category": "TANNZ",
+  "model1": "Maroon",
+  "model2": "Goldenrod",
+  "model3": "Orange",
   "img": "/images/productCart1.jpg",
   "imgAux1": "/images/productCart1.jpg",
   "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": 2217.12
+  "price": 1554.26
+ },
+ {
+  "id": 13,
+  "brand": "Neotis denhami",
+  "category": "GPX",
+  "model1": "Violet",
+  "model2": "Teal",
+  "model3": "Orange",
+  "img": "/images/productCart1.jpg",
+  "imgAux1": "/images/productCart1.jpg",
+  "imgAux2": "/images/productCart1.jpg",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
+  "price": 3541.75
+ },
+ {
+  "id": 16,
+  "brand": "unavailable",
+  "category": "DLR",
+  "model1": "Teal",
+  "model2": "Red",
+  "model3": "Teal",
+  "img": "/images/productCart1.jpg",
+  "imgAux1": "/images/productCart1.jpg",
+  "imgAux2": "/images/productCart1.jpg",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
+  "price": 1879.56
  }
 ]

@@ -7,7 +7,6 @@ const jsonTable = require('../dataBase/jsonTable');
 
 const cartModel = jsonTable('cart');
 const productsModel = jsonTable('products');
-const userModel = jsonTable('user');
 const categoriesModel = jsonTable('categories');
 
 module.exports = {
@@ -41,37 +40,16 @@ module.exports = {
     },
     edit: (req, res) => {
 
-
-        // let newProduct = {
-        //     id: req.params.id,
-        //     name: req.body.name,
-        //     description: req.body.description,
-        //     image: req.body.image,
-        //     category: req.body.category,
-        //     colors: req.body.colors,
-        //     price: req.body.price,
-        // }
-
-
-        // const product = productos.find(product => product.id == req.params.id);
-        // console.log(product);
-
-        // res.render('edit', { product });
-
-
-
         let product = productsModel.find(req.params.id);
         let categories = categoriesModel.all;
 
         res.render('edit', { product, categories });
     },
     update: (req, res) => {
-        // res.send(req.body);
-
-
         let product = req.body;
 
         product.id = req.params.id;
+        product.img = '/images/productDetail2.jpg';
         
         if (req.file) {
             product.img = req.file.filename;
@@ -79,7 +57,7 @@ module.exports = {
             product.img = req.body.oldImage;
         }
 
-        // delete product.oldImage;
+        delete product.oldImage;
 
         productId = productsModel.update(product);
 

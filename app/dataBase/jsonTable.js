@@ -52,6 +52,20 @@ let productsModel = function(tableName) {
             // 2. Buscar por campo y valor
             // 3. retornar los resultados
         },
+        create(row) {
+            // Microdesafío
+            // 1. Leer el archivo
+            // 2. Generar un nuevo id
+            // 3. Agregar el registro
+            // 4. guardar los cambios
+            let rows = this.readFile();
+            row.id = this.nextId();
+            rows.push(row);
+
+            this.writeFile(rows);
+
+            return row.id;
+        },
         update(row) {
             // Microdesafío
             // 1. Leer el archivo

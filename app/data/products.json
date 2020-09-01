@@ -4,24 +4,22 @@
   "brand": "vape master 3.0",
   "category": "vaporizador",
   "model1": "rojo",
-  "model2": "negro ",
+  "model2": "negro",
   "model3": "gris",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
   "price": "4500",
-  "img": "/images/product-1598834743677.jpg"
+  "img": "/images/productDetail2.jpg"
  },
  {
-  "id": 11,
+  "id": "11",
   "brand": "Cebus nigrivittatus",
   "category": "LKQ",
   "model1": "Khaki",
   "model2": "Orange",
   "model3": "Goldenrod",
-  "img": "/images/productCart1.jpg",
-  "imgAux1": "/images/productCart1.jpg",
-  "imgAux2": "/images/productCart1.jpg",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": 4610.68
+  "price": 4610.68,
+  "img": "/images/product-1598848925345.jpg"
  },
  {
   "id": 12,
