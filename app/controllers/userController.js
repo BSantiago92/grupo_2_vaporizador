@@ -60,7 +60,7 @@ module.exports = {
         
         req.session.destroy();
 
-        res.redirect('/');
+        res.render('login');
     },
 
     register: (req, res) => {
