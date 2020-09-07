@@ -70,6 +70,8 @@ let productsModel = function(tableName) {
             // 1. Leer el archivo
             // 2. Buscar por campo y valor
             // 3. retornar los resultados
+            let rows = this.readFile();
+            return rows.find(row => row[field] == value);
         },
         create(row) {
             // Microdesafío

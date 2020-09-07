@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
-var session = require('express-session');
+const session = require('express-session');
+const auth = require('./middlewares/auth');
 
 //Configuración 
 app.set('view engine', 'ejs');
@@ -13,13 +14,14 @@ app.listen(3003, () => { console.log('servidor corriendo en el puerto 3003') })
 
 app.use(express.static('public'));
 app.use(express.static('img'));
-app.use(express.urlencoded({ extended: false}));
 
 // formulario
+app.use(session({secret: 'usuario a logearse'}));
+app.use(auth);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-app.use(session({secret: 'usuarioALogearse'}));
+
 
 
 

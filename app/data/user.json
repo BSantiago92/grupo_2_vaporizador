@@ -159,7 +159,8 @@
     "category": "user",
     "image": "user_20.jpg"
   }, {
+    "id": 21,
     "email": "bruno.cami@hotmail.com",
-    "password": "12345678"
+    "password": "$2a$10$/YB.WoUu8BE2ywmQWumMvuhyHQsYRSTrH2PqtTT/b2zafpHmsPQJu"
   }
 ]

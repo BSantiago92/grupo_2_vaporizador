@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
+
+// imprime el codigo enciptado de mi password que lo tengo que guardar en la base de datos
+console.log(bcrypt.hashSync('12345678', 10));
+
 const { check, validationResult, body } = require('express-validator');
 const user = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.json'), 'utf-8'));
 
@@ -15,42 +19,49 @@ module.exports = {
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
+        
+       
 
         
         if(errors.isEmpty()) {
-            let usersJson = fs.readFileSync(path.join(__dirname, '/../data/user.json'), 'utf-8');
-            let users;
-            if (usersJson == "") {
-                users = [];
-            } else {
-                users = JSON.parse(usersJson);
-            }
-            for (let i = 0; i < users.length; i++) {
-                if (users[i].email == req.body.email) {
-                    if(bcrypt.compareSync(req.body.password, users[i].password)) {
-                        let usuarioALogearse = users[i];
-                        break;
+                let user = usersModel.findByField('email', req.body.email);
+                
+                // si existe el usuario
+
+                if (user) {
+
+                    //si la contraseña es correcta
+                    if(bcrypt.compareSync(req.body.password, user.password)) {
+                        // lo guardo en la session
+                        // delete user.password;
+
+                        req.session.user = user;
+                        // logeo al usuario
+
+                        res.redirect('/');
+
+                    } else {
+                            res.render('login', {
+                            errors: { password: { msg: 'La contraseña es incorrecta'} },
+                            user: req.body
+                        });
                     }
                 }
-            }
 
-            if (usuarioALogearse == undefined) {
-                return res.render('login', {errors: [
-                    {msg: 'credenciales invalidas'}
-                ]});
-            }
-
-            req.session.usuarioALogearse = usuarioALogearse;
-
-        } else {
-            return res.render('login', {errors: errors.errors});
-        }    
+            } else {
+                res.render('login', {
+                    errors: errors.mapped(),
+                    user: req.body
+                });
+            }   
     },
 
-    // register: (req, res) => {
-    //     console.log(validationResult(req));
-    //     res.render('register')
-    // },
+    logout: (req,res) => {
+        
+        req.session.destroy();
+
+        res.redirect('/');
+    },
 
     register: (req, res) => {
         res.render('register');
@@ -81,5 +92,5 @@ module.exports = {
         
 
       
-    },
+    }
 }
