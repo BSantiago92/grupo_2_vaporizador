@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
+var session = require('express-session');
 
 //Configuración 
 app.set('view engine', 'ejs');
@@ -18,6 +19,8 @@ app.use(express.urlencoded({ extended: false}));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(session({secret: 'usuarioALogearse'}));
+
 
 
 

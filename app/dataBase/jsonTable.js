@@ -39,12 +39,31 @@ let productsModel = function(tableName) {
 
             return 1;
         },
+        readAll() {
+            //Busco la tabla desde el archivo
+            let table;
+            try {
+                table = fs.readFileSync(this.tablePath, {encoding: 'utf-8'});
+            }
+            catch (errors) {
+                errors.push('readAll()');
+                throw error;
+            }
+
+            //Parseo la tabla y la devuelvo
+            return table = JSON.parse(table);
+        },
         all() {
             return this.readFile();
         },
         find(id) {
             let rows = this.readFile();
             return rows.find(row => row.id == id)
+        },
+        findBy(query, value) {
+            let table = this.readAll();
+            
+            return table.find((row) => row[query] == value);
         },
         findByField(field, value) {
             // Microdesafío

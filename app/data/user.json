@@ -158,4 +158,8 @@
     "password": "BYb8yiptp",
     "category": "user",
     "image": "user_20.jpg"
-  }]
+  }, {
+    "email": "bruno.cami@hotmail.com",
+    "password": "12345678"
+  }
+]

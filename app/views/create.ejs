@@ -16,7 +16,17 @@
                     <h1>Crear producto</h1>
                     
                     <input class="form-control" type="text" name="brand" placeholder="Marca">
-                    <input class="form-control" type="text" name="category" placeholder="Categoría">
+                    <!-- <input class="form-control" type="text" name="category" placeholder="Categoría"> -->
+                    <select class="form-control" name="categoryId" id="categoryId">
+                        <option value="">Selecciona una categoría</option>
+                        <% categories.forEach(Category => { %>
+                           <option 
+                            value="<%= Category.id %>"  
+                            <%= locals.product && product.categoryId == Category.id ? "selected": "";  %> >
+                                <%= Category.name %>
+                            </option> 
+                        <% });  %> 
+                    </select>
                     <input class="form-control" type="text" name="model1" placeholder="Modelo">
                     <input class="form-control" type="text" name="model2" placeholder="Modelo">
                     <input class="form-control" type="text" name="model3" placeholder="Modelo">

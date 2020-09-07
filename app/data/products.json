@@ -7,7 +7,7 @@
   "model2": "negro",
   "model3": "gris",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": "4500",
+  "price": null,
   "img": "/images/productDetail2.jpg"
  },
  {
@@ -408,5 +408,16 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
   "price": 4999,
   "id": 45
+ },
+ {
+  "brand": "",
+  "categoryId": "2",
+  "model1": "",
+  "model2": "",
+  "model3": "",
+  "img": "/images/default.jpg",
+  "description": "",
+  "price": "22",
+  "id": 46
  }
 ]

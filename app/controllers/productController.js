@@ -1,20 +1,39 @@
 const fs = require('fs');
 const path = require('path');
+const jsonTable = require('../dataBase/jsonTable');
 const productos = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/products.json'), 'utf-8'));
 const carrito = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/cart.json'), 'utf-8'));
-
-const jsonTable = require('../dataBase/jsonTable');
 
 const cartModel = jsonTable('cart');
 const productsModel = jsonTable('products');
 const categoriesModel = jsonTable('categories');
 
+const { Product, Category } = require('../dataBase/models')
+
 module.exports = {
     catalogue: (req,res) => {
-        res.render('catalogo', { productos });
+        // res.render('catalogo', { productos });
+
+        Product.findAll()
+            .then(products => {
+                return res.render('catalogo', { products });
+            })
+            .catch(error => {
+                console.log(error);
+                res.redirect('/');
+            })
     },
     create: (req,res) => {
-         res.render('create');
+        //  res.render('create');
+
+        Category.findAll()
+        .then(categories => {
+            return res.render('create', { categories });
+        })
+        .catch(error => {
+            console.log(error);
+            res.redirect('/');
+        })
     },
     store: (req, res) => {
         // //Nuevo producto
@@ -48,13 +67,21 @@ module.exports = {
         res.redirect('/product/list');
     },
     detail: (req, res) => {
-        res.render('productDetail')
-    },
-    detail: (req, res) => {
 
-        const product = productos.find(product => product.id == req.params.id);
+        // const product = productos.find(product => product.id == req.params.id);
+        // res.render('productDetail', { product } );
 
-        res.render('productDetail', { product } );
+
+        Product.findByPk(req.params.id,{ include: 'Category'})
+        .then(product => {
+            return res.render('productDetail', { product });
+        })
+        .catch(error => {
+            console.log(error);
+            res.redirect('/');
+        })
+
+
     },
 
     cart: (req, res) => {
