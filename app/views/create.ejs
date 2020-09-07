@@ -15,21 +15,22 @@
                 <form action="/product/" method="POST" enctype="application/x-www-form-urlencoded">
                     <h1>Crear producto</h1>
                     
+                    <input class="form-control" type="text" name="name" placeholder="Nombre del producto">
                     <input class="form-control" type="text" name="brand" placeholder="Marca">
                     <!-- <input class="form-control" type="text" name="category" placeholder="Categoría"> -->
-                    <select class="form-control" name="categoryId" id="categoryId">
+                    <select class="form-control" name="category_id" id="category_id">
                         <option value="">Selecciona una categoría</option>
                         <% categories.forEach(Category => { %>
                            <option 
                             value="<%= Category.id %>"  
-                            <%= locals.product && product.categoryId == Category.id ? "selected": "";  %> >
+                            <%= locals.product && product.category_id == Category.id ? "selected": "";  %> >
                                 <%= Category.name %>
                             </option> 
                         <% });  %> 
                     </select>
-                    <input class="form-control" type="text" name="model1" placeholder="Modelo">
-                    <input class="form-control" type="text" name="model2" placeholder="Modelo">
-                    <input class="form-control" type="text" name="model3" placeholder="Modelo">
+                    <input class="form-control" type="text" name="model_1" placeholder="Modelo">
+                    <input class="form-control" type="text" name="model_2" placeholder="Modelo">
+                    <input class="form-control" type="text" name="model_3" placeholder="Modelo">
                     <input class="form-control" type="file" name="img">
                     <input class="form-control" type="text" name="description" placeholder="Descripción">
                     <input class="form-control" type="number" name="price" placeholder="Precio">

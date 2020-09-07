@@ -1,14 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 const jsonTable = require('../dataBase/jsonTable');
+const { check, validationResult, body } = require('express-validator');
 const productos = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/products.json'), 'utf-8'));
 const carrito = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/cart.json'), 'utf-8'));
 
 const cartModel = jsonTable('cart');
 const productsModel = jsonTable('products');
 const categoriesModel = jsonTable('categories');
+const brandsModel = jsonTable('brands');
 
-const { Product, Category } = require('../dataBase/models')
+const { Product, Category, Brand } = require('../dataBase/models')
 
 module.exports = {
     catalogue: (req,res) => {
@@ -26,6 +28,15 @@ module.exports = {
     create: (req,res) => {
         //  res.render('create');
 
+        // Brand.findAll()
+        // .then(brands => {
+        //     return res.render('create', { brands });
+        // })
+        // .catch(error => {
+        //     console.log(error);
+        //     res.redirect('/');
+        // })
+
         Category.findAll()
         .then(categories => {
             return res.render('create', { categories });
@@ -36,35 +47,40 @@ module.exports = {
         })
     },
     store: (req, res) => {
-        // //Nuevo producto
-        // let newProduct = {
-        //     id: 30,
-        //     brand: req.body.name,
-        //     category: req.body.category,
-        //     model1: req.body.model1,
-        //     model2: req.body.model2,
-        //     model3: req.body.model3,
-        //     img: req.body.img,
-        //     imgAux1: req.body.imgAux1,
-        //     imgAux2: req.body.imgAux2,
-        //     description: req.body.description,
-        //     price: req.body.price
-        // }
+        let errors = validationResult(req);
 
-        // //Agrego el nuevo grupo a los existentes
-        // productos.push(newProduct);
+        if (errors.isEmpty()) {
 
-        // //Guardo el nuevo listado en el archivo JSON
-        // res.redirect('/products');
-
-        let product = req.body;
-        product.img = '/images/default.jpg';
+        let newProduct = req.body;
+        newProduct.img = '/images/default.jpg';
         if (req.file) {
-            product.img = req.file.filename;
+            newProduct.img = req.file.filename;
+        } else if (req.body.oldImage) {
+            newProduct.img = req.body.oldImage;
         }
-        let newId = productsModel.create(product);
-        
-        res.redirect('/product/list');
+
+        delete newProduct.oldImage;
+
+        Product.create(newProduct)
+        .then(newProduct => {
+            return res.redirect('/product/detail/' + newProduct.id);
+        })
+    } else {
+        // let categories = categoriesModel.all();
+
+        Category.findAll()
+            .then(categories => {
+                return res.render('create',  { 
+                    categories,
+                    errors: errors.mapped(), 
+                    Product: req.body
+                });
+            })
+            .catch(error => {
+                console.log(error);
+                return res.redirect('/');
+            })
+    }
     },
     detail: (req, res) => {
 
@@ -97,40 +113,70 @@ module.exports = {
         res.redirect('/product/carrito')
     },
     list: (req,res) => {
-        res.render('productList', { productos });
+        // res.render('productList', { productos });
+        Product.findAll()
+        .then(products => {
+            return res.render('productList', { products });
+        })
+        .catch(error => {
+            console.log(error);
+            res.redirect('/');
+        })
     },
-    edit: (req, res) => {
+    edit: async (req, res) => {
+        // let product = productsModel.find(req.params.id);
+        // let categories = categoriesModel.all;
+        // res.render('edit', { product, categories });
 
-        let product = productsModel.find(req.params.id);
-        let categories = categoriesModel.all;
+        const categories = await Category.findAll();
 
-        res.render('edit', { product, categories });
+        
+
+        Product.findByPk(req.params.id,{ include: 'Category'})
+        .then(product => {
+            return res.render('edit', { product, categories });
+        })
+        .catch(error => {
+            console.log(error);
+            res.redirect('/');
+        })
+
     },
     update: (req, res) => {
-        let product = req.body;
+        let updateProduct = req.body;
 
-        product.id = req.params.id;
-        product.img = '/images/productDetail2.jpg';
+        //updateProduct.id = req.params.id;
+        updateProduct.img = '/images/productroductDetail2.jpg';
         
         if (req.file) {
-            product.img = req.file.filename;
+            updateProduct.img = req.file.filename;
         } else if (req.body.oldImage) {
-            product.img = req.body.oldImage;
+            updateProduct.img = req.body.oldImage;
         }
 
-        delete product.oldImage;
+        delete updateProduct.oldImage;
 
-        productId = productsModel.update(product);
+        // productId = productsModel.update(product);
 
-        res.redirect('/product/detail/' + productId)
+        // res.redirect('/product/detail/' + productId)
+
+        Product.update(updateProduct, {where: { id: req.params.id}})
+        .then(updateProduct => {
+            return res.redirect('/product/detail/' + req.params.id);
+        })
+
     },
     destroy: (req, res) => {
 
-        let product = productsModel.find(req.params.id);
-        
-        productsModel.delete(req.params.id);
+        // let product = productsModel.find(req.params.id);
+        // productsModel.delete(req.params.id);
 
-        res.redirect('/product/list')
+        Product.destroy({where: { id: req.params.id}})
+        .then(deleteProduct => {
+            return res.redirect('/product/list/' + req.params.id);
+        })
+
+        // res.redirect('/product/list')
     },
     search: (req, res) => {
         let results = [];

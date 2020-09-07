@@ -29,7 +29,7 @@ router.get('/carrito', controller.cart);
 
 router.delete('/carrito/:id', controller.destroy_cartP);
 
-router.get('/products/:id/edit', controller.edit);
+router.get('/edit/:id', controller.edit);
 
 router.put('/products/:id', upload.single('img'), controller.update);
 

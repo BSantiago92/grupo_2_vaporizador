@@ -1,18 +1,5 @@
 [
  {
-  "id": 11,
-  "brand": "Cebus nigrivittatus",
-  "category": "LKQ",
-  "model1": "Khaki",
-  "model2": "Orange",
-  "model3": "Goldenrod",
-  "img": "/images/productCart1.jpg",
-  "imgAux1": "/images/productCart1.jpg",
-  "imgAux2": "/images/productCart1.jpg",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  lorem",
-  "price": 4610.68
- },
- {
   "id": 12,
   "brand": "Kobus defassa",
   "category": "TANNZ",
