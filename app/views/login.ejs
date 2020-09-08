@@ -38,19 +38,22 @@
                     <p class="feedback is-danger"><%= errors.password.msg %> </p>
                 <% } %> 
             </div>
+            <div>
                 <% if (locals.user) { %>
                     <input class="btn btn-success" type="submit" value="Cerrar sesión">
                 <% } else { %>
                     <input class="btn btn-success" type="submit" value="Ingresar">
-                <% }; %> 
+                <% }; %>                 
+            </div>
 
+            <div>
              <% if (locals.user) { %>
                 <p><a href="/user/edit/<%= user.id %>">Editar Usuario</a></p>
             <% } else { %>
                 <p><a href="/user/register">Olvidaste tu contraseña?</a></p>
                 <p><a href="/user/register">REGISTRARSE</a></p>
-                
-            <% }; %>               
+            <% }; %>  
+            </div>
         </form>
     </div>
 

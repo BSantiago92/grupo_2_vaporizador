@@ -8,7 +8,7 @@ router.get('/login', controller.login);
 
 router.post('/login', validate.loginForm, controller.processLogin);
 
-router.post('/login', controller.logout);
+router.post('/logout', controller.logout);
 
 router.get('/register', controller.register);
 

@@ -155,12 +155,13 @@
     "first_name": "Ronni",
     "last_name": "Gilffilland",
     "email": "rgilffillandj@shinystat.com",
-    "password": "BYb8yiptp",
+    "password": "$2a$10$/YB.WoUu8BE2ywmQWumMvuhyHQsYRSTrH2PqtTT/b2zafpHmsPQJu",
     "category": "user",
     "image": "user_20.jpg"
   }, {
     "id": 21,
     "email": "bruno.cami@hotmail.com",
-    "password": "$2a$10$/YB.WoUu8BE2ywmQWumMvuhyHQsYRSTrH2PqtTT/b2zafpHmsPQJu"
+    "password": "$2a$10$/YB.WoUu8BE2ywmQWumMvuhyHQsYRSTrH2PqtTT/b2zafpHmsPQJu",
+    "category": "admin"
   }
 ]
