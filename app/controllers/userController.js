@@ -55,11 +55,14 @@ module.exports = {
                 });
             }   
     },
+    profile: (req,res) => {
+        res.render('userProfile');
+    },
     logout: (req,res) => {
         
         req.session.destroy();
 
-        res.render('/');
+        return res.redirect('/');
     },
     register: (req, res) => {
         res.render('register');
