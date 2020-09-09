@@ -27,6 +27,10 @@ h1 {
     text-align: center;
 }
 
+.menu_admin {
+    display: none;
+}
+
 .logo {
     text-align: center;
     width: 100vw;
@@ -109,6 +113,10 @@ h1 {
 
 .busquedaLaptop {
     display: none;
+}
+
+.main_search {
+    height: auto;
 }
 
 
@@ -495,6 +503,18 @@ article img {
     color: #495057;
 }
 
+/* user profile */
+
+.container_profile{ 
+    margin: 80px 0px 80px;
+    width: 50% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* user profile fin */
+
 
 /*Catalogo*/
 
@@ -634,7 +654,19 @@ footer p {
     .laptop {
         width: 100%;
         display: flex;
+        justify-content: space-around;
         align-items: center;
+    }
+
+    .menu_admin {
+        display: inline-block;
+        width: 100%;
+        text-align: right;
+    }
+
+    .menu_admin .menu_p {
+        margin: 0px 20px;
+        padding: 0px;
     }
 
     .logo {
@@ -650,7 +682,7 @@ footer p {
     }
 
     .usuario {
-        width: 20%;
+        width: 25%;
         display: flex;
         align-items: center;
     }
@@ -662,6 +694,7 @@ footer p {
         justify-content: center;
         align-items: center;
         margin-bottom: 0em;
+        padding: 0px;
     }
 
     .usuario ul li {

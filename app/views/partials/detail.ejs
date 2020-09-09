@@ -1,22 +1,22 @@
 
     <section class="PDLeft">
         <article class="secondaryPhoto">
-            <img src= <%- product.img %> alt="imagen">
+            <img src="/images/default.jpg" alt="imagen">
         </article>
         <article class="secondaryPhoto">
-            <img src= <%- product.img %> alt="imagen">
+            <img src="/images/default.jpg" alt="imagen">
         </article>
     </section>
     <section class="PDCenter">
         <article class="primaryPhoto">
-            <img class="product_img"  src= <%- product.img %> alt="imagen">
+            <img class="product_img"  src="/images/default.jpg" alt="imagen">
         </article>
 
     </section>
     <section class="productInfo">
         <article class="vapeInfo">
                 <h3><%- product.name %></h3>
-                <h3><%- product.price %></h3>
+                <h3>$ <%- product.price %></h3>
         </article>
         <div>
             <article class="vapeSelection">
@@ -37,7 +37,7 @@
                     <button type="button" class="btn btn-secondary">+</button>
                 </div>
                 </div>
-                    <a href="/product/carrito">
+                    <a <% if (locals.user) { %> href="/product/carrito" <% } else { %> href="/user/login" <% } %>">
                         <input class="PCproductDetailButton" type="submit" value="AGREGAR AL CARRITO">
                     </a>                    
 

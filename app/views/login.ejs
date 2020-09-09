@@ -33,7 +33,7 @@
             </div>
                 <!-- <input class="form-control" type="password" name="password" placeholder="Contraseña"> -->
             <div class="password_login">
-                <input type="password" name="password" id="password" class="<%= locals.errors && errors.password ? 'is-danger' : '' %>" placeholder="contraseña">
+                <input type="password" name="password" id="password" class="form-control <%= locals.errors && errors.password ? 'is-danger' : '' %>" placeholder="contraseña">
                 <% if(locals.errors && errors.password) { %>
                     <p class="feedback is-danger"><%= errors.password.msg %> </p>
                 <% } %> 

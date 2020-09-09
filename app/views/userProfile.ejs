@@ -13,14 +13,19 @@
 
 
     <main>
-        
-        <div class="logout_bttn">
-            <% if (locals.user) { %>
-                <form action="/user/logout" method="POST">
-                    <button type="submit" class="btn btn-danger">logout</button>
-                </form>
-            <% } %>
-        </div>        
+        <div class="container_profile">
+            <h1><%= user.email %></h1>
+            <p>editar perfil</p>            
+            <div class="logout_bttn">
+                <% if (locals.user) { %>
+                    <form action="/user/logout" method="POST">
+                        <button type="submit" class="btn btn-danger">logout</button>
+                    </form>
+                <% } %>
+            </div>   
+        </div>
+
+     
     </main>
 
 
