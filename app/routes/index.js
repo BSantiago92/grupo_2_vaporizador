@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/indexController');
-const guestRoutes = require('../middlewares/guestRoute')
+const guestRoutes = require('../middlewares/guestRoute');
+const adminRoutes = require('../middlewares/adminRoute');
 
 
 router.get('/', controller.index);
+
+router.get('/admin', adminRoutes,controller.admin);
 
 
 module.exports = router;

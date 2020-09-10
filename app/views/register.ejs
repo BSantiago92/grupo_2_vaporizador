@@ -11,15 +11,19 @@
 
         <%- include('./partials/header') %>
 
+<<<<<<< HEAD
             <div class="form" method="POST" enctype="multipart/form-data">
                 <form>
+=======
+            <div class="form">
+                <form action="/user/register">
+>>>>>>> 48844570d14d75ddad5ed69c46e56cf33eef7505
                     <h1>REGISTRARSE</h1>
                     <input class="form-control" type="text" name="nombre" placeholder="Nombre">
                     <input class="form-control" type="text" name="apellido" placeholder="Apellido">
                     <input class="form-control" type="email" name="email" placeholder="Email">
                     <input class="form-control" type="password" name="password" placeholder="Contraseña">
                     <input class="btn btn-success" type="submit" value="Crear">
-
                 </form>
             </div>
             <%- include('./partials/footer') %>

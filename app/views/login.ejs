@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<<<<<<< HEAD
 <%- include('./partials/head') %>
 
     <body>
@@ -62,5 +63,65 @@
 
                     <%- include('./partials/footer') %>
     </body>
+=======
+    <%- include('./partials/head') %>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <%- include('./partials/header') %>
+
+    <% if (typeof errors != 'undefined') { %>
+        <p style="color:red">ERROR</p>
+        <ul>
+            <% for (let i = 0; i < errors.length; i++) { %>
+                <li>
+                    <%=errors[i].msg%>
+                </li>
+            <% } %>
+        </ul>
+    <% } %>
+    <div class="form">
+        <form action="/user/login"  method="POST">
+            <h1>INICIAR SESION</h1>
+            <div class="email_login">
+               <input type="text" name="email" id="email" class="form-control <%= locals.errors && errors.email ? 'is-danger' : '' %> " value="<%= locals.user && user.email %>" 
+               placeholder="<%= locals.user && user.email%> e-mail"> 
+               <% if(locals.errors && errors.email) { %>
+                <p class="feedback is-danger"><%= errors.email.msg %> </p>
+               <% } %>
+            </div>
+                <!-- <input class="form-control" type="password" name="password" placeholder="Contraseña"> -->
+            <div class="password_login">
+                <input type="password" name="password" id="password" class="form-control <%= locals.errors && errors.password ? 'is-danger' : '' %>" placeholder="contraseña">
+                <% if(locals.errors && errors.password) { %>
+                    <p class="feedback is-danger"><%= errors.password.msg %> </p>
+                <% } %> 
+            </div>
+            <div>
+                <% if (locals.user) { %>
+                    <input class="btn btn-success" type="submit" value="Cerrar sesión">
+                <% } else { %>
+                    <input class="btn btn-success" type="submit" value="Ingresar">
+                <% }; %>                 
+            </div>
+
+            <div>
+             <% if (locals.user) { %>
+                <p><a href="/user/edit/<%= user.id %>">Editar Usuario</a></p>
+            <% } else { %>
+                <p><a href="/user/register">Olvidaste tu contraseña?</a></p>
+                <p><a href="/user/register">REGISTRARSE</a></p>
+            <% }; %>  
+            </div>
+        </form>
+    </div>
+
+    <%- include('./partials/footer') %>
+</body>
+>>>>>>> 48844570d14d75ddad5ed69c46e56cf33eef7505
 
 </html>

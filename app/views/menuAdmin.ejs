@@ -11,11 +11,11 @@
 
         <%- include('./partials/header') %>
 
-        <main class="main_search">
-            <% productos.forEach(product => { %>
-                <%- include('./partials/Plist', { product }) %>
-            <% }) %>
-        </main>
+
+        <div class="list_products">
+            <a href="/product/list"><h3>LISTADO DE PRODUCTOS</h3></a>
+        </div>
+        
 
         <%- include('./partials/footer') %>
     </body>

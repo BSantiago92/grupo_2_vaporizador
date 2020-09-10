@@ -55,11 +55,19 @@ module.exports = {
             });
         }
     },
+<<<<<<< HEAD
     logout: (req, res) => {
 
+=======
+    profile: (req,res) => {
+        res.render('userProfile');
+    },
+    logout: (req,res) => {
+        
+>>>>>>> 48844570d14d75ddad5ed69c46e56cf33eef7505
         req.session.destroy();
 
-        res.render('/');
+        return res.redirect('/');
     },
     register: (req, res) => {
 
