@@ -16,7 +16,7 @@ app.use(express.static('public'));
 app.use(express.static('img'));
 
 // formulario
-app.use(session({secret: 'usuario a logearse'}));
+app.use(session({ secret: 'usuario a logearse' }));
 app.use(auth);
 
 app.use(express.urlencoded({ extended: false }));
