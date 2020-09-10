@@ -65,22 +65,32 @@ module.exports = {
     register: (req, res) => {
 
         res.render('register');
+
     },
     registerUser: (req, res) => {
+        /*let errors = validationResult(req);
 
-        let users = user;
+        if (errors.isEmpty()) {*/
+        let users = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.json'), 'utf-8'));
         let newUser = req.body;
+        console.log(users)
+        console.log(newUser)
 
-        //let newId = usersModel.create(user);
-
-        newUser.password = bcrypt.hashSync(req.body.password, 10);
+        // newUser.password = bcrypt.hashSync(req.body.password, 10);
 
         users.push(newUser);
-        let usersJson = JSON.stringify(users, null, " ");
-        console.log(newUser.password)
-        fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJson);
-        req.session.user = newUser;
+        console.log(users)
+            /*  let usersJson = JSON.stringify(users);
+
+             fs.writeFileSync(path.join(__dirname, '../data/user.json'), usersJson);*/
+            //req.session.user = newUser;
         res.redirect('/');
+        /*
+                }else{
+                    res.send("Error en el registro")
+                }*/
+
+
 
 
 
