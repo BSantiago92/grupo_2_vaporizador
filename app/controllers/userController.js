@@ -19,50 +19,70 @@ module.exports = {
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
-        
-       
 
-        
-        if(errors.isEmpty()) {
-                let user = usersModel.findByField('email', req.body.email);
-                
-                // si existe el usuario
 
-                if (user) {
 
-                    //si la contraseña es correcta
-                    if(bcrypt.compareSync(req.body.password, user.password)) {
-                        // lo guardo en la session
-                        // delete user.password;
 
-                        req.session.user = user;
-                        // logeo al usuario
+        if (errors.isEmpty()) {
+            let user = usersModel.findByField('email', req.body.email);
 
-                        res.redirect('/');
+            // si existe el usuario
 
-                    } else {
-                            res.render('login', {
-                            errors: { password: { msg: 'La contraseña es incorrecta'} },
-                            user: req.body
-                        });
-                    }
+            if (user) {
+
+                //si la contraseña es correcta
+                if (bcrypt.compareSync(req.body.password, user.password)) {
+                    // lo guardo en la session
+                    // delete user.password;
+
+                    req.session.user = user;
+                    // logeo al usuario
+
+                    res.redirect('/');
+
+                } else {
+                    res.render('login', {
+                        errors: { password: { msg: 'La contraseña es incorrecta' } },
+                        user: req.body
+                    });
                 }
+            }
 
-            } else {
-                res.render('login', {
-                    errors: errors.mapped(),
-                    user: req.body
-                });
-            }   
+        } else {
+            res.render('login', {
+                errors: errors.mapped(),
+                user: req.body
+            });
+        }
     },
-    logout: (req,res) => {
-        
+    logout: (req, res) => {
+
         req.session.destroy();
 
         res.render('/');
     },
     register: (req, res) => {
+
         res.render('register');
+    },
+    registerUser: (req, res) => {
+
+        let users = user;
+        let newUser = req.body;
+
+        //let newId = usersModel.create(user);
+
+        newUser.password = bcrypt.hashSync(req.body.password, 10);
+
+        users.push(newUser);
+        let usersJson = JSON.stringify(users, null, " ");
+        console.log(newUser.password)
+        fs.writeFileSync(path.join(__dirname, '../data/users.json'), usersJson);
+        req.session.user = newUser;
+        res.redirect('/');
+
+
+
     },
     store: (req, res) => {
         let errors = validationResult(req);
@@ -81,14 +101,14 @@ module.exports = {
             res.redirect('/index/index');
         } else {
             let users = usersModel.all();
-            res.render('register', { 
-                user, 
-                errors: errors.mapped(), 
-                user: req.body 
+            res.render('register', {
+                user,
+                errors: errors.mapped(),
+                user: req.body
             });
         }
-        
 
-      
+
+
     }
 }
