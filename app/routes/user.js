@@ -13,6 +13,7 @@ router.get('/profile', controller.profile);
 router.post('/logout', controller.logout);
 
 router.get('/register', controller.register);
+
 router.post('/register', controller.registerUser);
 
 

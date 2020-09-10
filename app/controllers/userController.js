@@ -31,7 +31,7 @@ module.exports = {
             if (user) {
 
                 //si la contraseña es correcta
-                if (bcrypt.compareSync(req.body.password, user.password)) {
+                if(bcrypt.compareSync(req.body.password, user.password)) {
                     // lo guardo en la session
                     // delete user.password;
 
@@ -42,10 +42,10 @@ module.exports = {
 
                 } else {
                     res.render('login', {
-                        errors: { password: { msg: 'La contraseña es incorrecta' } },
-                        user: req.body
-                    });
-                }
+                    errors: { password: { msg: 'email o contraseña incorrectos'} },
+                    user: req.body
+                });
+            }
             }
 
         } else {
@@ -53,7 +53,7 @@ module.exports = {
                 errors: errors.mapped(),
                 user: req.body
             });
-        }
+        }   
     },
     logout: (req, res) => {
 
@@ -68,31 +68,27 @@ module.exports = {
 
     },
     registerUser: (req, res) => {
-        /*let errors = validationResult(req);
+        let errors = validationResult(req);
 
-        if (errors.isEmpty()) {*/
+        if (errors.isEmpty()) {
         let users = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.json'), 'utf-8'));
         let newUser = req.body;
         console.log(users)
         console.log(newUser)
 
-        // newUser.password = bcrypt.hashSync(req.body.password, 10);
+        newUser.password = bcrypt.hashSync(req.body.password, 10);
 
         users.push(newUser);
         console.log(users)
-            /*  let usersJson = JSON.stringify(users);
+            let usersJson = JSON.stringify(users);
 
-             fs.writeFileSync(path.join(__dirname, '../data/user.json'), usersJson);*/
-            //req.session.user = newUser;
+             fs.writeFileSync(path.join(__dirname, '../data/user.json'), usersJson);
+            req.session.user = newUser;
         res.redirect('/');
-        /*
+        
                 }else{
                     res.send("Error en el registro")
-                }*/
-
-
-
-
+                }
 
     },
     store: (req, res) => {
@@ -118,8 +114,8 @@ module.exports = {
                 user: req.body
             });
         }
-
-
-
+    },
+    profile: (req, res) => {
+        res.render('userProfile');
     }
 }
