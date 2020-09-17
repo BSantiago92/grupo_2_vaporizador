@@ -9,8 +9,9 @@ const cartModel = jsonTable('cart');
 const productsModel = jsonTable('products');
 const categoriesModel = jsonTable('categories');
 const brandsModel = jsonTable('brands');
+const {Op} = require('sequelize');
 
-const { Product, Category, Brand } = require('../dataBase/models')
+const { Product, Category, Brand} = require('../dataBase/models');
 
 module.exports = {
     catalogue: (req,res) => {
@@ -178,15 +179,16 @@ module.exports = {
 
         // res.redirect('/product/list')
     },
-    search: (req, res) => {
-        let results = [];
+    search: (req, res) => {      
 
-        if (req.query.search) {
-            results = productos.filter(product => product.brand.toLowerCase().includes(req.query.search.toLowerCase()));
-        }
-
-        console.log(results);
-
-        res.render('search', { productos: results, search: req.query.search });
+        Product.findAll({where: {name: { [Op.substring]: req.query.search } } })
+            .then(products => {
+                console.log(products);
+                return res.render('search', {products});
+            })
+            .catch(error => {
+                console.log(error);
+                res.redirect('/');
+            })
     }
 }

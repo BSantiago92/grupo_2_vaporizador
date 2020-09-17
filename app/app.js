@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const auth = require('./middlewares/auth');
 
 //Configuración 
@@ -17,7 +18,9 @@ app.use(express.static('img'));
 
 // formulario
 app.use(session({ secret: 'usuario a logearse' }));
+app.use(cookieParser());
 app.use(auth);
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
@@ -30,6 +33,7 @@ app.use(methodOverride('_method'));
 const indexRoutes = require('./routes/index');
 const productsRoutes = require('./routes/products');
 const userRoutes = require('./routes/user');
+
 
 app.use('/', indexRoutes)
 app.use('/user', userRoutes)

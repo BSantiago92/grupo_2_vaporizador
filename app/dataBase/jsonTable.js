@@ -73,6 +73,14 @@ let productsModel = function(tableName) {
             let rows = this.readFile();
             return rows.find(row => row[field] == value);
         },
+        findAllByField(field, value) {
+            // Microdesafío
+            // 1. Leer el archivo
+            // 2. Buscar por campo y valor
+            // 3. retornar los resultados
+            let rows = this.readFile();
+            return rows.filter(row => row[field] == value);
+        },
         create(row) {
             // Microdesafío
             // 1. Leer el archivo
