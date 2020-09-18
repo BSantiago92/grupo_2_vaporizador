@@ -12,9 +12,20 @@
         <%- include('./partials/header') %>
 
 
-        <div class="list_products">
-            <a href="/product/list"><h3>LISTADO DE PRODUCTOS</h3></a>
-        </div>
+        <main class="admin_container">
+            <div class="list_products">
+                <ul>
+                    <li><a href="/product/list"><h3>LISTADO DE PRODUCTOS</h3></a></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="user_list_container">
+                <h3 class="title">Listado de Usuarios</h3>
+                <% usuario.forEach(user => { %>
+                    <%- include('./partials/Ulist', { user }) %>
+                <% }) %>
+            </div>
+        </main>
         
 
         <%- include('./partials/footer') %>

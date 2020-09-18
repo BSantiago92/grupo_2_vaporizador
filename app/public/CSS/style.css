@@ -158,6 +158,14 @@ h1 {
     width: 100%;
 }
 
+.mainText {
+    width: 100%;
+}
+
+.item_main_text {
+    font-size: 20px;
+}
+
 .las_dos_columnas {
     width: 80%;
     display: flex;
@@ -613,6 +621,43 @@ article img {
 
 /*Catalogo fin*/
 
+/* menu administrador */
+
+.admin_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list_paroducts {
+    width: 50%;
+}
+
+.user_list_container {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user_list_container .title {
+    width: 100%;
+    text-align: center;
+}
+
+.user_details {
+    width: 45%;
+    border: 1px solid #222;
+    margin: 5px;
+}
+
+.user_details .item_user {
+    font-size: 13px;
+}
+
+
+/* menu administrador fin */
+
 
 /*Footer*/
 footer {
@@ -670,6 +715,11 @@ footer p {
     .mainText {
         width: 100%;
         margin: 30px 0px 30px;
+
+    }
+
+    .item_main_text {
+        font-size: 35px;
     }
 
     .mainText .masVendidoSombreado {

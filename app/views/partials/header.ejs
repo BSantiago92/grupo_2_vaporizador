@@ -88,31 +88,36 @@
     </div>
 
     <!-- Barra de busqueda -->
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-    </form>  
-    
-    <!-- menu de usuario para mobile -->
-    <div class="usuarioMobile">
+    <div>
 
-      <div class="btn-group">
-        <button type="button" id="userMobile" class="btn" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-          <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
-            </svg>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-          <button class="dropdown-item" type="button"><a class="dropdown-item" <% if (locals.user) { %> href="/user/profile" <% } else { %> href="/user/login" <% } %>>INICIAR SESIÓN</a></button>
-          <button class="dropdown-item" type="button"><a class="dropdown-item" <% if (locals.user && user.category == "admin") { %> href="/product/list" <% } else { %> href="/product/favorite" <% } %>>FAVORITOS</a></button>
-          <button class="dropdown-item" type="button"><a class="dropdown-item" <% if (locals.user) { %> href="/product/carrito" <% } else { %> href="/user/login" <% } %>>CARRITO</a></button>
-          <button class="dropdown-item" type="button">    
-          <div class="menu_admin_mobile">
-              <% if (locals.user && user.category == "admin") { %>
-                <p><a class="dropdown-item" href="/admin">ADMINISTRAR WEB</a></p>
-              <% } %>
-          </div></button>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+      </form>  
+      
+      <!-- menu de usuario para mobile -->
+      <div class="usuarioMobile">
+
+        <div class="btn-group">
+          <button type="button" id="userMobile" class="btn" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-lines-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+            <button class="dropdown-item" type="button"><a class="dropdown-item" <% if (locals.user) { %> href="/user/profile" <% } else { %> href="/user/login" <% } %>>INICIAR SESIÓN</a></button>
+            <button class="dropdown-item" type="button"><a class="dropdown-item" <% if (locals.user && user.category == "admin") { %> href="/product/list" <% } else { %> href="/product/favorite" <% } %>>FAVORITOS</a></button>
+            <button class="dropdown-item" type="button"><a class="dropdown-item" <% if (locals.user) { %> href="/product/carrito" <% } else { %> href="/user/login" <% } %>>CARRITO</a></button>
+            <button class="dropdown-item" type="button">    
+            <div class="menu_admin_mobile">
+                <% if (locals.user && user.category == "admin") { %>
+                  <p><a class="dropdown-item" href="/admin">ADMINISTRAR WEB</a></p>
+                <% } %>
+            </div></button>
+          </div>
         </div>
-      </div>
-    </div>   
+      </div>        
+
+    </div>
+ 
   </div>
 </header>

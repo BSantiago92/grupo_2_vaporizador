@@ -2,12 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
-
 // imprime el codigo enciptado de mi password que lo tengo que guardar en la base de datos
 console.log(bcrypt.hashSync('12345678', 10));
 
 const { check, validationResult, body } = require('express-validator');
-const user = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.json'), 'utf-8'));
+const usuario = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.json'), 'utf-8'));
 
 const jsonTable = require('../dataBase/jsonTable');
 

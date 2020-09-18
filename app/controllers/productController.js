@@ -102,7 +102,6 @@ module.exports = {
     },
 
     cart: (req, res) => {
-
         res.render('productCart', { carrito });
     },
     destroy_cartP: (req, res) => {
@@ -183,7 +182,6 @@ module.exports = {
 
         Product.findAll({where: {name: { [Op.substring]: req.query.search } } })
             .then(products => {
-                console.log(products);
                 return res.render('search', {products});
             })
             .catch(error => {
