@@ -102,7 +102,16 @@ module.exports = {
     },
 
     cart: (req, res) => {
-        res.render('productCart', { carrito });
+
+        Product.findAll({where: {brand_id: 2 }})
+            .then(products => {
+                return res.render('productCart', { carrito, products });
+            })
+            .catch(error => {
+                console.log(error);
+                res.redirect('/');
+            })
+            
     },
     destroy_cartP: (req, res) => {
 

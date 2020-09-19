@@ -27,7 +27,7 @@
                         <div class="discount_code">
                             <h5>¿TENÉS UN CODIGO DE DESCUENTO?</h5>
                             <div class="code">
-                                <input class="add_code_var" type="text" name="discount_code" value="INSERTAR CODIGO">
+                                <input class="add_code_var" type="text" name="discount_code" placeholder="INSERTAR CODIGO">
                             <input class="bttn_add_code" type="submit" value="AÑADIR">                                
                             </div>
 
@@ -47,6 +47,12 @@
                         <input class="PCproductDetailButton" type="submit" value="COMPRAR">
                     </article>
                 </section>
+                <div class="related_products">
+                    <h4 class="title">Productos relacionados</h4>
+                    <% products.forEach(product => { %>
+                        <%- include('./partials/cartRelated', { product }) %>
+                    <% }) %>
+                </div>
             </main>
 
 
