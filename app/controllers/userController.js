@@ -11,6 +11,7 @@ const usuario = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.j
 const jsonTable = require('../dataBase/jsonTable');
 
 const usersModel = jsonTable('user');
+const { User, User_category } = require('../dataBase/models');
 const usersTokensModel = jsonTable('usersTokens');
 
 
@@ -20,40 +21,26 @@ module.exports = {
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
-
-
-
-
         if (errors.isEmpty()) {
             let user = usersModel.findByField('email', req.body.email);
-
             // si existe el usuario
-
             if (user) {
-
                 //si la contraseña es correcta
                 if(bcrypt.compareSync(req.body.password, user.password)) {
                     // lo guardo en la session
                     delete user.password;
-
                     req.session.user = user;
                     // logeo al usuario
-
                     //si pidió que lo recordemos 
                     if (req.body.remember) {
-
                         // Generamos un token seguro, eso para que no pueda entrar cualquiera
                         // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
                         const token = crypto.randomBytes(64).toString('base64');
-
                         usersTokensModel.create({userId: user.id, token });
-
                         // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
                         res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
                     } 
-
                     return res.redirect('/');
-
                 } else {
                     res.render('login', {
                     errors: { password: { msg: 'email o contraseña incorrectos'} },
@@ -61,13 +48,21 @@ module.exports = {
                 });
             }
             }
-
         } else {
             res.render('login', {
                 errors: errors.mapped(),
                 user: req.body
             });
         }   
+
+        // User.findOne({
+
+        // })
+
+
+
+
+
     },
     logout: (req, res) => {
         // Borro todas los tokens del usuario (lo deslogueo de todos los dispositivos)

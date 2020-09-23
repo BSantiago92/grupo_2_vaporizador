@@ -6,7 +6,7 @@ const productos = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/prod
 const carrito = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/cart.json'), 'utf-8'));
 
 const cartModel = jsonTable('cart');
-const productsModel = jsonTable('products');
+// const productsModel = jsonTable('products');
 const categoriesModel = jsonTable('categories');
 const brandsModel = jsonTable('brands');
 const {Op} = require('sequelize');
@@ -15,8 +15,6 @@ const { Product, Category, Brand} = require('../dataBase/models');
 
 module.exports = {
     catalogue: (req,res) => {
-        // res.render('catalogo', { productos });
-
         Product.findAll()
             .then(products => {
                 return res.render('catalogo', { products });
@@ -27,17 +25,6 @@ module.exports = {
             })
     },
     create: (req,res) => {
-        //  res.render('create');
-
-        // Brand.findAll()
-        // .then(brands => {
-        //     return res.render('create', { brands });
-        // })
-        // .catch(error => {
-        //     console.log(error);
-        //     res.redirect('/');
-        // })
-
         Category.findAll()
         .then(categories => {
             return res.render('create', { categories });
