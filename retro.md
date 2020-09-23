@@ -1,6 +1,6 @@
-# Retrospectiva del Sprint N°3
+# Retrospectiva del Sprint N°5
 
-- A continuación aplicamos la metodología denominada "estrella de mar" para analizar nuestro desempeño durante el sprint N°3
+- A continuación aplicamos la metodología denominada "estrella de mar" para analizar nuestro desempeño durante el sprint N°5
 
 ### Comencemos a hacer:
 
@@ -17,6 +17,9 @@
 - Sigamos acordando los pasos a seguir.
 - Mantengamos la buena comunicación que tuvimos.
 - Sigamos repasando las clases en conjunto.
+- Repasar e interpretar el código escrito por el otro.
+- Mejorando la estética del sitio
+- Ponerse en el lugar del usuario para detectar los puntos a mejorar del sitio.
 
 ### Hagamos menos:
 
