@@ -40,7 +40,7 @@ module.exports = {
                                 // Generamos un token seguro, eso para que no pueda entrar cualquiera
                                 // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
                                 const token = crypto.randomBytes(64).toString('base64');
-                                Token.create({userId: user.id, token });
+                                Token.create({user_id: user.id, token });
                                 // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
                                 res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 2} )
                             } 
