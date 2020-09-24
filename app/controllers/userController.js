@@ -3,7 +3,7 @@ const path = require('path');
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 // imprime el codigo enciptado de mi password que lo tengo que guardar en la base de datos
-console.log(bcrypt.hashSync('12345678', 10));
+console.log(bcrypt.hashSync('123456789', 10));
 
 const { check, validationResult, body } = require('express-validator');
 const usuario = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.json'), 'utf-8'));
@@ -11,7 +11,7 @@ const usuario = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.j
 const jsonTable = require('../dataBase/jsonTable');
 
 const usersModel = jsonTable('user');
-const { User, User_category } = require('../dataBase/models');
+const { User, User_category, Token } = require('../dataBase/models');
 const usersTokensModel = jsonTable('usersTokens');
 
 
@@ -21,9 +21,12 @@ module.exports = {
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
-        if (errors.isEmpty()) {
-            let user = usersModel.findByField('email', req.body.email);
+        if (errors.isEmpty()) {        
+            User.findOne({
+                where: {email: req.body.email}
+            })
             // si existe el usuario
+<<<<<<< HEAD
             if (user) {
                 //si la contraseña es correcta
                 if (bcrypt.compareSync(req.body.password, user.password)) {
@@ -63,6 +66,43 @@ module.exports = {
 
 
 
+=======
+            .then(user => {
+                    if (user) {
+                        //si la contraseña es correcta
+
+                        if(bcrypt.compareSync(req.body.password, user.password)) {
+                            // lo guardo en la session
+                            delete user.password;
+                            req.session.user = user;
+                            // logeo al usuario
+                            //si pidió que lo recordemos 
+                            if (req.body.remember) {
+                                // Generamos un token seguro, eso para que no pueda entrar cualquiera
+                                // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
+                                const token = crypto.randomBytes(64).toString('base64');
+                                Token.create({user_id: user.id, token });
+                                // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
+                                res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 2} )
+                            } 
+                            return res.redirect('/');
+                        } else {
+                            res.render('login', {
+                            errors: { password: { msg: 'email o contraseña incorrectos'} },
+                            user: req.body
+                            });
+                        }   
+                    }    
+            })
+            .catch(() => {
+                // Creo un error y se lo envío a la vista
+                res.render('login', {
+                    errors: errors.mapped(),
+                    user: req.body
+                });
+            })
+        }
+>>>>>>> d672130df60d934ec628f8e1ce7ea6adb64dae73
     },
     logout: (req, res) => {
         // Borro todas los tokens del usuario (lo deslogueo de todos los dispositivos)
@@ -160,5 +200,11 @@ module.exports = {
     },
     profile: (req, res) => {
         res.render('userProfile');
+    },
+    delete: (req,res) => {
+        User.destroy({where: { id: req.params.id}})
+        .then(deleteUser => {
+            return res.redirect('menuAdmin');
+        })
     }
 }

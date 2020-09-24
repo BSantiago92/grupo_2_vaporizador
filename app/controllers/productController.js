@@ -120,13 +120,7 @@ module.exports = {
         })
     },
     edit: async (req, res) => {
-        // let product = productsModel.find(req.params.id);
-        // let categories = categoriesModel.all;
-        // res.render('edit', { product, categories });
-
         const categories = await Category.findAll();
-
-        
 
         Product.findByPk(req.params.id,{ include: 'Category'})
         .then(product => {
@@ -169,7 +163,7 @@ module.exports = {
 
         Product.destroy({where: { id: req.params.id}})
         .then(deleteProduct => {
-            return res.redirect('/product/list/' + req.params.id);
+            return res.redirect('/product/list');
         })
 
         // res.redirect('/product/list')

@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'User_category',
+    timestamps: false
   });
   return User_category;
 };
