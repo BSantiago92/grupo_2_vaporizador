@@ -120,13 +120,7 @@ module.exports = {
         })
     },
     edit: async (req, res) => {
-        // let product = productsModel.find(req.params.id);
-        // let categories = categoriesModel.all;
-        // res.render('edit', { product, categories });
-
         const categories = await Category.findAll();
-
-        
 
         Product.findByPk(req.params.id,{ include: 'Category'})
         .then(product => {

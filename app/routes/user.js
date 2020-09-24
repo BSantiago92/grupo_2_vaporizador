@@ -2,7 +2,17 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/userController');
 const validate = require('../validators/users');
+
+const path = require('path');
+const multer = require('multer');
 const { check, validationResult, body } = require('express-validator');
+
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, '../img'),
+    filename: (req,file, callback) => {
+        callback(null, '/images/user-' + Date.now() + path.extname(file.originalname))
+    }
+});
 
 router.get('/login', controller.login);
 
