@@ -61,60 +61,6 @@ module.exports = {
                 });
             })
         }
-
-        // } else {
-        //     res.render('login', {
-        //         errors: errors.mapped(),
-        //         user: req.body
-        //     });
-        // }   
-
-        // Obtengo el usuario por medio de su email ó nombre de usuario
-        // User.findOne({
-        //     where: { email: req.body.email }
-        // })
-        //     .then(user => {
-        //         let errors;
-
-        //         // Si el usuario ingresa la contraseña correcta
-        //         if(bcrypt.compareSync(req.body.password, user.password)){   
-
-        //             // Se guarda al usuario en session
-        //             req.session.user = user;
-
-        //             // Si el usuario marcó "recordarme" le envíamos una cookie
-        //             if(req.body.remember){
-                        
-        //                 // Se genera un token seguro y aleatorio para la cookie
-        //                 const generatedToken = crypto.randomBytes(48).toString("base64");
-                        
-        // //                 // Se almacena el token en la base de datos con el ID del usuario para vincularlo al mimso a futuro
-        //                 Token.create({ user_id: user.id, token: generatedToken});
-                        
-        // //                 // Almacena el Token en la cookie por un mes
-        //                 res.cookie("uTwS", generatedToken, {maxAge : 1000 * 60 * 60 * 2});
-        //             }
-    
-        
-        //             res.redirect("/");
-        
-        //         } else {
-        //             // Creo un error y se lo envío a la vista
-        //             res.render("login", {
-        //                 errors: { password: { msg: 'email o contraseña incorrectos'} },
-        //                 user: req.body
-        //             });
-        //         }
-
-        //     })
-        //     .catch(() => {
-        //         // Creo un error y se lo envío a la vista
-        //         res.render("login", {
-        //             errors: errors.mapped(),
-        //             user: req.body
-        //         });
-        //     })
-
     },
     logout: (req, res) => {
         // Borro todas los tokens del usuario (lo deslogueo de todos los dispositivos)
@@ -194,5 +140,11 @@ module.exports = {
     },
     profile: (req, res) => {
         res.render('userProfile');
+    },
+    delete: (req,res) => {
+        User.destroy({where: { id: req.params.id}})
+        .then(deleteUser => {
+            return res.redirect('menuAdmin');
+        })
     }
 }

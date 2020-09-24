@@ -163,7 +163,7 @@ module.exports = {
 
         Product.destroy({where: { id: req.params.id}})
         .then(deleteProduct => {
-            return res.redirect('/product/list/' + req.params.id);
+            return res.redirect('/product/list');
         })
 
         // res.redirect('/product/list')

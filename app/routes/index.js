@@ -10,4 +10,5 @@ router.get('/', controller.index);
 router.get('/admin', adminRoutes,controller.admin);
 
 
+
 module.exports = router;
