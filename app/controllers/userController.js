@@ -26,7 +26,7 @@ module.exports = {
             // si existe el usuario
             if (user) {
                 //si la contraseña es correcta
-                if(bcrypt.compareSync(req.body.password, user.password)) {
+                if (bcrypt.compareSync(req.body.password, user.password)) {
                     // lo guardo en la session
                     delete user.password;
                     req.session.user = user;
@@ -36,24 +36,24 @@ module.exports = {
                         // Generamos un token seguro, eso para que no pueda entrar cualquiera
                         // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
                         const token = crypto.randomBytes(64).toString('base64');
-                        usersTokensModel.create({userId: user.id, token });
+                        usersTokensModel.create({ userId: user.id, token });
                         // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
-                        res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3} )
-                    } 
+                        res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3 })
+                    }
                     return res.redirect('/');
                 } else {
                     res.render('login', {
-                    errors: { password: { msg: 'email o contraseña incorrectos'} },
-                    user: req.body
-                });
-            }
+                        errors: { password: { msg: 'email o contraseña incorrectos' } },
+                        user: req.body
+                    });
+                }
             }
         } else {
             res.render('login', {
                 errors: errors.mapped(),
                 user: req.body
             });
-        }   
+        }
 
         // User.findOne({
 
@@ -112,20 +112,22 @@ module.exports = {
         }*/
 
         if (errors.isEmpty()) {
-            let user = req.body;
-            if(req.body.password != ''){
-                if(req.body.first_name != ''){
-                    user.password = bcrypt.hashSync(req.body.password, 10);
-                    let newId = usersModel.create(user);
 
-                     res.redirect('/');
-                }else{
+            let user = req.body;
+            //JSON.parse(user)
+            if (req.body.password != '') {
+                if (req.body.first_name != '') {
+                    user.password = bcrypt.hashSync(req.body.password, 10);
+                    User.create(user);
+
+                    res.redirect('/');
+                } else {
                     console.log(errors)
                 }
-            }else{
+            } else {
                 console.log(errors)
             }
-        }else{
+        } else {
             console.log(errors)
         }
 
