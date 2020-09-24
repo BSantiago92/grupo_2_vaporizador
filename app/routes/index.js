@@ -9,6 +9,8 @@ router.get('/', controller.index);
 
 router.get('/admin', adminRoutes,controller.admin);
 
+router.delete('/admin/:id', controller.delete);
+
 
 
 module.exports = router;

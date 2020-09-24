@@ -65,9 +65,10 @@ module.exports = {
     logout: (req, res) => {
         // Borro todas los tokens del usuario (lo deslogueo de todos los dispositivos)
         let userTokens = usersTokensModel.findAllByField('userId', req.session.user.id);
-        userTokens.forEach(userToken => {
-            usersTokensModel.delete(userToken.id);
-        });
+        Token.destroy({where: { user_id: req.session.user.id}})
+            .then(() => {
+                return res.redirect('/');
+            })
 
         // Borro solo el token del dispositivo desde donde se está logeando
         // let userToken = usersTokensModel.findByField('token', req.cookies.userToken);
@@ -159,11 +160,5 @@ module.exports = {
     },
     profile: (req, res) => {
         res.render('userProfile');
-    },
-    delete: (req,res) => {
-        User.destroy({where: { id: req.params.id}})
-        .then(deleteUser => {
-            return res.redirect('menuAdmin');
-        })
     }
 }

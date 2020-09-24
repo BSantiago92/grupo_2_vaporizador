@@ -20,5 +20,11 @@ module.exports = {
             console.log(error);
             res.redirect('/');
         })
+    },
+    delete: (req,res) => {
+        User.destroy({where: { id: req.params.id}})
+        .then(deleteUser => {
+            return res.redirect('/admin');
+        })
     }
 }
