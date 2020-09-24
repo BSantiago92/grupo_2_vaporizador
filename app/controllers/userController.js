@@ -90,7 +90,7 @@ module.exports = {
     registerUser: (req, res) => {
         let errors = validationResult(req);
         //console.log(req.body)
-        if (errors.isEmpty()) {
+        /*if (errors.isEmpty()) {
             let users = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.json'), 'utf-8'));
             let newUser = JSON.stringify(req.body);
             newUser = JSON.parse(newUser)
@@ -109,9 +109,25 @@ module.exports = {
 
         } else {
             res.send("Error en el registro")
+        }*/
+
+        if (errors.isEmpty()) {
+            let user = req.body;
+            if(req.body.password != ''){
+                if(req.body.first_name != ''){
+                    user.password = bcrypt.hashSync(req.body.password, 10);
+                    let newId = usersModel.create(user);
+
+                     res.redirect('/');
+                }else{
+                    console.log(errors)
+                }
+            }else{
+                console.log(errors)
+            }
+        }else{
+            console.log(errors)
         }
-
-
 
 
 
