@@ -35,3 +35,13 @@ tuvimos en cuenta que fueran sitios nacionales preferentemente, facilmente naveg
 ## Enlace al Tablero de Trabajo
 
 https://trello.com/b/RUZQ73v2/vapear
+
+## Pasos para instalar el proyecto correctamente 
+
+- clonar el repositorio de enlace https://github.com/BSantiago92/grupo_2_vaporizador.git
+
+- instalar la dependencias con el comando: npm install
+
+- el archivo de la base de datos: vapear_db(2).sql
+
+- [basedatos](./vapear_db(2).sql)
