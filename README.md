@@ -44,4 +44,4 @@ https://trello.com/b/RUZQ73v2/vapear
 
 - el archivo de la base de datos: vapear_db(2).sql
 
-- [basedatos](/vapear_db(2).sql)
+- [basedatos](/vapear_db.sql)
