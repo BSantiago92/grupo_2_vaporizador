@@ -2,7 +2,7 @@
     <h3 class="item_user">Nombre: <%- user.first_name %></h3>
     <h3 class="item_user">Apellido: <%- user.last_name %></h3>
     <h3 class="item_user">E-mail: <%- user.email %></h3>
-    <h3 class="item_user">Categoria: <%- user.category %></h3>
+    <h3 class="item_user">Categoria: <%- user.User_category.category %></h3>
     <form action="/admin/<%- user.id %>?_method=DELETE" method="POST">
         <button type="submit" class="bttn_delete_user">Eliminar Usuario</button>
     </form>

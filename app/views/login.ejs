@@ -10,7 +10,7 @@
 
 
         <%- include('./partials/header') %>
-
+<!--
             <% if (typeof errors != 'undefined') { %>
                 <p style="color:red">ERROR</p>
                 <ul>
@@ -20,49 +20,54 @@
                         </li>
                         <% } %>
                 </ul>
-                <% } %>
-                    <div class="form">
-                        <form action="/user/login" method="POST">
-                            <h1>INICIAR SESION</h1>
-                            <div class="email_login">
-                                <input type="text" name="email" id="email" class="form-control <%= locals.errors && errors.email ? 'is-danger' : '' %> " value="<%= locals.user && user.email %>" placeholder="<%= locals.user && user.email%> e-mail">
-                                <% if(locals.errors && errors.email) { %>
-                                    <p class="feedback is-danger">
-                                        <%= errors.email.msg %>
-                                    </p>
-                                    <% } %>
-                            </div>
-                            <!-- <input class="form-control" type="password" name="password" placeholder="Contraseña"> -->
-                            <div class="password_login">
-                                <input type="password" name="password" id="password" class="form-control <%= locals.errors && errors.password ? 'is-danger' : '' %>" placeholder="contraseña">
-                                <% if(locals.errors && errors.password) { %>
-                                    <p class="feedback is-danger">
-                                        <%= errors.password.msg %>
-                                    </p>
-                                    <% } %>
-                            </div>
-                            <div class="field">
-                                <label for="remember">Recordar mis datos</label>
-                                <div class="control">
-                                    <input type="checkbox" name="remember" id="remember">
-                                </div>
-                            </div>
-                            <div>
-                                <input class="btn btn-success" type="submit" value="Ingresar">
-                            </div>
-
-                            <div>
-                                <% if (locals.user) { %>
-                                    <p><a href="/user/edit/<%= user.id %>">Editar Usuario</a></p>
-                                    <% } else { %>
-                                        <p><a href="/user/register">Olvidaste tu contraseña?</a></p>
-                                        <p><a href="/user/register">REGISTRARSE</a></p>
-                                        <% }; %>
-                            </div>
-                        </form>
+                <% } %> -->
+            <div class="form">
+                <form action="/user/login" method="POST">
+                    <h1>INICIAR SESION</h1>
+                    <!-- <div class="email_login"> -->
+                        <input type="email" name="email" id="email" class="form-control <%= locals.errors && errors.both || locals.errors && errors.email ? 'is-danger' : '' %> " value="<%= locals.user && user.email %>" placeholder="E-mail">
+                        <!-- <% if(locals.errors && errors.email) { %> -->
+                            <p id="email-error-alert" class="feedback is-dangers">
+                                <%= locals.errors && errors.both ? errors.both.msg : '' %>
+                                <%= locals.errors && errors.userEmail ? errors.userEmail.msg : '' %>
+                            </p>
+                            <!-- <% } %> -->
+                    <!-- </div> -->
+                    <!-- <input class="form-control" type="password" name="password" placeholder="Contraseña"> -->
+                    <!-- <div class="password_login"> -->
+                        <input type="password" name="password" id="password" class="form-control <%= locals.errors && errors.both || locals.errors && errors.password ? 'is-danger' : '' %>" placeholder="contraseña">
+                        <!-- <% if(locals.errors && errors.password) { %> -->
+                            <p id="password-error-alert" class="feedback is-dangers">
+                                <%= locals.errors && errors.both ? errors.both.msg : '' %>
+                                <%= locals.errors && errors.password ? errors.password.msg : '' %>
+                                <%= locals.errors && errors.processLogin ? errors.processLogin.msg : '' %>
+                            </p>
+                            <!-- <% } %> -->
+                    <!-- </div> -->
+                    <div class="field">
+                        <label for="remember">Recordar mis datos</label>
+                        <div class="control">
+                            <input type="checkbox" name="remember" id="remember">
+                        </div>
+                    </div>
+                    <div>
+                        <input class="btn btn-success" type="submit" value="Ingresar">
                     </div>
 
-                    <%- include('./partials/footer') %>
+                    <div>
+                        <% if (locals.user) { %>
+                            <p><a href="/user/edit/<%= user.id %>">Editar Usuario</a></p>
+                            <% } else { %>
+                                <p><a href="/user/register">Olvidaste tu contraseña?</a></p>
+                                <p><a href="/user/register">REGISTRARSE</a></p>
+                                <% }; %>
+                    </div>
+                </form>
+            </div>
+
+            <%- include('./partials/footer') %>
+
+            <script src="/js/processLogin.js"></script>
     </body>
 
 </html>

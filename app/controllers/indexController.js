@@ -12,7 +12,7 @@ module.exports = {
         res.render('index/index')
     },
     admin: (req, res) => {
-        User.findAll()
+        User.findAll({include: 'User_category'})
         .then(users => {
             return res.render('menuAdmin', { users });
         })
