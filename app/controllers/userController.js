@@ -26,7 +26,7 @@ module.exports = {
                 where: {email: req.body.email}
             })
             // si existe el usuario
-<<<<<<< HEAD
+
             if (user) {
                 //si la contraseña es correcta
                 if (bcrypt.compareSync(req.body.password, user.password)) {
@@ -61,13 +61,7 @@ module.exports = {
         // User.findOne({
 
         // })
-
-
-
-
-
-=======
-            .then(user => {
+        .then(user => {
                     if (user) {
                         //si la contraseña es correcta
 
@@ -102,7 +96,7 @@ module.exports = {
                 });
             })
         }
->>>>>>> d672130df60d934ec628f8e1ce7ea6adb64dae73
+
     },
     logout: (req, res) => {
         // Borro todas los tokens del usuario (lo deslogueo de todos los dispositivos)
@@ -158,6 +152,7 @@ module.exports = {
             if (req.body.password != '') {
                 if (req.body.first_name != '') {
                     user.password = bcrypt.hashSync(req.body.password, 10);
+                    user.category_id = 2;
                     User.create(user);
 
                     res.redirect('/');
