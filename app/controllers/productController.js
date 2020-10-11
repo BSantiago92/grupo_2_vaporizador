@@ -71,11 +71,6 @@ module.exports = {
     }
     },
     detail: (req, res) => {
-
-        // const product = productos.find(product => product.id == req.params.id);
-        // res.render('productDetail', { product } );
-
-
         Product.findByPk(req.params.id,{ include: 'Category'})
         .then(product => {
             return res.render('productDetail', { product });
@@ -84,12 +79,9 @@ module.exports = {
             console.log(error);
             res.redirect('/');
         })
-
-
     },
 
     cart: (req, res) => {
-
         Product.findAll({where: {brand_id: 2 }})
             .then(products => {
                 return res.render('productCart', { carrito, products });
@@ -98,7 +90,6 @@ module.exports = {
                 console.log(error);
                 res.redirect('/');
             })
-            
     },
     destroy_cartP: (req, res) => {
 

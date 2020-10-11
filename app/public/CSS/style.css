@@ -545,6 +545,7 @@ article img {
 
 
 /*Formularios login-register*/
+
 .form {
     /* height: 50vh; */
     width: 100%;
@@ -579,13 +580,61 @@ article img {
 
 /* user profile */
 
+
+
 .container_profile{ 
-    margin: 80px 0px 80px;
-    width: 50% auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
 }
+
+aside {
+    width: 324px;
+}
+
+.profile_info_container {
+    margin-top: 50px;
+    width: 100%;
+    display: inline-block;
+
+}
+
+.profile_info {
+    background: #F3EEED;
+    padding: 16px;
+}
+
+.profile_mail {
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+.bttn_logout {
+    border: red solid 1.5px;
+    width: 100%;
+    background-color: transparent;
+    color: red;
+}
+
+.my_acount ul {
+    list-style: none;
+}
+
+.my_acount li {
+    text-decoration: none;
+    width: 100%;
+}
+
+.my_acount li a {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(20, 19, 19);
+}
+
+.profile_acount {
+    font-size: 1.6rem;
+    line-height: 1.25;
+}
+
 
 /* user profile fin */
 
@@ -707,6 +756,13 @@ article img {
 
 .user_details .item_user {
     font-size: 13px;
+}
+
+.bttn_delete_user {
+    width: 100%;
+    border: red solid 1.5px;
+    color: red;
+    background-color: transparent;
 }
 
 

@@ -1,4 +1,6 @@
-const { check } = require('express-validator');
+const { user, category } = require("../database/models");
+const bcrypt = require("bcryptjs");
+const { check, body } = require('express-validator');
 
 // Creamos una propiedad por cada formulario que queramos validar
 module.exports = {
@@ -22,6 +24,7 @@ module.exports = {
             .notEmpty().withMessage('Nombre invalido').bail(),       
 
         check('last_name')
-            .notEmpty().withMessage('Apellido inválido').bail(),    
+            .notEmpty().withMessage('Apellido inválido').bail(),   
+
     ]
 }

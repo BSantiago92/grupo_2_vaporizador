@@ -62,9 +62,10 @@ module.exports = {
 
         // })
         .then(user => {
+            .then(user => {
+
                     if (user) {
                         //si la contraseña es correcta
-
                         if(bcrypt.compareSync(req.body.password, user.password)) {
                             // lo guardo en la session
                             delete user.password;
@@ -73,7 +74,6 @@ module.exports = {
                             //si pidió que lo recordemos 
                             if (req.body.remember) {
                                 // Generamos un token seguro, eso para que no pueda entrar cualquiera
-                                // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
                                 const token = crypto.randomBytes(64).toString('base64');
                                 Token.create({user_id: user.id, token });
                                 // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
@@ -82,8 +82,8 @@ module.exports = {
                             return res.redirect('/');
                         } else {
                             res.render('login', {
-                            errors: { password: { msg: 'email o contraseña incorrectos'} },
-                            user: req.body
+                            userEmail: req.body.email,                               
+                            errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
                             });
                         }   
                     }    
@@ -91,19 +91,47 @@ module.exports = {
             .catch(() => {
                 // Creo un error y se lo envío a la vista
                 res.render('login', {
-                    errors: errors.mapped(),
-                    user: req.body
+                    userEmail: req.body.email,                               
+                    errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
                 });
             })
-        }
-
+        } else {
+            function errorMsg(error) {
+                if (error.email && error.password) {
+                    return {
+                        both : {
+                            msg : "Campo obligatorio"
+                        }
+                    }
+                } else if(error.email) {
+                    return {
+                        userEmail : {
+                            msg : error.email.msg
+                        }
+                    }
+                } else {
+                    return {
+                        password : {
+                            msg : error.password.msg 
+                        }
+                    }
+                }
+            }
+            console.log(errorMsg(errors.mapped()))
+            // Se envía el error a la vista
+            res.render('login', {
+                userEmail: req.body.email,
+                errors : errorMsg(errors.mapped())
+            });
+        });
     },
     logout: (req, res) => {
         // Borro todas los tokens del usuario (lo deslogueo de todos los dispositivos)
         let userTokens = usersTokensModel.findAllByField('userId', req.session.user.id);
-        userTokens.forEach(userToken => {
-            usersTokensModel.delete(userToken.id);
-        });
+        Token.destroy({where: { user_id: req.session.user.id}})
+            .then(() => {
+                return res.redirect('/');
+            })
 
         // Borro solo el token del dispositivo desde donde se está logeando
         // let userToken = usersTokensModel.findByField('token', req.cookies.userToken);
@@ -196,10 +224,7 @@ module.exports = {
     profile: (req, res) => {
         res.render('userProfile');
     },
-    delete: (req,res) => {
-        User.destroy({where: { id: req.params.id}})
-        .then(deleteUser => {
-            return res.redirect('menuAdmin');
-        })
+    addToCart: (req,res) => {
+        
     }
 }

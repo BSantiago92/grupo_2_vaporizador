@@ -1,6 +1,6 @@
 <header>
     <div class="menu_admin">
-        <% if (locals.user && user.category_id == "1") { %>
+        <% if (locals.user && user.user_category_id == "1") { %>
           <p class=" "><a href="/admin">ADMINISTRAR PRODUCTOS</a></p>
         <% } %>
     </div>  
@@ -104,7 +104,9 @@
               </svg>
           </button>
           <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-            <button class="dropdown-item" type="button"><a class="dropdown-item" <% if (locals.user) { %> href="/user/profile" <% } else { %> href="/user/login" <% } %>>INICIAR SESIÓN</a></button>
+            <button class="dropdown-item" type="button">
+              <% if (locals.user) { %> <a class="dropdown-item" href="/user/profile">MI CUENTA</a> <% } else { %> <a class="dropdown-item" href="/user/login">INICIAR SESIÓN</a> <% } %>
+            </button>
             <button class="dropdown-item" type="button"><a class="dropdown-item" <% if (locals.user && user.category == "admin") { %> href="/product/list" <% } else { %> href="/product/favorite" <% } %>>FAVORITOS</a></button>
             <button class="dropdown-item" type="button"><a class="dropdown-item" <% if (locals.user) { %> href="/product/carrito" <% } else { %> href="/user/login" <% } %>>CARRITO</a></button>
             <button class="dropdown-item" type="button">    

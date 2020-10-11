@@ -12,13 +12,19 @@ module.exports = {
         res.render('index/index')
     },
     admin: (req, res) => {
-        User.findAll()
+        User.findAll({include: 'User_category'})
         .then(users => {
             return res.render('menuAdmin', { users });
         })
         .catch(error => {
             console.log(error);
             res.redirect('/');
+        })
+    },
+    delete: (req,res) => {
+        User.destroy({where: { id: req.params.id}})
+        .then(deleteUser => {
+            return res.redirect('/admin');
         })
     }
 }

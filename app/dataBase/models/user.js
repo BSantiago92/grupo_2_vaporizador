@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.hasMany(models.Token);
       this.belongsTo(models.User_category);
+      this.hasMany(models.Cart);
     }
   };
   User.init({
@@ -21,10 +22,11 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     image: DataTypes.STRING,
-    category_id: DataTypes.INTEGER
+    user_category_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',
+    tableName: 'users',
     timestamps: false
   });
   return User;
