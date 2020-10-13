@@ -20,110 +20,73 @@ module.exports = {
         res.render('login')
     },
     processLogin: (req, res) => {
-        let errors = validationResult(req);
+            let errors = validationResult(req);
         if (errors.isEmpty()) {        
             User.findOne({
                 where: {email: req.body.email}
             })
             // si existe el usuario
-
-            if (user) {
-                //si la contraseña es correcta
-                if (bcrypt.compareSync(req.body.password, user.password)) {
-                    // lo guardo en la session
-                    delete user.password;
-                    req.session.user = user;
-                    // logeo al usuario
-                    //si pidió que lo recordemos 
-                    if (req.body.remember) {
-                        // Generamos un token seguro, eso para que no pueda entrar cualquiera
-                        // https://stackoverflow.com/questions/8855687/secure-random-token-in-node-js
-                        const token = crypto.randomBytes(64).toString('base64');
-                        usersTokensModel.create({ userId: user.id, token });
-                        // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
-                        res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 24 * 30 * 3 })
-                    }
-                    return res.redirect('/');
-                } else {
-                    res.render('login', {
-                        errors: { password: { msg: 'email o contraseña incorrectos' } },
-                        user: req.body
-                    });
-                }
-            }
-        } else {
-            res.render('login', {
-                errors: errors.mapped(),
-                user: req.body
-            });
-        }
-
-        // User.findOne({
-
-        // })
-        .then(user => {
             .then(user => {
-
                     if (user) {
                         //si la contraseña es correcta
-                        if(bcrypt.compareSync(req.body.password, user.password)) {
-                            // lo guardo en la session
-                            delete user.password;
-                            req.session.user = user;
-                            // logeo al usuario
-                            //si pidió que lo recordemos 
-                            if (req.body.remember) {
-                                // Generamos un token seguro, eso para que no pueda entrar cualquiera
-                                const token = crypto.randomBytes(64).toString('base64');
-                                Token.create({user_id: user.id, token });
-                                // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
-                                res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 2} )
-                            } 
-                            return res.redirect('/');
-                        } else {
-                            res.render('login', {
-                            userEmail: req.body.email,                               
-                            errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
-                            });
-                        }   
-                    }    
-            })
-            .catch(() => {
-                // Creo un error y se lo envío a la vista
-                res.render('login', {
-                    userEmail: req.body.email,                               
-                    errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
-                });
-            })
+        if(bcrypt.compareSync(req.body.password, user.password)) {
+            // lo guardo en la session
+            delete user.password;
+            req.session.user = user;
+            // logeo al usuario
+            //si pidió que lo recordemos 
+            if (req.body.remember) {
+                // Generamos un token seguro, eso para que no pueda entrar cualquiera
+        const token = crypto.randomBytes(64).toString('base64');
+        Token.create({user_id: user.id, token });
+        // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
+        res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 2} )
+    } 
+    return res.redirect('/');
+    } else {
+    res.render('login', {
+        userEmail: req.body.email,                               
+        errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
+        });
+    }   
+    }    
+    })
+    .catch(() => {
+    // Creo un error y se lo envío a la vista
+    res.render('login', {
+            userEmail: req.body.email,                               
+            errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
+        });
+        })
         } else {
-            function errorMsg(error) {
-                if (error.email && error.password) {
-                    return {
-                        both : {
-                            msg : "Campo obligatorio"
-                        }
-                    }
-                } else if(error.email) {
-                    return {
-                        userEmail : {
-                            msg : error.email.msg
-                        }
-                    }
-                } else {
-                    return {
-                        password : {
-                            msg : error.password.msg 
-                        }
-                    }
+        function errorMsg(error) {
+        if (error.email && error.password) {
+            return {
+                both : {
+                    msg : "Campo obligatorio"
                 }
             }
-            console.log(errorMsg(errors.mapped()))
-            // Se envía el error a la vista
-            res.render('login', {
-                userEmail: req.body.email,
-                errors : errorMsg(errors.mapped())
-            });
+        } else if(error.email) {
+            return {
+                userEmail : {
+                    msg : error.email.msg
+                }
+            }
+        } else {
+            return {
+                password : {
+                    msg : error.password.msg 
+                }
+            }
+        }
+        }
+        console.log(errorMsg(errors.mapped()))
+        // Se envía el error a la vista
+        res.render('login', {
+        userEmail: req.body.email,
+        errors : errorMsg(errors.mapped())
         });
+        }
     },
     logout: (req, res) => {
         // Borro todas los tokens del usuario (lo deslogueo de todos los dispositivos)
