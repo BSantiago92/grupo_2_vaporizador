@@ -1,74 +1,64 @@
-// let errors = {};
 
-// let userEmail = document.getElementById('email');
-// let password = document.getElementById('password');
-// let emailErrorAlert = document.getElementById('email-error-alert');
-// let passwordErrorAlert = document.getElementById('password-error-alert');
+let errors = {};
 
-// function validateEmail(){
-//     // Se evitan los espacios por delante y por detras
-//     userEmail.value = userEmail.value.trim();
+let form = document.getElementById('form-login');
 
-//     let feedback;
-
-//     if (userEmail.value == ""){
-//         feedback = "Campo obligatorio";
-//     } else if(userEmail.value.length < 2 || userEmail.value.length > 255 ) feedback = "Debe tener entre 2 y 255 caracteres";
-
-//     if (feedback) {
-//         userEmail.classList.add("is-danger");
-//         emailErrorAlert.innerText = feedback;
-//     } else {
-//         userEmail.classList.remove("is-danger");
-//         emailErrorAlert.innerText = "";
-//     }
-// }
-
-//   function validatePassword(){
-    
-//     let feedback;
-
-//     if(password.value == "") {
-//         feedback = "Campo obligatório";
-//     } else if(password.value.length < 8) {
-//         feedback = "Debe tener al menos 8 caracteres";
-//     } 
-
-//     if (feedback) {
-//         password.classList.add("is-danger");
-//         passwordErrorAlert.innerText = feedback;
-//     } else {
-//         password.classList.remove("is-danger");
-//         passwordErrorAlert.innerText = "";
-//     }
-// }
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
 
-// userEmail.addEventListener("blur", validateEmail);
-// password.addEventListener("blur", validatePassword);
+let validateEmail = function(){
+    let feedback = '';
+    let feedbackElement = email.nextElementSibling;
 
-// form.addEventListener("submit", function(event){
-//     // Ataja el caso en que se intente enviar el formulario sin haber interactuado con los campos
-//     validateEmail();
+    if(email.value.trim() == '' ){
+        feedback = 'El campo email no puede estar vacío';
+    }
 
-//     if(Object.keys(errors).length){
-//         event.preventDefault();
-//     }
+    if(feedback){
+        email.classList.add('is-danger');
+        errors.email = feedback;
+    }
+    else{
+        email.classList.remove('is-danger');
+        //feedbackElement.remove();
+        delete errors.email;
+    }
 
-// });
+    feedbackElement.innerText = feedback;
+}
 
-window.addEventListener('load', function(){
-    let email = document.getElementById('email');
-    let password = document.getElementById('password');
+let validatePassword = function(){
+    let feedback = '';
+    let feedbackElement = password.nextElementSibling;
 
-    email.addEventListener('blur', function(){
-        if (this.value == "" ) {
-            console.log('El campo no puede estar vacío');
-        }
-    })
-    password.addEventListener('blur', function(){
-        if (this.value == "" ) {
-            console.log('El campo no puede estar vacío');
-        }
-    })
+    if(password.value.trim() == '' ){
+        feedback = 'El campo contraseña no puede estar vacío';
+    }
+    else if(password.value.length < 8){
+        feedback = 'La contraseña debe tener al menos 8 caracteres';
+    }
+
+    if(feedback){
+        password.classList.add('is-danger');
+        errors.password = feedback;
+    }
+    else{
+        password.classList.remove('is-danger');
+        //feedbackElement.remove();
+        delete errors.password;
+    }
+
+    feedbackElement.innerText = feedback;
+    }
+
+email.addEventListener('blur', validateEmail);
+password.addEventListener('blur', validatePassword);
+
+form.addEventListener('submit', function(event){
+    validateEmail();
+    validatePassword();
+    if(Object.keys(errors).length){
+        event.preventDefault();
+    }
 })

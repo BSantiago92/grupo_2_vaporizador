@@ -568,6 +568,11 @@ article img {
     margin: 10px;
 }
 
+.is-danger{
+    color: red;
+    font-size: 0.8em;
+}
+
 .form p a {
     color: #495057;
 }
@@ -577,6 +582,13 @@ article img {
     flex-direction: row;
     justify-content: center;
 }
+
+.feedback {
+    margin-top: .25rem;
+    font-size: .9rem;
+    color: red;
+}
+
 
 /* user profile */
 
