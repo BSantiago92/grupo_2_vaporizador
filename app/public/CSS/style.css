@@ -777,6 +777,12 @@ aside {
     background-color: transparent;
 }
 
+/* product create */
+
+#category_id {
+    margin: 10px;
+}
+
 
 /* menu administrador fin */
 

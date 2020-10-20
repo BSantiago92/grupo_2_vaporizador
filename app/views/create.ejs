@@ -15,8 +15,10 @@
                 <form action="/product/" method="POST" enctype="application/x-www-form-urlencoded">
                     <h1>Crear producto</h1>
                     
-                    <input class="form-control" type="text" name="name" placeholder="Nombre del producto">
-                    <input class="form-control" type="text" name="brand" placeholder="Marca">
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Nombre del producto">
+                    <p class="is-danger"></p>
+                    <input class="form-control" type="text" name="brand" id="brand" placeholder="Marca">
+                    <p class="is-danger"></p>
                     <!-- <input class="form-control" type="text" name="category" placeholder="Categoría"> -->
                     <select class="form-control" name="category_id" id="category_id">
                         <option value="">Selecciona una categoría</option>
@@ -28,12 +30,18 @@
                             </option> 
                         <% });  %> 
                     </select>
-                    <input class="form-control" type="text" name="model_1" placeholder="Modelo">
-                    <input class="form-control" type="text" name="model_2" placeholder="Modelo">
-                    <input class="form-control" type="text" name="model_3" placeholder="Modelo">
-                    <input class="form-control" type="file" name="img">
-                    <input class="form-control" type="text" name="description" placeholder="Descripción">
-                    <input class="form-control" type="number" name="price" placeholder="Precio">
+                    <input class="form-control" type="text" name="model_1" id="model_1" placeholder="Modelo">
+                    <p class="is-danger"></p>
+                    <input class="form-control" type="text" name="model_2" id="model_2" placeholder="Modelo">
+                    <p class="is-danger"></p>
+                    <input class="form-control" type="text" name="model_3" id="model_3" placeholder="Modelo">
+                    <p class="is-danger"></p>
+                    <input class="form-control" type="file" id="img" name="img">
+                    <p class="is-danger"></p>
+                    <input class="form-control" type="text" name="description" id="description" placeholder="Descripción">
+                    <p class="is-danger"></p>
+                    <input class="form-control" type="number" name="price" id="price" placeholder="Precio">
+                    <p class="is-danger"></p>
                                      
 
 
@@ -42,6 +50,7 @@
                 </form>
             </div>
             <%- include('./partials/footer') %>
+            <script src="/js/productCreate.js"></script>
     </body>
 
 </html>
