@@ -46,7 +46,7 @@ module.exports = {
                 } else {
                 res.render('login', {
                     userEmail: req.body.email,                               
-                    errors: { processLogin: { msg: 'email o contraseña incorrect'} }
+                    errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
                     });
                 }   
             }    
@@ -114,7 +114,6 @@ module.exports = {
     },
     registerUser: (req, res) => {
         let errors = validationResult(req);
-
         if (errors.isEmpty()) {
             let user = req.body;
             //JSON.parse(user)
@@ -133,11 +132,42 @@ module.exports = {
                     console.log(errors)
                 }
             } else {
+                res.render('register', {
+                    password: req.body.password,
+                    errors: {registerUser: { msg: 'contraseña invalida'}}
+                })
                 console.log(errors)
             }
         } else {
+            function errorMsg(error) {
+                if (error.email && error.password) {
+                    return {
+                        both : {
+                            msg : "Campo obligatorio"
+                        }
+                    }
+                } else if(error.email) {
+                    return {
+                        userEmail : {
+                            msg : error.email.msg
+                        }
+                    }
+                } else {
+                    return {
+                        password : {
+                            msg : error.password.msg 
+                        }
+                    }
+                }
+            }
             console.log(errors)
         }
+        console.log(errorMsg(errors.mapped()))
+        // Se envía el error a la vista
+        res.render('register', {
+        first_name: req.body.first_name,
+        errors : errorMsg(errors.mapped())
+        });
 
 
 

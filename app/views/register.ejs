@@ -16,7 +16,7 @@
                     <h1>REGISTRARSE</h1>
                     <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Nombre">
                     <p id="email-error-alert" class="is-danger">
-                        <%= locals.errors && errors ? errors.msg : '' %>
+                        <%= locals.errors && errors.first_name ? errors.first_name.msg : '' %>
                     </p>
 
                     <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Apellido">
