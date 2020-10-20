@@ -14,25 +14,24 @@
             <div class="form">
                 <form action="register" method="POST">
                     <h1>REGISTRARSE</h1>
-                    <input class="form-control" type="text" name="first_name" placeholder="Nombre">
+                    <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Nombre">
+                    <p id="email-error-alert" class="is-danger">
+                        <%= locals.errors && errors ? errors.msg : '' %>
+                    </p>
+
+                    <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Apellido">
                     <p id="email-error-alert" class="is-danger">
 
                         <%= locals.errors && errors ? errors.msg : '' %>
                     </p>
 
-                    <input class="form-control" type="text" name="last_name" placeholder="Apellido">
+                    <input class="form-control" type="email" name="email" id="email" placeholder="Email">
                     <p id="email-error-alert" class="is-danger">
 
                         <%= locals.errors && errors ? errors.msg : '' %>
                     </p>
 
-                    <input class="form-control" type="email" name="email" placeholder="Email">
-                    <p id="email-error-alert" class="is-danger">
-
-                        <%= locals.errors && errors ? errors.msg : '' %>
-                    </p>
-
-                    <input class="form-control" type="password" name="password" placeholder="Contraseña">
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña">
                     <p id="password-error-alert" class="is-danger">
 
                         <%= locals.errors && errors ? errors.msg : '' %>
@@ -42,6 +41,7 @@
                 </form>
             </div>
             <%- include('./partials/footer') %>
+            <script src="/js/register.js"></script>
     </body>
 
 </html>

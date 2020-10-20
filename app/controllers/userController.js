@@ -20,72 +20,72 @@ module.exports = {
         res.render('login')
     },
     processLogin: (req, res) => {
-            let errors = validationResult(req);
+        let errors = validationResult(req);
         if (errors.isEmpty()) {        
             User.findOne({
                 where: {email: req.body.email}
             })
             // si existe el usuario
             .then(user => {
-                    if (user) {
-                        //si la contraseña es correcta
-        if(bcrypt.compareSync(req.body.password, user.password)) {
-            // lo guardo en la session
-            delete user.password;
-            req.session.user = user;
-            // logeo al usuario
-            //si pidió que lo recordemos 
-            if (req.body.remember) {
-                // Generamos un token seguro, eso para que no pueda entrar cualquiera
-        const token = crypto.randomBytes(64).toString('base64');
-        Token.create({user_id: user.id, token });
-        // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
-        res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 2} )
-    } 
-    return res.redirect('/');
-    } else {
-    res.render('login', {
-        userEmail: req.body.email,                               
-        errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
-        });
-    }   
-    }    
-    })
-    .catch(() => {
-    // Creo un error y se lo envío a la vista
-    res.render('login', {
-            userEmail: req.body.email,                               
-            errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
-        });
+            if (user) {
+                //si la contraseña es correcta
+                if(bcrypt.compareSync(req.body.password, user.password)) {
+                    // lo guardo en la session
+                    delete user.password;
+                    req.session.user = user;
+                    // logeo al usuario
+                    //si pidió que lo recordemos 
+                    if (req.body.remember) {
+                        // Generamos un token seguro, eso para que no pueda entrar cualquiera
+                const token = crypto.randomBytes(64).toString('base64');
+                Token.create({user_id: user.id, token });
+                // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
+                res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 2} )
+                    } 
+                    return res.redirect('/');
+                } else {
+                res.render('login', {
+                    userEmail: req.body.email,                               
+                    errors: { processLogin: { msg: 'email o contraseña incorrect'} }
+                    });
+                }   
+            }    
         })
-        } else {
-        function errorMsg(error) {
-        if (error.email && error.password) {
-            return {
-                both : {
-                    msg : "Campo obligatorio"
-                }
-            }
-        } else if(error.email) {
-            return {
-                userEmail : {
-                    msg : error.email.msg
-                }
-            }
-        } else {
-            return {
-                password : {
-                    msg : error.password.msg 
-                }
-            }
-        }
-        }
-        console.log(errorMsg(errors.mapped()))
-        // Se envía el error a la vista
+        .catch(() => {
+        // Creo un error y se lo envío a la vista
         res.render('login', {
-        userEmail: req.body.email,
-        errors : errorMsg(errors.mapped())
-        });
+                userEmail: req.body.email,                               
+                errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
+            });
+            })
+            } else {
+            function errorMsg(error) {
+                if (error.email && error.password) {
+                    return {
+                        both : {
+                            msg : "Campo obligatorio"
+                        }
+                    }
+                } else if(error.email) {
+                    return {
+                        userEmail : {
+                            msg : error.email.msg
+                        }
+                    }
+                } else {
+                    return {
+                        password : {
+                            msg : error.password.msg 
+                        }
+                    }
+                }
+            }
+            console.log(errorMsg(errors.mapped()))
+            // Se envía el error a la vista
+            res.render('login', {
+            userEmail: req.body.email,
+            errors : errorMsg(errors.mapped())
+            });
         }
     },
     logout: (req, res) => {
@@ -114,30 +114,8 @@ module.exports = {
     },
     registerUser: (req, res) => {
         let errors = validationResult(req);
-        //console.log(req.body)
-        /*if (errors.isEmpty()) {
-            let users = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.json'), 'utf-8'));
-            let newUser = JSON.stringify(req.body);
-            newUser = JSON.parse(newUser)
-                //console.log(users)
-                //console.log(newUser)
-
-            newUser.password = bcrypt.hashSync(req.body.password, 10);
-
-            users.push(newUser);
-            //console.log(users)
-            let usersJson = JSON.stringify(users);
-
-            fs.writeFileSync(path.join(__dirname, '../data/user.json'), usersJson);
-            //req.session.user = newUser;
-            res.redirect('/');
-
-        } else {
-            res.send("Error en el registro")
-        }*/
 
         if (errors.isEmpty()) {
-
             let user = req.body;
             //JSON.parse(user)
             if (req.body.password != '') {
@@ -148,6 +126,10 @@ module.exports = {
 
                     res.redirect('/');
                 } else {
+                    res.render('register', {
+                        first_name: req.body.first_name,
+                        errors: {registerUser: {msg: 'Debe completar el campo nombre'}}
+                    })
                     console.log(errors)
                 }
             } else {

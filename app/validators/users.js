@@ -24,7 +24,8 @@ module.exports = {
             .notEmpty().withMessage('Nombre invalido').bail(),       
 
         check('last_name')
-            .notEmpty().withMessage('Apellido inválido').bail(),   
+            .notEmpty().withMessage('Apellido inválido').bail()
+            .isLength({ min : 8 }).withMessage('La contraseña debe tener al menos 8 caracteres')   
 
     ]
 }

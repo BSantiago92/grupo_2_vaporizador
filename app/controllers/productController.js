@@ -82,7 +82,7 @@ module.exports = {
     },
 
     cart: (req, res) => {
-        Product.findAll({where: {brand_id: 2 }})
+        Product.findAll({where: {brand_id: 2} }, {limit: 4}  )
             .then(products => {
                 return res.render('productCart', { carrito, products });
             })
