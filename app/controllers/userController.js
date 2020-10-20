@@ -117,39 +117,68 @@ module.exports = {
         if (errors.isEmpty()) {
             let user = req.body;
             //JSON.parse(user)
-            if (req.body.password != '') {
-                if (req.body.first_name != '') {
-                    user.password = bcrypt.hashSync(req.body.password, 10);
-                    user.category_id = 2;
-                    User.create(user);
+            if (req.body.email != '') {
+                if (req.body.last_name != '') {
+                    if (req.body.password != '') {
+                        if (req.body.first_name != '') {
+                            user.password = bcrypt.hashSync(req.body.password, 10);
+                            user.category_id = 2;
+                            User.create(user);
 
-                    res.redirect('/');
+                            res.redirect('/');
+                        } else {
+                            res.render('register', {
+                                first_name: req.body.first_name,
+                                errors: {registerUser: {msg: 'Debe completar el campo nombre'}}
+                            })
+                            console.log(errors)
+                        }
+                    } else {
+                        res.render('register', {
+                            password: req.body.password,
+                            errors: {registerUser: { msg: 'contraseña invalida'}}
+                        })
+                        console.log(errors)
+                    }
                 } else {
                     res.render('register', {
-                        first_name: req.body.first_name,
-                        errors: {registerUser: {msg: 'Debe completar el campo nombre'}}
+                        last_name: req.body.last_name,
+                        errors: {registerUser: { msg: 'Debe completar el campo apellido'}}
                     })
                     console.log(errors)
                 }
             } else {
                 res.render('register', {
-                    password: req.body.password,
-                    errors: {registerUser: { msg: 'contraseña invalida'}}
+                    email: req.body.email,
+                    errors: {registerUser: { msg: 'Debe completar el campo email'}}
                 })
                 console.log(errors)
             }
         } else {
             function errorMsg(error) {
-                if (error.email && error.password) {
+                let cero = 0;
+                if (error.first_name && error.password && error.last_name && error.email) {
                     return {
                         both : {
                             msg : "Campo obligatorio"
                         }
                     }
-                } else if(error.email) {
+                } else if(error.first_name) {
                     return {
-                        userEmail : {
-                            msg : error.email.msg
+                        first_name : {
+                            msg : error.first_name.msg
+                        }
+                    }
+                } else if (error.last_name){
+                    return {
+                        last_name: {
+                            msg: error.last_name
+                        }
+                    }
+                } else if (error.email) {
+                    return {
+                        email: {
+                            msg: error.email
                         }
                     }
                 } else {
@@ -160,7 +189,8 @@ module.exports = {
                     }
                 }
             }
-            console.log(errors)
+            
+            console.log(Array.from(errors));
         }
         console.log(errorMsg(errors.mapped()))
         // Se envía el error a la vista
@@ -176,12 +206,6 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            // Micro desafío
-            // 1. leer todos los grupos
-            // 2. creo el grupo con los datos del formulario
-            // 3. agrego el nuevo grupo a los existentes
-            // 4. guardado el nuevo listado en el archivo JSON
-
             let user = req.body;
 
             let newId = usersModel.create(user);

@@ -16,25 +16,26 @@
                     <h1>REGISTRARSE</h1>
                     <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Nombre">
                     <p id="email-error-alert" class="is-danger">
+                        <%= locals.errors && errors.both ? errors.both.msg : '' %>
                         <%= locals.errors && errors.first_name ? errors.first_name.msg : '' %>
                     </p>
 
                     <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Apellido">
                     <p id="email-error-alert" class="is-danger">
-
-                        <%= locals.errors && errors ? errors.msg : '' %>
+                        <%= locals.errors && errors.both ? errors.both.msg : '' %>
+                        <%= locals.errors && errors.last_name ? errors.last_name.msg : '' %>
                     </p>
 
                     <input class="form-control" type="email" name="email" id="email" placeholder="Email">
                     <p id="email-error-alert" class="is-danger">
-
-                        <%= locals.errors && errors ? errors.msg : '' %>
+                        <%= locals.errors && errors.both ? errors.both.msg : '' %>
+                        <%= locals.errors && errors.email ? errors.email.msg : '' %>
                     </p>
 
                     <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña">
                     <p id="password-error-alert" class="is-danger">
-
-                        <%= locals.errors && errors ? errors.msg : '' %>
+                        <%= locals.errors && errors.both ? errors.both.msg : '' %>
+                        <%= locals.errors && errors.password ? errors.password.msg : '' %>
 
                     </p>
                     <input class="btn btn-success" type="submit" value="Crear">
