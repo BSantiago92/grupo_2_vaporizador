@@ -15,20 +15,20 @@
                 <form action="/user/login" method="POST">
                     <h1>INICIAR SESION</h1>
 
-                        <input type="email" name="email" id="email" class="form-control <%= locals.errors && errors.both || locals.errors && errors.email ? 'is-danger' : '' %> " value="<%= locals.user && user.email %>" placeholder="E-mail">
+                    <input type="email" name="email" id="email" class="form-control <%= locals.errors && errors.both || locals.errors && errors.email ? 'is-danger' : '' %> " value="<%= locals.user && user.email %>" placeholder="E-mail">
 
-                        <p id="email-error-alert" class="is-danger">
-                            <%= locals.errors && errors.both ? errors.both.msg : '' %>
-                            <%= locals.errors && errors.userEmail ? errors.userEmail.msg : '' %>
-                        </p>
+                    <p id="email-error-alert" class="is-danger">
+                        <%= locals.errors && errors.both ? errors.both.msg : '' %>
+                        <%= locals.errors && errors.userEmail ? errors.userEmail.msg : '' %>
+                    </p>
 
-                        <input type="password" name="password" id="password" class="form-control <%= locals.errors && errors.both || locals.errors && errors.password ? 'is-danger' : '' %>" placeholder="contraseña">
+                    <input type="password" name="password" id="password" class="form-control <%= locals.errors && errors.both || locals.errors && errors.password ? 'is-danger' : '' %>" placeholder="contraseña">
 
-                        <p id="password-error-alert" class="is-danger">
-                            <%= locals.errors && errors.both ? errors.both.msg : '' %>
-                            <%= locals.errors && errors.password ? errors.password.msg : '' %>
-                            <%= locals.errors && errors.processLogin ? errors.processLogin.msg : '' %>
-                        </p>
+                    <p id="password-error-alert" class="is-danger">
+                        <%= locals.errors && errors.both ? errors.both.msg : '' %>
+                        <%= locals.errors && errors.password ? errors.password.msg : '' %>
+                        <%= locals.errors && errors.processLogin ? errors.processLogin.msg : '' %>
+                    </p>
 
                     <div class="field">
                         <label for="remember">Recordar mis datos</label>
