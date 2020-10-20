@@ -15,9 +15,29 @@
                 <form action="register" method="POST">
                     <h1>REGISTRARSE</h1>
                     <input class="form-control" type="text" name="first_name" placeholder="Nombre">
+                    <p id="email-error-alert" class="is-danger">
+
+                        <%= locals.errors && errors ? errors.msg : '' %>
+                    </p>
+
                     <input class="form-control" type="text" name="last_name" placeholder="Apellido">
+                    <p id="email-error-alert" class="is-danger">
+
+                        <%= locals.errors && errors ? errors.msg : '' %>
+                    </p>
+
                     <input class="form-control" type="email" name="email" placeholder="Email">
+                    <p id="email-error-alert" class="is-danger">
+
+                        <%= locals.errors && errors ? errors.msg : '' %>
+                    </p>
+
                     <input class="form-control" type="password" name="password" placeholder="Contraseña">
+                    <p id="password-error-alert" class="is-danger">
+
+                        <%= locals.errors && errors ? errors.msg : '' %>
+
+                    </p>
                     <input class="btn btn-success" type="submit" value="Crear">
                 </form>
             </div>
