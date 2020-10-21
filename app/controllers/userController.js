@@ -27,30 +27,30 @@ module.exports = {
             })
             // si existe el usuario
             .then(user => {
-            if (user) {
-                //si la contraseña es correcta
-                if(bcrypt.compareSync(req.body.password, user.password)) {
-                    // lo guardo en la session
-                    delete user.password;
-                    req.session.user = user;
-                    // logeo al usuario
-                    //si pidió que lo recordemos 
-                    if (req.body.remember) {
-                        // Generamos un token seguro, eso para que no pueda entrar cualquiera
-                const token = crypto.randomBytes(64).toString('base64');
-                Token.create({user_id: user.id, token });
-                // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
-                res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 2} )
-                    } 
-                    return res.redirect('/');
-                } else {
-                res.render('login', {
-                    userEmail: req.body.email,                               
-                    errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
-                    });
-                }   
-            }    
-        })
+                if (user) {
+                    //si la contraseña es correcta
+                    if(bcrypt.compareSync(req.body.password, user.password)) {
+                        // lo guardo en la session
+                        delete user.password;
+                        req.session.user = user;
+                        // logeo al usuario
+                        //si pidió que lo recordemos 
+                        if (req.body.remember) {
+                            // Generamos un token seguro, eso para que no pueda entrar cualquiera
+                    const token = crypto.randomBytes(64).toString('base64');
+                    Token.create({user_id: user.id, token });
+                    // Seteamos una cookie en el navegador   msec   seg  min  hs  dias  meses
+                    res.cookie('userToken', token, { maxAge: 1000 * 60 * 60 * 2} )
+                        } 
+                        return res.redirect('/');
+                    } else {
+                    res.render('login', {
+                        userEmail: req.body.email,                               
+                        errors: { processLogin: { msg: 'email o contraseña incorrectos'} }
+                        });
+                    }   
+                }    
+            })
         .catch(() => {
         // Creo un error y se lo envío a la vista
         res.render('login', {
@@ -198,9 +198,24 @@ module.exports = {
         first_name: req.body.first_name,
         errors : errorMsg(errors.mapped())
         });
+        // let errors = validationResult(req);
+        // if (errors.isEmpty()) {
 
+        //     let userObj = {
+        //         first_name: req.body.fisrt_name,
+        //         last_name: req.body.last_name,
+        //         email: req.body.email,
+        //         password: req.body.password
+        //     }
 
+        //     let hash = bcrypt.hashSync(userObj.password, 10);
+        //     userObj.password = hash;
+        //     user.category_id = 2;
 
+        //     User.create(userObj);
+        //     res.redirect('/');
+            
+        // }
     },
     store: (req, res) => {
         let errors = validationResult(req);
