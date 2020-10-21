@@ -113,109 +113,128 @@ module.exports = {
 
     },
     registerUser: (req, res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-            let user = req.body;
-            //JSON.parse(user)
-            if (req.body.email != '') {
-                if (req.body.last_name != '') {
-                    if (req.body.password != '') {
-                        if (req.body.first_name != '') {
-                            user.password = bcrypt.hashSync(req.body.password, 10);
-                            user.category_id = 2;
-                            User.create(user);
-
-                            res.redirect('/');
-                        } else {
-                            res.render('register', {
-                                first_name: req.body.first_name,
-                                errors: {registerUser: {msg: 'Debe completar el campo nombre'}}
-                            })
-                            console.log(errors)
-                        }
-                    } else {
-                        res.render('register', {
-                            password: req.body.password,
-                            errors: {registerUser: { msg: 'contraseña invalida'}}
-                        })
-                        console.log(errors)
-                    }
-                } else {
-                    res.render('register', {
-                        last_name: req.body.last_name,
-                        errors: {registerUser: { msg: 'Debe completar el campo apellido'}}
-                    })
-                    console.log(errors)
-                }
-            } else {
-                res.render('register', {
-                    email: req.body.email,
-                    errors: {registerUser: { msg: 'Debe completar el campo email'}}
-                })
-                console.log(errors)
-            }
-        } else {
-            function errorMsg(error) {
-                let cero = 0;
-                if (error.first_name && error.password && error.last_name && error.email) {
-                    return {
-                        both : {
-                            msg : "Campo obligatorio"
-                        }
-                    }
-                } else if(error.first_name) {
-                    return {
-                        first_name : {
-                            msg : error.first_name.msg
-                        }
-                    }
-                } else if (error.last_name){
-                    return {
-                        last_name: {
-                            msg: error.last_name
-                        }
-                    }
-                } else if (error.email) {
-                    return {
-                        email: {
-                            msg: error.email
-                        }
-                    }
-                } else {
-                    return {
-                        password : {
-                            msg : error.password.msg 
-                        }
-                    }
-                }
-            }
-            
-            console.log(Array.from(errors));
-        }
-        console.log(errorMsg(errors.mapped()))
-        // Se envía el error a la vista
-        res.render('register', {
-        first_name: req.body.first_name,
-        errors : errorMsg(errors.mapped())
-        });
         // let errors = validationResult(req);
         // if (errors.isEmpty()) {
+        //     let user = req.body;
+        //     //JSON.parse(user)
+        //     if (req.body.email != '') {
+        //         if (req.body.last_name != '') {
+        //             if (req.body.password != '') {
+        //                 if (req.body.first_name != '') {
+        //                     user.password = bcrypt.hashSync(req.body.password, 10);
+        //                     user.category_id = 2;
+        //                     User.create(user);
 
-        //     let userObj = {
-        //         first_name: req.body.fisrt_name,
-        //         last_name: req.body.last_name,
-        //         email: req.body.email,
-        //         password: req.body.password
+        //                     res.redirect('/');
+        //                 } else {
+        //                     res.render('register', {
+        //                         first_name: req.body.first_name,
+        //                         errors: {registerUser: {msg: 'Debe completar el campo nombre'}}
+        //                     })
+        //                     console.log(errors)
+        //                 }
+        //             } else {
+        //                 res.render('register', {
+        //                     password: req.body.password,
+        //                     errors: {registerUser: { msg: 'contraseña invalida'}}
+        //                 })
+        //                 console.log(errors)
+        //             }
+        //         } else {
+        //             res.render('register', {
+        //                 last_name: req.body.last_name,
+        //                 errors: {registerUser: { msg: 'Debe completar el campo apellido'}}
+        //             })
+        //             console.log(errors)
+        //         }
+        //     } else {
+        //         res.render('register', {
+        //             email: req.body.email,
+        //             errors: {registerUser: { msg: 'Debe completar el campo email'}}
+        //         })
+        //         console.log(errors)
         //     }
-
-        //     let hash = bcrypt.hashSync(userObj.password, 10);
-        //     userObj.password = hash;
-        //     user.category_id = 2;
-
-        //     User.create(userObj);
-        //     res.redirect('/');
+        // } else {
+        //     function errorMsg(error) {
+        //         if (error.first_name && error.password && error.last_name && error.email) {
+        //             return {
+        //                 both : {
+        //                     msg : "Campo obligatorio"
+        //                 }
+        //             }
+        //         } else if(error.first_name) {
+        //             return {
+        //                 first_name : {
+        //                     msg : error.first_name.msg
+        //                 }
+        //             }
+        //         } else if (error.last_name){
+        //             return {
+        //                 last_name: {
+        //                     msg: error.last_name
+        //                 }
+        //             }
+        //         } else if (error.email) {
+        //             return {
+        //                 email: {
+        //                     msg: error.email
+        //                 }
+        //             }
+        //         } else {
+        //             return {
+        //                 password : {
+        //                     msg : error.password.msg 
+        //                 }
+        //             }
+        //         }
+        //     }
             
+        //     console.log(Array.from(errors));
         // }
+        // console.log(errorMsg(errors.mapped()))
+        // // Se envía el error a la vista
+        // res.render('register', {
+        // first_name: req.body.first_name,
+        // errors : errorMsg(errors.mapped())
+        // });
+
+
+
+
+
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+
+            let user = req.body;
+
+            let userObj = {
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                password: req.body.password,
+                user_category_id: 2
+            }
+
+            let hash = bcrypt.hashSync(userObj.password, 10);
+            userObj.password = hash;
+            user.category_id = 2;
+
+            User.create(userObj)
+                .then(() => {
+                    res.redirect("login");
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+            
+            
+        } else {
+            console.log(errors.mapped());
+            return res.render("register", {
+                first_name: req.body,
+                errors : errors.mapped()
+            })
+        }
     },
     store: (req, res) => {
         let errors = validationResult(req);
