@@ -34,10 +34,17 @@ const indexRoutes = require('./routes/index');
 const productsRoutes = require('./routes/products');
 const userRoutes = require('./routes/user');
 
+const usersApiRoutes = require('./routes/api/user');
+const productsApiRoutes = require('./routes/api/products');
+
 
 app.use('/', indexRoutes)
 app.use('/user', userRoutes)
 app.use('/product/', productsRoutes)
+
+app.use('/api/users', usersApiRoutes);
+
+app.use('/api/products', productsApiRoutes);
 
 
 app.use((req, res, next) =>{
