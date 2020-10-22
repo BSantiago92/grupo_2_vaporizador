@@ -31,15 +31,17 @@
                     <a class="dropdown-item" href="#"><%- product.model_3 %></a>
                     </div>
                 </div>
-                <div class="btn-group" role="group" aria-label="Basic example" role="group">
-                    <button type="button" class="btn btn-secondary">-</button>
-                    <button type="button" class="btn btn-secondary">1</button>
-                    <button type="button" class="btn btn-secondary">+</button>
-                </div>
-                </div>
-                    <a <% if (locals.user) { %> href="/product/carrito" <% } else { %> href="/user/login" <% } %>">
-                        <input class="PCproductDetailButton" type="submit" value="AGREGAR AL CARRITO">
-                    </a>                    
+                <form action="/user/addToCart" method="POST">
+                    <div class="btn-group" role="group" aria-label="Basic example" role="group">
+                        <input type="number" id="quantity" name="quantity" value="1">
+                        <p class="is-danger"><%= typeof errors == 'undefined' ? '' : errors.quantity ? errors.quantity.msg : '' %></p>
+                    </div>
+                    </div>
+                        <a <% if (locals.user) { %> href="/product/carrito" <% } else { %> href="/user/login" <% } %>">
+                            <input class="PCproductDetailButton" type="submit" value="AGREGAR AL CARRITO">
+                        </a>                     
+                </form>
+                   
 
             </article>
             <article class="vapeDescription">

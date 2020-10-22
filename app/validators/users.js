@@ -1,6 +1,6 @@
 const { user, category } = require("../database/models");
 const bcrypt = require("bcryptjs");
-const { check, body } = require('express-validator');
+const { check, body, validationResult } = require('express-validator');
 
 // Creamos una propiedad por cada formulario que queramos validar
 module.exports = {
@@ -27,5 +27,10 @@ module.exports = {
         check('last_name')
             .notEmpty().withMessage('Apellido inválido').bail()   
 
+    ],
+    addToCart: [
+        body('quantity')
+            .custom((value) => value > 0)
+            .withMessage('Debe agregar al menos 1 producto'),
     ]
 }

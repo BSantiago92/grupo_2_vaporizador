@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Token);
       this.belongsTo(models.User_category);
       this.hasMany(models.Cart);
+      this.hasMany(models.Item);
     }
   };
   User.init({
