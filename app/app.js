@@ -40,8 +40,11 @@ app.use('/user', userRoutes)
 app.use('/product/', productsRoutes)
 
 
+app.use((req, res, next) =>{
+    res.status(404).render("notFound");
+});
 
-
+/*
 app.get('*', (req, res) => {
     res.status(404).send("Esta pagina no existe");
-})
+})*/
