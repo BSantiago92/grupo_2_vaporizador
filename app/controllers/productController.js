@@ -15,7 +15,7 @@ const { Product, Category, Brand} = require('../dataBase/models');
 
 module.exports = {
     catalogue: (req,res) => {
-        Product.findAll()
+        Product.findAll({ limit: 8})
             .then(products => {
                 return res.render('catalogo', { products });
             })
@@ -82,7 +82,7 @@ module.exports = {
     },
 
     cart: (req, res) => {
-        Product.findAll({where: {brand_id: 2} }, {limit: 4}  )
+        Product.findAll({where: {brand_id: 2}, limit: 4 } )
             .then(products => {
                 return res.render('productCart', { carrito, products });
             })

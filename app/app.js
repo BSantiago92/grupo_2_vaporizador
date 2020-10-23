@@ -5,8 +5,13 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const auth = require('./middlewares/auth');
 
+const cors = require('cors');
+
+app.use(cors());
+
 //Configuración 
 app.set('view engine', 'ejs');
+
 
 
 

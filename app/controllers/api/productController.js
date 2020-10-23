@@ -6,7 +6,7 @@ module.exports = {
         // let groups = groupsModel.all()
         // res.render('groups/index',  { groups });
 
-        Product.findAll({ include: 'Category' })
+        Product.findAll({ include: 'Category'})
             //return res.json(response);
             .then(products => {
                 if(products.length) {
@@ -16,7 +16,9 @@ module.exports = {
                             status: 200,
                             count: products.length
                         },
-                        data: products
+                        data: { 
+                            products 
+                        }
                     }
 
                     return res.json(response);
@@ -29,6 +31,16 @@ module.exports = {
                 return res.status(500).json( { error: 'Could not connect to database' } );;
             })
 
+    },
+    detail: (req,res) => {
+        Product.findByPk( req.params.id ,{ include: 'Category'})
+        .then(product => {
+            return res.json(product);
+        })
+        .catch(error => {
+            console.log(error);
+            return res.status(500).json( { error: 'Could not connect to database' } );
+        })
     }
 }
 

@@ -3,16 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-09-2020 a las 23:14:00
+-- Tiempo de generación: 30-09-2020 a las 20:22:25
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.9
 
--- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
--- START TRANSACTION;
--- SET time_zone = "+00:00";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-CREATE DATABASE vapear_db;
-USE vapear_db;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -94,11 +92,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `brand_id`, `name`, `model_1`, `model_2`, `model_3`, `description`, `price`, `img`) VALUES
-(2, 3, 2, 'Hylocomiastrum Moss', 'Red', 'Red', 'Aquamarine', 'sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis', '1679', '/images/default.jpg'),
-(3, 4, 7, 'Basin Cryptantha', 'Purple', 'Crimson', 'Green', 'dapibus at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan', '2980', '/images/default.jpg'),
 (4, 1, 7, 'Creeping Mannagrass', 'Mauv', 'Teal', 'Violet', 'maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus', '916', '/images/default.jpg'),
-(5, 2, 1, 'Tilesius\' Wormwood', 'Indigo', 'Pink', 'Turquoise', 'elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus', '2469', '/images/default.jpg'),
-(6, 5, 6, 'Texan Flatsedge', 'Fuscia', 'Red', 'Blue', 'maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh', '1076', '/images/default.jpg'),
 (7, 4, 8, 'Spinster\'s Blue Eyed Mary', 'Green', 'Indigo', 'Purple', 'erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec', '2638', '/images/default.jpg'),
 (8, 5, 2, 'Hawai\'i Quillwort', 'Crimson', 'Maroon', 'Blue', 'non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus', '2090', '/images/default.jpg'),
 (9, 1, 3, 'Piper\'s Buxbaumia Moss', 'Turquoise', 'Blue', 'Red', 'curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan', '3527', '/images/default.jpg'),
@@ -115,8 +109,6 @@ INSERT INTO `products` (`id`, `category_id`, `brand_id`, `name`, `model_1`, `mod
 (21, 2, 2, 'Roughfruit Berry', 'Indigo', 'Maroon', 'Red', 'morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae', '3709', '/images/default.jpg'),
 (22, 1, 7, 'Kamanomano', 'Khaki', 'Fuscia', 'Indigo', 'sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque', '2224', '/images/default.jpg'),
 (23, 4, 7, 'Kamchatka Rhododendron', 'Red', 'Khaki', 'Fuscia', 'phasellus sit amet erat nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis', '2495', '/images/default.jpg'),
-(24, 2, 3, 'Madwort', 'Yellow', 'Maroon', 'Puce', 'nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis', '2692', '/images/default.jpg'),
-(25, 1, 8, 'Pilose Phyllostegia', 'Crimson', 'Aquamarine', 'Indigo', 'metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas', '3503', '/images/default.jpg'),
 (26, 1, 3, 'Microlychnus Lichen', 'Orange', 'Blue', 'Blue', 'non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque', '3936', '/images/default.jpg'),
 (27, 1, 2, 'Saw Palmetto', 'Violet', 'Turquoise', 'Goldenrod', 'volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio', '1168', '/images/default.jpg'),
 (28, 3, 2, 'Roseroot Stonecrop', 'Turquoise', 'Maroon', 'Indigo', 'turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc', '3158', '/images/default.jpg'),
@@ -140,19 +132,45 @@ INSERT INTO `products` (`id`, `category_id`, `brand_id`, `name`, `model_1`, `mod
 (47, 3, 6, 'Walker\'s Suncup', 'Crimson', 'Blue', 'Orange', 'erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla', '3569', '/images/default.jpg'),
 (48, 1, 2, 'Point Reyes Lupine', 'Indigo', 'Puce', 'Mauv', 'nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis', '358', '/images/default.jpg'),
 (49, 1, 7, 'Myriotrema Lichen', 'Indigo', 'Khaki', 'Green', 'lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam', '2697', '/images/default.jpg'),
-(50, 2, 6, 'producto editado', 'Maroon', 'Violet', 'Teal', 'vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis', '2404', '/images/default.jpg');
+(50, 4, 6, 'producto edit', 'Maroon', 'Violet', 'Teal', 'vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis', '2489', '/images/product-1600987512230.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `token`
+-- Estructura de tabla para la tabla `products_cart`
 --
 
-CREATE TABLE `token` (
+CREATE TABLE `products_cart` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `total` float NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `operation_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tokens`
+--
+
+CREATE TABLE `tokens` (
   `id` int(11) NOT NULL,
   `token` varchar(250) NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tokens`
+--
+
+INSERT INTO `tokens` (`id`, `token`, `user_id`) VALUES
+(3, 'hT6yj/kY5OOZ+ESiT2wwc8X0PYw4TeYjxxoMDcNnvDUcXCNlST/KMK1jAn5BmdoPzcTltC4OIQa1PWfLba9FOg==', 2),
+(4, 'VADyDiszIeb9ij4i1uuAw7ZmrSepTBaTGx3pycRptILqjeHc1997mXk6HSjCQxJgEjOzvwvkeeMmw5IPbEVlIQ==', 5),
+(8, 'nh+3EB4c2vlMkCkmFi2UJUoy35e93yvFuAQgzE8V2vi4s/zuLth6RLY6tHsY7nbUNXrv++SbdoxjudKADzNLvA==', 22),
+(17, 'B07Es9qP2cMOHiW8dIpMd7GHlhLMTNl1JoRLglO3fN/PCy+BRyrpRW2HTcbqpZmW1yyq9E+nIhTIddyjCOfRww==', 21);
 
 -- --------------------------------------------------------
 
@@ -167,35 +185,37 @@ CREATE TABLE `users` (
   `last_name` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `image` varchar(45) NOT NULL
+  `image` varchar(45) NOT NULL,
+  `user_category_id` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `category_id`, `first_name`, `last_name`, `email`, `password`, `image`) VALUES
-(1, 1, 'Cassius', 'Maes', 'cmaes0@simplemachines.org', 'YFlG2VlmAPan', '/images/default.jpg'),
-(2, 1, 'Lizzie', 'Caldron', 'lcaldron1@weebly.com', 'kqP7IYpe', '/images/default.jpg'),
-(3, 1, 'Barde', 'Threadkell', 'bthreadkell2@time.com', 'XaYNPQizu7aP', '/images/default.jpg'),
-(4, 1, 'Giustino', 'Braybrooks', 'gbraybrooks3@php.net', 'UZy08Gk', '/images/default.jpg'),
-(5, 2, 'Hervey', 'Guile', 'hguile4@ezinearticles.com', '4qoj3cPd5j', '/images/default.jpg'),
-(6, 2, 'Derek', 'Carnie', 'dcarnie5@elpais.com', '4oH5bDz3Sn', '/images/default.jpg'),
-(7, 2, 'Elsinore', 'Eldon', 'eeldon6@fema.gov', 'zbFlIXqQb', '/images/default.jpg'),
-(8, 2, 'Vida', 'Pearde', 'vpearde7@adobe.com', 'RUbI4y6h', '/images/default.jpg'),
-(9, 1, 'Electra', 'Skeath', 'eskeath8@springer.com', 'd9qeIviU7epo', '/images/default.jpg'),
-(10, 1, 'Orton', 'Shotboult', 'oshotboult9@people.com.cn', 'Sa1WYN9XW', '/images/default.jpg'),
-(11, 2, 'Corty', 'Crowth', 'ccrowtha@wikipedia.org', '4yu8uNWaSvE', '/images/default.jpg'),
-(12, 2, 'Fidole', 'Hanscombe', 'fhanscombeb@marketwatch.com', 'x60yV8Xd', '/images/default.jpg'),
-(13, 2, 'Karlotta', 'Padkin', 'kpadkinc@odnoklassniki.ru', '1rVGujRcD', '/images/default.jpg'),
-(14, 2, 'Nickie', 'Drohane', 'ndrohaned@nasa.gov', 'qDGybNYZ', '/images/default.jpg'),
-(15, 1, 'Latia', 'Mapston', 'lmapstone@cbslocal.com', 'N12WNQAgXcS2', '/images/default.jpg'),
-(16, 2, 'Cyndia', 'Whelan', 'cwhelanf@seattletimes.com', 'aXj9zk', '/images/default.jpg'),
-(17, 1, 'Martelle', 'Posnett', 'mposnettg@bbb.org', 'CpQpFs', '/images/default.jpg'),
-(18, 2, 'Elyn', 'Cardoo', 'ecardooh@princeton.edu', 'u7Sx2EYVP', '/images/default.jpg'),
-(19, 1, 'Cosette', 'Jaquet', 'cjaqueti@illinois.edu', '5oEIxpIRYi', '/images/default.jpg'),
-(20, 2, 'Free', 'Eberdt', 'feberdtj@globo.com', 'rd82JYpFXbYQ', '/images/default.jpg'),
-(21, 1, 'bruno', 'cami', 'bruno.cami@hotmail.com', '$2a$10$1KivUA1UfMjtvYfmY.IdQ.ebWDW8LwwAcVJEeHoFlQVhHKPAX/MmS', '/images/default.jpg');
+INSERT INTO `users` (`id`, `category_id`, `first_name`, `last_name`, `email`, `password`, `image`, `user_category_id`) VALUES
+(1, 1, 'Cassius', 'Maes', 'cmaes0@simplemachines.org', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(2, 1, 'Lizzie', 'Caldron', 'lcaldron1@weebly.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(3, 1, 'Barde', 'Threadkell', 'bthreadkell2@time.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(4, 1, 'Giustino', 'Braybrooks', 'gbraybrooks3@php.net', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(5, 2, 'Hervey', 'Guile', 'hguile4@ezinearticles.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(6, 2, 'Derek', 'Carnie', 'dcarnie5@elpais.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(7, 2, 'Elsinore', 'Eldon', 'eeldon6@fema.gov', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(8, 2, 'Vida', 'Pearde', 'vpearde7@adobe.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(9, 1, 'Electra', 'Skeath', 'eskeath8@springer.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(10, 1, 'Orton', 'Shotboult', 'oshotboult9@people.com.cn', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(11, 2, 'Corty', 'Crowth', 'ccrowtha@wikipedia.org', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(12, 2, 'Fidole', 'Hanscombe', 'fhanscombeb@marketwatch.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(13, 2, 'Karlotta', 'Padkin', 'kpadkinc@odnoklassniki.ru', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(14, 2, 'Nickie', 'Drohane', 'ndrohaned@nasa.gov', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(15, 1, 'Latia', 'Mapston', 'lmapstone@cbslocal.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(16, 2, 'Cyndia', 'Whelan', 'cwhelanf@seattletimes.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(17, 1, 'Martelle', 'Posnett', 'mposnettg@bbb.org', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(18, 2, 'Elyn', 'Cardoo', 'ecardooh@princeton.edu', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(19, 1, 'Cosette', 'Jaquet', 'cjaqueti@illinois.edu', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(20, 2, 'Free', 'Eberdt', 'feberdtj@globo.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(21, 1, 'bruno', 'cami', 'bruno.cami@hotmail.com', '$2a$10$zHmOHx/fsH7iRLyezYBkruWfBbe8lpPUOoZNI9gtXQj1wRytVCLwW', '/images/default.jpg', NULL),
+(23, 2, 'nuevo ', 'usuario 2', 'nuevo@vape.com', '$2a$10$pYm74ugCalsJSi682mcih.Tyq5qHygmMJdTkHFZTAWnKIgIhLYZ9e', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -239,9 +259,15 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `token`
+-- Indices de la tabla `products_cart`
 --
-ALTER TABLE `token`
+ALTER TABLE `products_cart`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tokens`
+--
+ALTER TABLE `tokens`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -279,16 +305,22 @@ ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT de la tabla `token`
+-- AUTO_INCREMENT de la tabla `products_cart`
 --
-ALTER TABLE `token`
+ALTER TABLE `products_cart`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `users_categories`

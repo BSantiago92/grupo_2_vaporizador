@@ -1,4 +1,5 @@
 const { User } = require('../../dataBase/models');
+const user = require('../../dataBase/models/user');
 
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
         // let groups = groupsModel.all()
         // res.render('groups/index',  { groups });
 
-        User.findAll()
+        User.findAll({include: 'User_category'})
             //return res.json(response);
             .then(users => {
                 if(users.length) {
@@ -27,8 +28,18 @@ module.exports = {
             .catch(error => {
                 console.log(error);
                 return res.status(500).json( { error: 'Could not connect to database' } );;
-            })
+        })
 
+    },
+    detail: (req,res) => {
+        User.findByPk( req.params.id ,{ include: 'User_category'})
+        .then(user => {
+            return res.json(user);
+        })
+        .catch(error => {
+            console.log(error);
+            return res.status(500).json( { error: 'Could not connect to database' } );
+        })
     }
 }
 
