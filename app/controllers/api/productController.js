@@ -10,6 +10,7 @@ module.exports = {
             //return res.json(response);
             .then(products => {
                 if(products.length) {
+                    console.log(products);
                     let response = {
                         meta: {
                             url: req.originalUrl,
@@ -17,7 +18,7 @@ module.exports = {
                             count: products.length
                         },
                         data: { 
-                            products 
+                            products
                         }
                     }
 

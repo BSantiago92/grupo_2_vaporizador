@@ -1,33 +1,54 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+// import axios from "react-axios";
+
+
+// import Card from "./components/Card";
 import KeyMetric from './components/KeyMetric';
-import U_KeyMetric from './components/U_KeyMetric';
+// import U_KeyMetric from './components/U_KeyMetric';
+// import Table from './components/Table'
 
 class App extends Component {
-  constructor(props) {
+  constructor(props){
     super(props);
     this.state = {
       metrics: []
-    };
+    }
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3003/api/products')
-      .then(response => response.json())
-      .then(products => {
-        this.setState({
+  componentWillMount() {
+
+    let promises = [
+      fetch("http://localhost:3003/api/products").then(result => result.json()),
+      fetch("http://localhost:3003/api/users").then(result => result.json())
+    ];
+
+    Promise.all(promises)
+
+      .then(result => {
+
+        let products = result[0];
+        let users = result[1];
+
+        this.setState({          
           metrics: [
-            {
-              color: "primary",
-              title: "Products in Data Base",
-              value: products.meta.count,
-              iconClass: "fa-clipboard-list",
-            }
-          ]
-        })
+          {
+            color: "danger",
+            title: "Products in Data Base",
+            value: products.meta.count,
+            iconClass: "fa-clipboard-list",
+          },
+          {
+            color: "success",
+            title: "Users in Data Base",
+            value: users.meta.count,
+            iconClass: "fa-clipboard-list",
+          }
+        ]
+        });
       })
-      .catch(error => console.log(error));
+      .catch( e => console.log( e ))
+    
   }
-
 render () {
   return (
     <div id="content">
@@ -134,22 +155,7 @@ render () {
                   title= { metric.title }
                   value= { metric.value }
                   iconClass= { metric.iconClass }
-                  key= { `metric-${index}`}
-                />
-              )  
-            :
-              <p>Cargando métricas...</p>
-          }
-
-          { 
-            this.state.metrics.length ? 
-              this.state.metrics.map((metric, index) =>
-                <U_KeyMetric 
-                  color= { metric.color }
-                  title= { metric.title }
-                  value= { metric.value }
-                  iconClass= { metric.iconClass }
-                  key= { `metric-${index}`}
+                  key= { index }
                 />
               )  
             :
@@ -157,7 +163,7 @@ render () {
           }
         </div>
 
-        {/* <div className="row">
+        <div className="row">
           <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
               <div className="card-header py-3">
@@ -226,7 +232,7 @@ render () {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
