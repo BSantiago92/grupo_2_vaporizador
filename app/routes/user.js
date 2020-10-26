@@ -26,6 +26,4 @@ router.get('/register', controller.register);
 
 router.post('/register', validate.register,controller.registerUser);
 
-router.post('/addToCart', validate.addToCart, controller.addToCart);
-
 module.exports = router;

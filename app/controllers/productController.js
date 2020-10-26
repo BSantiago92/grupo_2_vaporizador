@@ -11,7 +11,7 @@ const categoriesModel = jsonTable('categories');
 const brandsModel = jsonTable('brands');
 const {Op} = require('sequelize');
 
-const { Product, Category, Brand} = require('../dataBase/models');
+const { Product, Category, Brand, Item} = require('../dataBase/models');
 
 module.exports = {
     catalogue: (req,res) => {
@@ -82,25 +82,54 @@ module.exports = {
     },
 
     cart: (req, res) => {
-        Product.findAll({where: {brand_id: 2}, limit: 4 } )
-            .then(products => {
-                return res.render('productCart', { carrito, products });
+        Item.findAll({where: { user_id: req.session.user.id}, include: 'Product'})
+            .then(item => {
+                return res.render('productCart', { item });
             })
             .catch(error => {
                 console.log(error);
                 res.redirect('/');
             })
     },
+    addToCart: (req,res) => {
+        const errors = validationResult(req);
+
+        if(errors.isEmpty()) {
+            Product.findByPk(req.params.id)
+            .then((product) => {
+                let price = product.price;
+                console.log(product);
+
+                let itemObj = {
+                    salePrice: price,
+                    quantity: req.body.quantity,
+                    subTotal: price * req.body.quantity,
+                    state: 1,
+                    product_id: product.id,
+                    user_id: req.session.user.id,
+                }
+
+                Item.create(itemObj)
+            })
+            .then(() => res.redirect('/product/carrito'))
+            .catch((e) => console.log(e));
+        } else {
+            Product.findByPk(req.body.id, {
+                include: 'Item',
+            })
+            .then(product => {
+                return res.render('/product/detail', {product, errors: 
+                errors.mapped()})
+            })
+        }
+    },
     destroy_cartP: (req, res) => {
-
-        let product_cart = cartModel.find(req.params.id);
-        
-        cartModel.delete(req.params.id);
-
-        res.redirect('/product/carrito')
+        Item.destroy({where: { id: req.params.id}})
+        .then(deleteProduct => {
+            return res.redirect('/product/carrito');
+        })
     },
     list: (req,res) => {
-        // res.render('productList', { productos });
         Product.findAll()
         .then(products => {
             return res.render('productList', { products });
@@ -148,16 +177,10 @@ module.exports = {
 
     },
     destroy: (req, res) => {
-
-        // let product = productsModel.find(req.params.id);
-        // productsModel.delete(req.params.id);
-
         Product.destroy({where: { id: req.params.id}})
         .then(deleteProduct => {
             return res.redirect('/product/list');
         })
-
-        // res.redirect('/product/list')
     },
     search: (req, res) => {      
 

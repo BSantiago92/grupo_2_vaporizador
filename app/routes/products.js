@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/productController');
+const validate = require('../validators/products');
 const adminRoutes = require('../middlewares/adminRoute');
 
 const path = require('path');
@@ -27,6 +28,8 @@ router.get('/detail/:id', controller.detail);
 router.get('/catalogo', controller.catalogue);
 
 router.get('/carrito', controller.cart);
+
+router.post('/addToCart/:id', validate.addToCart, controller.addToCart);
 
 router.delete('/carrito/:id', controller.destroy_cartP);
 

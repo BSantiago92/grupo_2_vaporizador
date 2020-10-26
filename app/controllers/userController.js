@@ -13,6 +13,7 @@ const jsonTable = require('../dataBase/jsonTable');
 const usersModel = jsonTable('user');
 const { User, User_category, Token, Product, Item } = require('../dataBase/models');
 const item = require('../dataBase/models/item');
+const product = require('../dataBase/models/product');
 const usersTokensModel = jsonTable('usersTokens');
 
 
@@ -150,38 +151,5 @@ module.exports = {
     },
     profile: (req, res) => {
         res.render('userProfile');
-    },
-    addToCart: (req,res) => {
-        const errors = validationResult(req);
-
-        if(errors.isEmpty()) {
-            Product.findByPk(req.body.id, {
-                include: ['user_id'],
-            })
-            .then((product) => {
-                let price = 300;
-
-                //creo item de compra 
-                return Item.create({
-                    salePrice: price,
-                    quantity: req.body.quantity,
-                    subTotal: price * req.body.quantity,
-                    state: 1,
-                    user_id: req.session.user.id,
-                    seller_id: 4,
-                    product_id: 7,
-                });
-            })
-            .then((item) => res.redirect('/product/carrito'))
-            .catch((e) => console.log(e));
-        } else {
-            Product.findByPk(req.body.product_id, {
-                include: ['user_id'],
-            })
-            .then(product => {
-                return res.render('product/detail', {product, errors: 
-                errors.mapped()})
-            })
-        }
     }
 }

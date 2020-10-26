@@ -27,10 +27,5 @@ module.exports = {
         check('last_name')
             .notEmpty().withMessage('Apellido inválido').bail()   
 
-    ],
-    addToCart: [
-        body('quantity')
-            .custom((value) => value > 0)
-            .withMessage('Debe agregar al menos 1 producto'),
     ]
 }

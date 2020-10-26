@@ -1,16 +1,16 @@
 <article class="PCarticle">
     <div class="PCimg">
-        <img src="<%- product_cart.img %>" alt="image">
+        <img src="<%- product_cart.Product.img %>" alt="image">
     </div>
     
     <div class="PCProduct">
         <div class="PCdescription">
-            <h3><%- product_cart.brand %></h3>
-            <h5>$<%- product_cart.price %></h5> 
+            <h3><%- product_cart.Product.name %></h3>
+            <h5>$<%- product_cart.subTotal %></h5> 
         </div>
         <div class="PCSelection">
-            <h5><%- product_cart.model1 %></h5>
-            <input class="form-control" type="number" name="cuantity" placeholder="1">
+            <h5><%- product_cart.Product.model1 %></h5>
+            <input class="form-control" type="number" name="quantity" placeholder="<%- product_cart.quantity %>">
         </div>
     </div>
 

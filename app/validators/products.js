@@ -88,5 +88,10 @@ module.exports = {
 
         check("aditional-info").optional().trim()
             .isLength({ max:500 }).withMessage("La información adicional no puede tener más de 500 caracteres").bail()
+    ],
+    addToCart: [
+        body('quantity')
+            .custom((value) => value > 0)
+            .withMessage('Debe agregar al menos 1 producto'),
     ]
 }

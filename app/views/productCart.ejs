@@ -18,7 +18,7 @@
                     <h3>CARRITO</h3>
                 </div>
                 <section class="cart">
-                    <% carrito.forEach(product_cart => { %>
+                    <% item.forEach(product_cart => { %>
                         <%- include('./partials/cart', { product_cart }) %>
                     <% }) %>
                 </section>
@@ -33,25 +33,18 @@
 
                         </div>
                         <div class="price">
-                            <h4 class="price_text">TOTAL:</h4>
+                            <h4 class="price_text">TOTAL:</h4>     
                             <h4 class="price_text">
                                 $ 
-                                <% var arr = carrito; %>
-
-                                <% var total = arr.reduce((sum, value) => (typeof value.price == "number" ? sum + value.price : sum), 0); %>
+                                <% var arr = item; %>
+                                <% var total = arr.reduce((sum, value) => (typeof value.subTotal == "number" ? sum + value.subTotal : sum), 0); %>
                                 <%- total; %>                                 
-                            </h4>     
-        
-                            
+                            </h4>                         
                         </div>
                         <input class="PCproductDetailButton" type="submit" value="COMPRAR">
                     </article>
                 </section>
                 <div class="related_products">
-                    <h4 class="title">Productos relacionados</h4>
-                    <% products.forEach(product => { %>
-                        <%- include('./partials/cartRelated', { product }) %>
-                    <% }) %>
                 </div>
             </main>
 
