@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
-// import axios from "react-axios";
 
 
-// import Card from "./components/Card";
+import Card from "./components/Card";
 import KeyMetric from './components/KeyMetric';
-// import U_KeyMetric from './components/U_KeyMetric';
 // import Table from './components/Table'
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      metrics: []
+      metrics: [],
+      category: []
     }
   }
 
@@ -19,7 +18,8 @@ class App extends Component {
 
     let promises = [
       fetch("http://localhost:3003/api/products").then(result => result.json()),
-      fetch("http://localhost:3003/api/users").then(result => result.json())
+      fetch("http://localhost:3003/api/users").then(result => result.json()),
+      fetch("http://localhost:3003/api/categories").then(result => result.json())
     ];
 
     Promise.all(promises)
@@ -28,6 +28,13 @@ class App extends Component {
 
         let products = result[0];
         let users = result[1];
+        let categories = result[2];
+
+        let Data = categories.data.categories;
+        Data.map((category) => {
+          console.log(category.name);
+          })
+        
 
         this.setState({          
           metrics: [
@@ -42,14 +49,29 @@ class App extends Component {
             title: "Users in Data Base",
             value: users.meta.count,
             iconClass: "fa-clipboard-list",
+          },
+          {
+            color: "warning",
+            title: "categories in Data Base",
+            value: categories.meta.count,
+            iconClass: "fa-clipboard-list",
+          }
+        ],
+        category: [
+          {
+            categories:  
+              Data.map((category) => {
+                return category.name;
+              })
           }
         ]
         });
       })
       .catch( e => console.log( e ))
-    
   }
+
 render () {
+   
   return (
     <div id="content">
 
@@ -155,7 +177,7 @@ render () {
                   title= { metric.title }
                   value= { metric.value }
                   iconClass= { metric.iconClass }
-                  key= { index }
+                  // key= { index }
                 />
               )  
             :
@@ -186,48 +208,75 @@ render () {
               </div>
               <div className="card-body">
                 <div className="row">
+
                   <div className="col-lg-6 mb-4">
                     <div className="card bg-info text-white shadow">
                       <div className="card-body">
-                        Category 01
+                        { 
+                        this.state.category.length ? 
+                          this.state.category.map((metric, index) =>
+                            <Card 
+                              categories= { metric.categories[0] }
+                            />
+                          )  
+                        :
+                          <p>Cargando métricas...</p>
+                      }
                       </div>
                     </div>
                   </div>
+
                   <div className="col-lg-6 mb-4">
                     <div className="card bg-info text-white shadow">
                       <div className="card-body">
-                        Category 02
+                        { 
+                        this.state.category.length ? 
+                          this.state.category.map((metric, index) =>
+                            <Card 
+                              categories= { metric.categories[1] }
+                            />
+                          )  
+                        :
+                          <p>Cargando métricas...</p>
+                      }
                       </div>
                     </div>
                   </div>
+
                   <div className="col-lg-6 mb-4">
                     <div className="card bg-info text-white shadow">
                       <div className="card-body">
-                        Category 03
+                        { 
+                        this.state.category.length ? 
+                          this.state.category.map((metric, index) =>
+                            <Card 
+                              categories= { metric.categories[2] }
+                            />
+                          )  
+                        :
+                          <p>Cargando métricas...</p>
+                      }
                       </div>
                     </div>
                   </div>
+
                   <div className="col-lg-6 mb-4">
                     <div className="card bg-info text-white shadow">
                       <div className="card-body">
-                        Category 04
+                        { 
+                        this.state.category.length ? 
+                          this.state.category.map((metric, index) =>
+                            <Card 
+                              categories= { metric.categories[3] }
+                            />
+                          )  
+                        :
+                          <p>Cargando métricas...</p>
+                      }
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-6 mb-4">
-                    <div className="card bg-info text-white shadow">
-                      <div className="card-body">
-                        Category 05
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 mb-4">
-                    <div className="card bg-info text-white shadow">
-                      <div className="card-body">
-                        Category 06
-                      </div>
-                    </div>
-                  </div>
+          
                 </div>
               </div>
             </div>

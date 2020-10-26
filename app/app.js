@@ -41,6 +41,7 @@ const userRoutes = require('./routes/user');
 
 const usersApiRoutes = require('./routes/api/user');
 const productsApiRoutes = require('./routes/api/products');
+const categoriesApiRoutes = require('./routes/api/categories');
 
 
 app.use('/', indexRoutes)
@@ -51,12 +52,9 @@ app.use('/api/users', usersApiRoutes);
 
 app.use('/api/products', productsApiRoutes);
 
+app.use('/api/categories', categoriesApiRoutes);
+
 
 app.use((req, res, next) =>{
     res.status(404).render("notFound");
 });
-
-/*
-app.get('*', (req, res) => {
-    res.status(404).send("Esta pagina no existe");
-})*/

@@ -15,7 +15,7 @@ const { Product, Category, Brand, Item} = require('../dataBase/models');
 
 module.exports = {
     catalogue: (req,res) => {
-        Product.findAll({ limit: 8})
+        Product.findAll({ })
             .then(products => {
                 return res.render('catalogo', { products });
             })
