@@ -133,46 +133,9 @@
                 <h5 class="masVendidoSombreado">¡Los vapes, atomizadores, e-liquids y repuestos preferidos por nuestros clientes!</h5>
             </div>
 
-            <article class="masVendidosArticle">
-                <a href=""><img class="product_img" src="/images/productCart3.jpg" alt=""></a>
-                <div class="masVendidos_details">
-                    <h3>Vaporesso LT</h3>
-                    <p>$12.300,00</p>
-                </div>
-                
-            </article>
-            <article class="masVendidosArticle">
-                <a href=""><img class="product_img" src="/images/productCart3.jpg" alt=""></a>
-                <div class="masVendidos_details">
-                    <h3>Vaporesso LT</h3>
-                    <p>$12.300,00</p>
-                </div>
-                
-            </article>
-            <article class="masVendidosArticle">
-                <a href=""><img class="product_img" src="/images/productCart3.jpg" alt=""></a>
-                <div class="masVendidos_details">
-                    <h3>Vaporesso LT</h3>
-                    <p>$12.300,00</p>
-                </div>
-
-            </article>
-            <article class="masVendidosArticle">
-                <a href=""><img class="product_img" src="/images/productCart3.jpg" alt=""></a>
-                <div class="masVendidos_details">
-                    <h3>Vaporesso LT</h3>
-                    <p>$12.300,00</p>
-                </div>
-
-            </article>
-            <article class="masVendidosArticle">
-                <a href=""><img class="product_img" src="/images/productCart3.jpg" alt=""></a>
-                <div class="masVendidos_details">
-                    <h3>Vaporesso LT</h3>
-                    <p>$12.300,00</p>
-                </div>
-
-            </article>
+            <% masVendido.forEach(MV => { %>
+                <%- include('../partials/masVendido', { MV }) %>
+            <% }) %>
         </section>
     </main>
 

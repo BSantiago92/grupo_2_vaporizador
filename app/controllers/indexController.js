@@ -5,11 +5,14 @@ const usuario = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/user.j
 
 const jsonTable = require('../dataBase/jsonTable');
 
-const { User, User_category, Token } = require('../dataBase/models');
+const { User, Item, Product } = require('../dataBase/models');
 
 module.exports = {
     index: (req, res) => {
-        res.render('index/index')
+        Item.findAll({where: {user_id: 20}, include: 'Product'})
+            .then(masVendido => {
+                return res.render('index', {masVendido});
+            })
     },
     admin: (req, res) => {
         User.findAll({include: 'User_category'})

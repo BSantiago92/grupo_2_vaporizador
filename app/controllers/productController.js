@@ -5,17 +5,17 @@ const { check, validationResult, body } = require('express-validator');
 const productos = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/products.json'), 'utf-8'));
 const carrito = JSON.parse(fs.readFileSync(path.join(__dirname, '/../data/cart.json'), 'utf-8'));
 
-const cartModel = jsonTable('cart');
+// const cartModel = jsonTable('cart');
 // const productsModel = jsonTable('products');
-const categoriesModel = jsonTable('categories');
-const brandsModel = jsonTable('brands');
+// const categoriesModel = jsonTable('categories');
+// const brandsModel = jsonTable('brands');
 const {Op} = require('sequelize');
 
-const { Product, Category, Brand, Item} = require('../dataBase/models');
+const { Product, Category, Brand, Item, Cart} = require('../dataBase/models');
 
 module.exports = {
     catalogue: (req,res) => {
-        Product.findAll({ })
+        Product.findAll({order: [['price', 'DESC']]})
             .then(products => {
                 return res.render('catalogo', { products });
             })
@@ -39,36 +39,34 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-        let newProduct = req.body;
-        newProduct.img = '/images/default.jpg';
-        if (req.file) {
-            newProduct.img = req.file.filename;
-        } else if (req.body.oldImage) {
-            newProduct.img = req.body.oldImage;
+            let newProduct = req.body;
+            newProduct.img = '/images/default.jpg';
+            if (req.file) {
+                newProduct.img = req.file.filename;
+            } else if (req.body.oldImage) {
+                newProduct.img = req.body.oldImage;
+            }
+
+            delete newProduct.oldImage;
+
+            Product.create(newProduct)
+            .then(newProduct => {
+                return res.redirect('/product/detail/' + newProduct.id);
+            })
+        } else {
+            Category.findAll()
+                .then(categories => {
+                    return res.render('create',  { 
+                        categories,
+                        errors: errors.mapped(), 
+                        Product: req.body
+                    });
+                })
+                .catch(error => {
+                    console.log(error);
+                    return res.redirect('/');
+                })
         }
-
-        delete newProduct.oldImage;
-
-        Product.create(newProduct)
-        .then(newProduct => {
-            return res.redirect('/product/detail/' + newProduct.id);
-        })
-    } else {
-        // let categories = categoriesModel.all();
-
-        Category.findAll()
-            .then(categories => {
-                return res.render('create',  { 
-                    categories,
-                    errors: errors.mapped(), 
-                    Product: req.body
-                });
-            })
-            .catch(error => {
-                console.log(error);
-                return res.redirect('/');
-            })
-    }
     },
     detail: (req, res) => {
         Product.findByPk(req.params.id,{ include: 'Category'})
@@ -80,7 +78,6 @@ module.exports = {
             res.redirect('/');
         })
     },
-
     cart: (req, res) => {
         Item.findAll({where: { user_id: req.session.user.id}, include: 'Product'})
             .then(item => {
@@ -98,7 +95,6 @@ module.exports = {
             Product.findByPk(req.params.id)
             .then((product) => {
                 let price = product.price;
-                console.log(product);
 
                 let itemObj = {
                     salePrice: price,
@@ -154,8 +150,6 @@ module.exports = {
     },
     update: (req, res) => {
         let updateProduct = req.body;
-
-        //updateProduct.id = req.params.id;
         updateProduct.img = '/images/productroductDetail2.jpg';
         
         if (req.file) {
@@ -165,10 +159,6 @@ module.exports = {
         }
 
         delete updateProduct.oldImage;
-
-        // productId = productsModel.update(product);
-
-        // res.redirect('/product/detail/' + productId)
 
         Product.update(updateProduct, {where: { id: req.params.id}})
         .then(updateProduct => {
