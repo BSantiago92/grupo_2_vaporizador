@@ -4,10 +4,13 @@
         <div class="list_details">
                 <h3><%- product.name %></h3>
                 <h3><%- product.model_1 %></h3>
-                <p><%- product.description %></p>
+        <div class="buttons_Plist">
             <form action="/product/list/<%- product.id %>?_method=DELETE" method="POST">
                 <button type="submit" class="btn btn-danger">Eliminar Producto</button>
-            </form>
+            </form>    
+            <button type="button" class="btn btn-warning"><a href="/product/edit/<%-product.id%>">Editar</a></button>        
+        </div>
+
         </div>
     </div> 
 </div> 

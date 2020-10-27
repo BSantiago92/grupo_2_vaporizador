@@ -331,6 +331,13 @@ article img {
    width: 100%;
 }
 
+.buttons_Plist {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 
 /* List fin */
 
@@ -591,7 +598,10 @@ article img {
 
 
 /* user profile */
-
+.profile_main {
+    display: flex;
+    flex-direction: row;
+}
 
 
 .container_profile{ 
@@ -737,6 +747,17 @@ aside {
 /*Catalogo fin*/
 
 /* menu administrador */
+.menuAdmin_ul {
+    text-decoration: none;
+    list-style: none;
+}
+.menuAdmin_ul li a {
+    text-decoration: none;
+    color: black ;
+}
+
+
+
 
 .admin_container {
     width: 100%;
@@ -744,8 +765,9 @@ aside {
     justify-content: space-between;
 }
 
-.list_paroducts {
+.list_products {
     width: 50%;
+    margin: 45px 20px 20px;
 }
 
 .user_list_container {

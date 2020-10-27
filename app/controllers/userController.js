@@ -150,6 +150,9 @@ module.exports = {
         }
     },
     profile: (req, res) => {
-        res.render('userProfile');
+        Item.findAll({where: {user_id: 20}, include: 'Product'})
+        .then(masVendido => {
+            return res.render('userProfile', {masVendido});
+        })
     }
 }

@@ -118,7 +118,7 @@ let validateDescription = function(){
     let feedbackElement = description.nextElementSibling;
 
     if(description.value.trim() == '' ){
-        feedback = 'Debe ingresar el modelo del producto';
+        feedback = 'Debe ingresar una descripcion para el producto';
     }
 
     if(feedback){
@@ -139,7 +139,7 @@ let validatePrice = function(){
     let feedbackElement = price.nextElementSibling;
 
     if(price.value.trim() == '' ){
-        feedback = 'Debe ingresar el modelo del producto';
+        feedback = 'Debe ingresar el precio del producto';
     }
 
     if(feedback){

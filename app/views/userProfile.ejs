@@ -12,7 +12,7 @@
     <%- include('./partials/header') %>
 
 
-    <main>
+    <main class="profile_main">
         <div class="container_profile">
             <aside>
                 <div class="profile_info_container">
@@ -50,6 +50,15 @@
                     </div>
                 </div>
             </aside>
+        </div>
+
+        <div >
+            <h3>basado en tus ultimas compras</h3>
+            <div class="masVendidos">
+                <% masVendido.forEach(MV => { %>
+                    <%- include('./partials/masVendido', { MV }) %>
+                <% }) %>
+            </div>
         </div>
     </main>
     <%- include('./partials/footer') %>

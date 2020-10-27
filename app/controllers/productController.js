@@ -35,37 +35,43 @@ module.exports = {
         })
     },
     store: (req, res) => {
-        let errors = validationResult(req);
+        let errors = validationResult(req);  
 
-        if (errors.isEmpty()) {
+        if (errors.isEmpty()) {  
 
             let newProduct = req.body;
-            newProduct.img = '/images/default.jpg';
-            if (req.file) {
-                newProduct.img = req.file.filename;
-            } else if (req.body.oldImage) {
-                newProduct.img = req.body.oldImage;
+            let newProductObj = {
+                name: req.body.name,
+                brand: req.body.brand,
+                category_id: req.body.category_id,
+                model_1: req.body.model_1,
+                model_2: req.body.model_2,
+                model_3: req.body.model_3,
+                img: '/images/' + req.body.img,
+                description: req.body.description,
+                price: req.body.price
             }
 
-            delete newProduct.oldImage;
+            let newProductObjProduct = req.body;
+            newProductObjProduct.img = '/images/productroductDetail2.jpg';
+            
+            if (req.body.img) {
+                newProductObjProduct.img = '/images/' + req.body.img;
+            } else if (req.body.oldImage) {
+                newProductObjProduct.img = req.body.oldImage;
+            }
 
-            Product.create(newProduct)
-            .then(newProduct => {
-                return res.redirect('/product/detail/' + newProduct.id);
+            Product.create(newProductObj)
+            .then(newProductObj => {
+                return res.redirect('/product/detail/' + newProductObj.id);
             })
         } else {
-            Category.findAll()
-                .then(categories => {
-                    return res.render('create',  { 
-                        categories,
-                        errors: errors.mapped(), 
-                        Product: req.body
-                    });
-                })
-                .catch(error => {
-                    console.log(error);
-                    return res.redirect('/');
-                })
+            console.log(req.body.category_id);
+                console.log(errors.mapped());                    
+                return res.render('create',  { 
+                    name: req.body,
+                    errors: errors.mapped()
+                });
         }
     },
     detail: (req, res) => {
@@ -174,7 +180,7 @@ module.exports = {
     },
     search: (req, res) => {      
 
-        Product.findAll({where: {name: { [Op.substring]: req.query.search } } })
+        Product.findAll({where: {name: { [Op.substring]: req.query.search } }, include: 'Category' })
             .then(products => {
                 return res.render('search', {products});
             })
